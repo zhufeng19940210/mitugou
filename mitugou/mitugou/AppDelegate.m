@@ -1,25 +1,32 @@
-//
 //  AppDelegate.m
 //  mitugou
-//
 //  Created by zhufeng on 2018/11/3.
 //  Copyright © 2018年 zhufeng. All rights reserved.
-//
-
 #import "AppDelegate.h"
-
+#import "LoginVC.h"
+#import "RegisterVC.h"
+#import "TabBarController.h"
+#import "MyNavigationController.h"
 @interface AppDelegate ()
-
 @end
-
 @implementation AppDelegate
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window  = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    UIViewController *rootViewController = nil;
+    BOOL isFirst = [[NSUserDefaults standardUserDefaults]boolForKey:@"isFirst"];
+    if (isFirst) {
+        TabBarController *tabbarvc = [[TabBarController alloc]init];
+        rootViewController = tabbarvc;
+    }else{
+        LoginVC *loginVC = [[LoginVC alloc]init];
+        MyNavigationController *nav = [[MyNavigationController alloc]initWithRootViewController:loginVC];
+        rootViewController = nav;
+    }
+    self.window.rootViewController = rootViewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
