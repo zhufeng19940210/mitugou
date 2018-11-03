@@ -82,6 +82,9 @@
 		F00E0799218D2A570079D952 /* mitugou */ = {
 			isa = PBXGroup;
 			children = (
+				F0F0E46A218D53CF00B4ABCE /* Classes */,
+				F0F0E47F218D53D000B4ABCE /* Rescoure */,
+				F0F0E47E218D53D000B4ABCE /* Vendor */,
 				F00E079A218D2A570079D952 /* AppDelegate.h */,
 				F00E079B218D2A570079D952 /* AppDelegate.m */,
 				F00E079D218D2A570079D952 /* ViewController.h */,
@@ -93,6 +96,179 @@
 				F00E07A9218D2A5A0079D952 /* main.m */,
 			);
 			path = mitugou;
+			sourceTree = "<group>";
+		};
+		F0F0E46A218D53CF00B4ABCE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F0F0E46B218D53CF00B4ABCE /* Home */,
+				F0F0E470218D53D000B4ABCE /* Applicatin */,
+				F0F0E475218D53D000B4ABCE /* Setting */,
+				F0F0E47A218D53D000B4ABCE /* Main */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F0F0E46B218D53CF00B4ABCE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0F0E46C218D53CF00B4ABCE /* Other */,
+				F0F0E46D218D53CF00B4ABCE /* Controller */,
+				F0F0E46E218D53CF00B4ABCE /* Model */,
+				F0F0E46F218D53CF00B4ABCE /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F0F0E46C218D53CF00B4ABCE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F0F0E46D218D53CF00B4ABCE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0F0E46E218D53CF00B4ABCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0F0E46F218D53CF00B4ABCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0F0E470218D53D000B4ABCE /* Applicatin */ = {
+			isa = PBXGroup;
+			children = (
+				F0F0E471218D53D000B4ABCE /* Other */,
+				F0F0E472218D53D000B4ABCE /* Controller */,
+				F0F0E473218D53D000B4ABCE /* Model */,
+				F0F0E474218D53D000B4ABCE /* View */,
+			);
+			path = Applicatin;
+			sourceTree = "<group>";
+		};
+		F0F0E471218D53D000B4ABCE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F0F0E472218D53D000B4ABCE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0F0E473218D53D000B4ABCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0F0E474218D53D000B4ABCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0F0E475218D53D000B4ABCE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F0F0E476218D53D000B4ABCE /* Other */,
+				F0F0E477218D53D000B4ABCE /* Controller */,
+				F0F0E478218D53D000B4ABCE /* Model */,
+				F0F0E479218D53D000B4ABCE /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F0F0E476218D53D000B4ABCE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F0F0E477218D53D000B4ABCE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0F0E478218D53D000B4ABCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0F0E479218D53D000B4ABCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0F0E47A218D53D000B4ABCE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F0F0E47B218D53D000B4ABCE /* Controller */,
+				F0F0E47C218D53D000B4ABCE /* Model */,
+				F0F0E47D218D53D000B4ABCE /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F0F0E47B218D53D000B4ABCE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0F0E47C218D53D000B4ABCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0F0E47D218D53D000B4ABCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0F0E47E218D53D000B4ABCE /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		F0F0E47F218D53D000B4ABCE /* Rescoure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rescoure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,15 +343,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-mitugou-checkManifestLockResult.txt",
 			);
@@ -337,13 +509,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R48RV923F;
 				INFOPLIST_FILE = mitugou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bailing.mitugou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -355,13 +528,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R48RV923F;
 				INFOPLIST_FILE = mitugou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bailing.mitugou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
