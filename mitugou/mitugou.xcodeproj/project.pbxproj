@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CEE68FE5DD0D382C6ECCAD0 /* libPods-mitugou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EA01E4B49DC91B473E816F /* libPods-mitugou.a */; };
+		F00E079C218D2A570079D952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F00E079B218D2A570079D952 /* AppDelegate.m */; };
+		F00E079F218D2A570079D952 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F00E079E218D2A570079D952 /* ViewController.m */; };
+		F00E07A2218D2A570079D952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00E07A0218D2A570079D952 /* Main.storyboard */; };
+		F00E07A4218D2A5A0079D952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00E07A3218D2A5A0079D952 /* Assets.xcassets */; };
+		F00E07A7218D2A5A0079D952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00E07A5218D2A5A0079D952 /* LaunchScreen.storyboard */; };
+		F00E07AA218D2A5A0079D952 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F00E07A9218D2A5A0079D952 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37EA01E4B49DC91B473E816F /* libPods-mitugou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mitugou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9392D2DD45447DB10F35EDFB /* Pods-mitugou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mitugou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mitugou/Pods-mitugou.debug.xcconfig"; sourceTree = "<group>"; };
+		968DDD2F5CD949B4DAB378CF /* Pods-mitugou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mitugou.release.xcconfig"; path = "Pods/Target Support Files/Pods-mitugou/Pods-mitugou.release.xcconfig"; sourceTree = "<group>"; };
+		F00E0797218D2A570079D952 /* mitugou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitugou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00E079A218D2A570079D952 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F00E079B218D2A570079D952 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F00E079D218D2A570079D952 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F00E079E218D2A570079D952 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F00E07A1218D2A570079D952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F00E07A3218D2A5A0079D952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F00E07A6218D2A5A0079D952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F00E07A8218D2A5A0079D952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F00E07A9218D2A5A0079D952 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F00E0794218D2A570079D952 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CEE68FE5DD0D382C6ECCAD0 /* libPods-mitugou.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		705C454D5A90F147A665C100 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37EA01E4B49DC91B473E816F /* libPods-mitugou.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4B5DE63235AA127D7B3208A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9392D2DD45447DB10F35EDFB /* Pods-mitugou.debug.xcconfig */,
+				968DDD2F5CD949B4DAB378CF /* Pods-mitugou.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F00E078E218D2A570079D952 = {
+			isa = PBXGroup;
+			children = (
+				F00E0799218D2A570079D952 /* mitugou */,
+				F00E0798218D2A570079D952 /* Products */,
+				E4B5DE63235AA127D7B3208A /* Pods */,
+				705C454D5A90F147A665C100 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F00E0798218D2A570079D952 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F00E0797218D2A570079D952 /* mitugou.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F00E0799218D2A570079D952 /* mitugou */ = {
+			isa = PBXGroup;
+			children = (
+				F00E079A218D2A570079D952 /* AppDelegate.h */,
+				F00E079B218D2A570079D952 /* AppDelegate.m */,
+				F00E079D218D2A570079D952 /* ViewController.h */,
+				F00E079E218D2A570079D952 /* ViewController.m */,
+				F00E07A0218D2A570079D952 /* Main.storyboard */,
+				F00E07A3218D2A5A0079D952 /* Assets.xcassets */,
+				F00E07A5218D2A5A0079D952 /* LaunchScreen.storyboard */,
+				F00E07A8218D2A5A0079D952 /* Info.plist */,
+				F00E07A9218D2A5A0079D952 /* main.m */,
+			);
+			path = mitugou;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F00E0796218D2A570079D952 /* mitugou */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F00E07AD218D2A5A0079D952 /* Build configuration list for PBXNativeTarget "mitugou" */;
+			buildPhases = (
+				56374A578A3AE25EB3D3DB5E /* [CP] Check Pods Manifest.lock */,
+				F00E0793218D2A570079D952 /* Sources */,
+				F00E0794218D2A570079D952 /* Frameworks */,
+				F00E0795218D2A570079D952 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mitugou;
+			productName = mitugou;
+			productReference = F00E0797218D2A570079D952 /* mitugou.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F00E078F218D2A570079D952 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = zhufeng;
+				TargetAttributes = {
+					F00E0796218D2A570079D952 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = F00E0792218D2A570079D952 /* Build configuration list for PBXProject "mitugou" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F00E078E218D2A570079D952;
+			productRefGroup = F00E0798218D2A570079D952 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F00E0796218D2A570079D952 /* mitugou */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F00E0795218D2A570079D952 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00E07A7218D2A5A0079D952 /* LaunchScreen.storyboard in Resources */,
+				F00E07A4218D2A5A0079D952 /* Assets.xcassets in Resources */,
+				F00E07A2218D2A570079D952 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56374A578A3AE25EB3D3DB5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mitugou-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F00E0793218D2A570079D952 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00E079F218D2A570079D952 /* ViewController.m in Sources */,
+				F00E07AA218D2A5A0079D952 /* main.m in Sources */,
+				F00E079C218D2A570079D952 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F00E07A0218D2A570079D952 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F00E07A1218D2A570079D952 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F00E07A5218D2A5A0079D952 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F00E07A6218D2A5A0079D952 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F00E07AB218D2A5A0079D952 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F00E07AC218D2A5A0079D952 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F00E07AE218D2A5A0079D952 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9392D2DD45447DB10F35EDFB /* Pods-mitugou.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3R48RV923F;
+				INFOPLIST_FILE = mitugou/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bailing.mitugou;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F00E07AF218D2A5A0079D952 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 968DDD2F5CD949B4DAB378CF /* Pods-mitugou.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3R48RV923F;
+				INFOPLIST_FILE = mitugou/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bailing.mitugou;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F00E0792218D2A570079D952 /* Build configuration list for PBXProject "mitugou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00E07AB218D2A5A0079D952 /* Debug */,
+				F00E07AC218D2A5A0079D952 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F00E07AD218D2A5A0079D952 /* Build configuration list for PBXNativeTarget "mitugou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00E07AE218D2A5A0079D952 /* Debug */,
+				F00E07AF218D2A5A0079D952 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F00E078F218D2A570079D952 /* Project object */;
+}
