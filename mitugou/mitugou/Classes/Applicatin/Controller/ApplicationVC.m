@@ -12,12 +12,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.navigationItem.title = @"申请额度";
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 @end

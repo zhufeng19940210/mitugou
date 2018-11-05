@@ -4,21 +4,32 @@
 //  Copyright © 2018年 zhufeng. All rights reserved.
 #import "AppDelegate.h"
 #import "LoginVC.h"
-#import "RegisterVC.h"
+#import "ResigterVC.h"
 #import "TabBarController.h"
 #import "MyNavigationController.h"
+#import "GuiideVC.h"
 @interface AppDelegate ()
 @end
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self seutpThirdInitlation];
     self.window  = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     UIViewController *rootViewController = nil;
     BOOL isFirst = [[NSUserDefaults standardUserDefaults]boolForKey:@"isFirst"];
     if (isFirst) {
-        TabBarController *tabbarvc = [[TabBarController alloc]init];
-        rootViewController = tabbarvc;
+        if ([UserModel isOnline]) {
+            //登录成功
+            TabBarController *tabbarvc = [[TabBarController alloc]init];
+            rootViewController = tabbarvc;
+        }else{
+            //没有登录
+            LoginVC *loginVC = [[LoginVC alloc]init];
+            MyNavigationController *nav = [[MyNavigationController alloc]initWithRootViewController:loginVC];
+            rootViewController = nav;
+        }
     }else{
+        //引导页
         LoginVC *loginVC = [[LoginVC alloc]init];
         MyNavigationController *nav = [[MyNavigationController alloc]initWithRootViewController:loginVC];
         rootViewController = nav;
@@ -28,6 +39,16 @@
     return YES;
 }
 
+//三方初始化
+-(void)seutpThirdInitlation
+{
+    ///三方登录的东西
+    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
+        [platformsRegister setupQQWithAppId:MOBSSDKQQAppID appkey:MOBSSDKQQAppKey];
+        [platformsRegister setupWeChatWithAppId:MOBSSDKWeChatAppID appSecret:MOBSSDKWeChatAppSecret];
+        [platformsRegister setupSinaWeiboWithAppkey:MOBSSDKSinaWeiBoAppKey appSecret:MOBSSDKWeChatAppSecret redirectUrl:MOBSSDKSinaWeiBoDirecUrl];
+    }];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

@@ -25,4 +25,5 @@
 #import "NetWorkTool.h"
 #import "URLStr.h"
 #import "ResponeModel.h"
+#import <ShareSDK/ShareSDK.h> 
 #endif /* PrefixHeader_pch */
