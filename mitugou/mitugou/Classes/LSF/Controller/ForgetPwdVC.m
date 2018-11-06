@@ -79,12 +79,13 @@
  */
 - (IBAction)actionEyeBtn:(UIButton *)sender
 {
+    sender.selected = !sender.selected;
     if (sender.selected) {
         self.pwd_tf.secureTextEntry = NO;
-        [self.eye_btn setImage:[UIImage imageNamed:@"eye_nor"] forState:UIControlStateNormal];
+        [self.eye_btn setImage:[UIImage imageNamed:@"eye_sel"] forState:UIControlStateNormal];
     }else{
         self.pwd_tf.secureTextEntry = YES;
-        [self.eye_btn setImage:[UIImage imageNamed:@"eye_sel"] forState:UIControlStateNormal];
+        [self.eye_btn setImage:[UIImage imageNamed:@"eye_nor"] forState:UIControlStateNormal];
     }
 }
 /**
@@ -93,12 +94,13 @@
  */
 - (IBAction)acitonEyeBtn2:(UIButton *)sender
 {
+    sender.selected = !sender.selected;
     if (sender.selected) {
         self.pwd_again_tf.secureTextEntry = NO;
-        [self.eye_btn2 setImage:[UIImage imageNamed:@"eye_nor"] forState:UIControlStateNormal];
+        [self.eye_btn2 setImage:[UIImage imageNamed:@"eye_sel"] forState:UIControlStateNormal];
     }else{
         self.pwd_again_tf.secureTextEntry = YES;
-        [self.eye_btn2 setImage:[UIImage imageNamed:@"eye_sel"] forState:UIControlStateNormal];
+        [self.eye_btn2 setImage:[UIImage imageNamed:@"eye_nor"] forState:UIControlStateNormal];
     }
 }
 @end

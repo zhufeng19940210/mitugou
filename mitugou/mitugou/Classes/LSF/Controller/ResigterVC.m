@@ -25,6 +25,7 @@
  */
 - (IBAction)actionEyeBtn:(UIButton *)sender
 {
+    sender.selected = !sender.selected;
     if (sender.selected) {
         self.pwd_tf.secureTextEntry = NO;
         [self.eye_btn setImage:[UIImage imageNamed:@"eye_sel"] forState:UIControlStateNormal];
@@ -106,6 +107,7 @@
  */
 - (IBAction)actionAgreeBtn:(UIButton *)sender
 {
+    sender.selected = !sender.selected;
     if (sender.selected) {
         [self.agree_btn setImage:[UIImage imageNamed:@"aregree_sel"] forState:UIControlStateNormal];
         self.isAgree = YES;

@@ -30,16 +30,16 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dje-E9-hbD">
-                    <rect key="frame" x="20" y="246" width="294" height="40"/>
+                    <rect key="frame" x="20" y="246" width="284" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="nr0-dh-ydh"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sSJ-mY-23Z">
                     <rect key="frame" x="152" y="70" width="72" height="72"/>
@@ -148,11 +148,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcd-Wd-o43">
-                    <rect key="frame" x="315" y="246" width="40" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcd-Wd-o43">
+                    <rect key="frame" x="305" y="246" width="50" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="9xj-GN-cgL"/>
-                        <constraint firstAttribute="width" constant="40" id="icb-zl-7Zt"/>
+                        <constraint firstAttribute="width" constant="50" id="icb-zl-7Zt"/>
                     </constraints>
                     <state key="normal" image="eye_nor"/>
                     <connections>
@@ -166,9 +166,12 @@
                         <constraint firstAttribute="height" constant="45" id="W42-VD-FTV"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Xo3-xM-3FM"/>
                     </constraints>
-                    <state key="normal" title="注册" backgroundImage="bg">
+                    <state key="normal" title="登录" backgroundImage="bg">
                         <color key="titleColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="actionLoginBtn:" destination="-1" eventType="touchUpInside" id="IdR-Lf-K5N"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

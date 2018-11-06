@@ -30,6 +30,7 @@
  */
 - (IBAction)actionEyeBtn:(UIButton *)sender
 {
+    sender.selected = !sender.selected;
     if (sender.selected) {
         self.pwd_tf.secureTextEntry = NO;
         [self.eye_btn setImage:[UIImage imageNamed:@"eye_sel"] forState:UIControlStateNormal];
@@ -59,20 +60,16 @@
         [self showHint:@"手机号码不能为空" yOffset:-200];
         return;
     }
+    if (![LCUtil isMobileNumber:phone]) {
+        [self showHint:@"" yOffset:-200];
+        return;
+    }
     if (pwd.length == 0 || [pwd isEqualToString:@""]) {
         [self showHint:@"密码不能为空" yOffset:-200];
         return;
     }
     //开始去登录
     [self loginWithPhone:phone withPwd:pwd];
-    
-    //开始去做登录操作了
-    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    app.window.backgroundColor = [UIColor whiteColor];
-    TabBarController *tabbar = [[TabBarController alloc]init];
-    app.window.backgroundColor = [UIColor whiteColor];
-    app.window.rootViewController = tabbar;
-    [app.window makeKeyAndVisible];
 }
 
 -(void)loginWithPhone:(NSString *)phone withPwd:(NSString *)pwd
@@ -120,9 +117,9 @@
  */
 -(void)ThirdAuthorMethodWithPlatform:(int)platform WithType:(NSString *)platformType
 {
-    [ZFCustomView showWithStatus:@""];
+    [SVProgressHUD showWithStatus:@"请求中"];
     [ShareSDK authorize:platform settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
-        [ZFCustomView dismiss];
+        [SVProgressHUD dismiss];
         switch (state) {
             case SSDKResponseStateSuccess:
             {

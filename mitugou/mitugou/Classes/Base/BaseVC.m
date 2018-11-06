@@ -15,7 +15,7 @@
     {   self.edgesForExtendedLayout = UIRectEdgeNone;
         NSDictionary * attributes = @{
                                       NSForegroundColorAttributeName:[UIColor blackColor],
-                                      NSFontAttributeName:[UIFont systemFontOfSize:15]
+                                      NSFontAttributeName:[UIFont systemFontOfSize:17]
                                       };
         [self.navigationController.navigationBar setTitleTextAttributes:attributes];
         // 设置状态栏覆盖

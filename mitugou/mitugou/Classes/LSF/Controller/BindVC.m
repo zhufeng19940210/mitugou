@@ -14,12 +14,12 @@
     [super viewDidLoad];
     self.navigationItem.title = @"绑定手机";
 }
-
 /**
  显示眼睛的方法
  @param sender 显示眼睛的方法
  */
 - (IBAction)actionEyeBtn:(UIButton *)sender {
+    sender.selected = !sender.selected;
     if (sender.selected) {
         self.pwd_tf.secureTextEntry = NO;
         [sender setImage:[UIImage imageNamed:@"eye_sel"] forState:UIControlStateNormal];
