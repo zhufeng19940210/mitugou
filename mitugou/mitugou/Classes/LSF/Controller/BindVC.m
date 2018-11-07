@@ -59,7 +59,7 @@
         [self showHint:@"手机号不能为空" yOffset:-200];
         return;
     }
-    if (![LCUtil isMobileNumber:phone]) {
+    if (phone.length != 11) {
         [self showHint:@"手机号码有误" yOffset:-200];
         return;
     }

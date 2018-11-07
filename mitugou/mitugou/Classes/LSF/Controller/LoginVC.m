@@ -54,22 +54,30 @@
  */
 - (IBAction)actionLoginBtn:(UIButton *)sender
 {
+    [self.phone_tf resignFirstResponder];
+    [self.pwd_tf resignFirstResponder];
     NSString *phone = self.phone_tf.text;
     NSString *pwd   = self.pwd_tf.text;
     if (phone.length == 0 || [phone isEqualToString:@""]) {
         [self showHint:@"手机号码不能为空" yOffset:-200];
         return;
     }
-    if (![LCUtil isMobileNumber:phone]) {
-        [self showHint:@"" yOffset:-200];
+    if (phone.length != 11) {
+        [self showHint:@"手机号码有误" yOffset:-200];
         return;
     }
     if (pwd.length == 0 || [pwd isEqualToString:@""]) {
         [self showHint:@"密码不能为空" yOffset:-200];
         return;
     }
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    app.window.backgroundColor = [UIColor whiteColor];
+    TabBarController *tabbar = [[TabBarController alloc]init];
+    app.window.backgroundColor = [UIColor whiteColor];
+    app.window.rootViewController = tabbar;
+    [app.window makeKeyAndVisible];
     //开始去登录
-    [self loginWithPhone:phone withPwd:pwd];
+    //[self loginWithPhone:phone withPwd:pwd];
 }
 
 -(void)loginWithPhone:(NSString *)phone withPwd:(NSString *)pwd
@@ -79,6 +87,7 @@
     param[@"password"] = pwd;
     [[NetWorkTool shareInstacne]postWithURLString:User_Login_URL parameters:param success:^(id  _Nonnull responseObject) {
         NSLog(@"resoponseObject:%@",responseObject);
+        
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"error:%@",error);
     }];

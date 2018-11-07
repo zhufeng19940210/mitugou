@@ -26,4 +26,6 @@ target 'mitugou' do
   pod 'Bugtags'  
   #导入提示框
   pod 'MBProgressHUD'
+  #导入massory
+  pod 'Masonry'
 end

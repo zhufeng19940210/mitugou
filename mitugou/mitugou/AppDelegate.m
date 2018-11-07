@@ -42,6 +42,8 @@
 //三方初始化
 -(void)seutpThirdInitlation
 {
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     ///三方登录的东西
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
         [platformsRegister setupQQWithAppId:MOBSSDKQQAppID appkey:MOBSSDKQQAppKey];
