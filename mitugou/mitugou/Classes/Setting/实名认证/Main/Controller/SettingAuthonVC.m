@@ -8,7 +8,6 @@
 #import "FaceAuthonVC.h"
 #import "CardAuthonVC.h"
 #import "YunYinShangAuthonVC.h"
-#import "TaoBaoAuthonVC.h"
 #import "ZhifubaoPayAuthonVC.h"
 @interface SettingAuthonVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -18,7 +17,7 @@
 -(NSMutableArray *)titleArray
 {
     if (!_titleArray) {
-        _titleArray = [NSMutableArray arrayWithObjects:@"个人信息认证",@"人脸识别认证",@"银行卡认证",@"运营商认证",@"淘宝认证",@"支付宝认证", nil];
+        _titleArray = [NSMutableArray arrayWithObjects:@"个人信息认证",@"人脸识别认证",@"银行卡认证",@"运营商认证",@"支付宝认证", nil];
     }
     return _titleArray;
 }
@@ -79,10 +78,6 @@
         YunYinShangAuthonVC *yunxinshangvc = [[YunYinShangAuthonVC alloc]init];
         [self.navigationController pushViewController:yunxinshangvc animated:YES];
     }else if(indexPath.row == 4){
-        //淘宝认证
-        TaoBaoAuthonVC *taobaovc = [[TaoBaoAuthonVC alloc]init];
-        [self.navigationController pushViewController:taobaovc animated:YES];
-    }else if(indexPath.row == 5){
         //支付宝认证
         ZhifubaoPayAuthonVC *zhifubaovc = [[ZhifubaoPayAuthonVC alloc]init];
         [self.navigationController pushViewController:zhifubaovc animated:YES];

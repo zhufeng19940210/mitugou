@@ -13,10 +13,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"支付宝认证";
+    [self setRightButtonText:@"上传" withColor:MainThemeColor];
+}
+/**
+ RightButton
+ @param button RightButton
+ */
+- (void)onRightBtnAction:(UIButton *)button
+{
+    NSLog(@"上传界面");
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
 }
 @end

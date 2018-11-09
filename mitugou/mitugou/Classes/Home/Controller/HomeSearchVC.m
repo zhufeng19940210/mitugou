@@ -3,8 +3,8 @@
 //  Created by zhufeng on 2018/11/7.
 //  Copyright © 2018 zhufeng. All rights reserved.
 #import "HomeSearchVC.h"
-
-@interface HomeSearchVC ()<UITextFieldDelegate>
+#import "ApplicationproductCell.h"
+@interface HomeSearchVC ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)UITextField *search_tf;
 @property (nonatomic,assign)BOOL isSearch; //是否搜索
@@ -21,23 +21,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupConfigNavitionBar];
+    [self setupCollectionView];
 }
+-(void)setupCollectionView
+{
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    //注册cell
+    [self.collectionView registerNib:[UINib nibWithNibName:@"ApplicationproductCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"ApplicationproductCell"];
+}
+#pragma mark -- collectionViewDelegate
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.self.searchArray.count;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ApplicationproductCell *searchCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
+    return searchCell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
+
 -(void)setupConfigNavitionBar
 {
     [self setRightButtonText:@"搜索" withColor:[UIColor blackColor]];
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, IPHONE_WIDTH*0.8, 34)];
     textField.layer.masksToBounds = YES;
-    textField.layer.cornerRadius = 4.0f;
-    textField.backgroundColor = RGB(235, 240, 242);
+    textField.layer.cornerRadius = 16.0f;
+    textField.backgroundColor = RGB(240, 240, 240);
     textField.font = [UIFont systemFontOfSize:15]; // 字体颜色
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary]; // 创建属性字典
-    attrs[NSFontAttributeName] = [UIFont systemFontOfSize:15]; // 设置font
+    attrs[NSFontAttributeName] = [UIFont systemFontOfSize:14]; // 设置font
     attrs[NSForegroundColorAttributeName] = RGB(153, 153, 153); // 设置颜色
-    NSAttributedString *attStr = [[NSAttributedString alloc] initWithString:@"输入关键字学校名称/区域地址" attributes:attrs];
+    NSAttributedString *attStr = [[NSAttributedString alloc] initWithString:@"搜索您想要" attributes:attrs];
     textField.attributedPlaceholder = attStr;
     textField.textColor = [UIColor blackColor];
     textField.tintColor = RGB(153, 153, 153);
-    textField.leftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_search_gary"]];
+    textField.leftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"search"]];
     textField.leftViewMode = UITextFieldViewModeAlways;
     textField.rightView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_delete"]];
     textField.rightView.userInteractionEnabled = YES;
@@ -91,7 +120,17 @@
  */
 - (void)onRightBtnAction:(UIButton *)button
 {
-    NSLog(@"搜索的功能");
+    [self searchMethod];
+}
+//搜索的功能
+-(void)searchMethod
+{
+    NSString *searchStr = self.search_tf.text;
+    if (searchStr.length == 0 || [searchStr isEqualToString:@""]) {
+        [self showHint:@"搜索的内容不能为空" yOffset:-200];
+        return;
+    }
+    ///开始去搜索公司
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

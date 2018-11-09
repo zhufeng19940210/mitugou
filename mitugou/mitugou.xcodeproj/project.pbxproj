@@ -78,8 +78,6 @@
 		F0E1AC3B219426A500A9C17F /* SettingAuthonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC39219426A500A9C17F /* SettingAuthonCell.xib */; };
 		F0E1AC4921942E0D00A9C17F /* ZhifubaoPayAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC4721942E0D00A9C17F /* ZhifubaoPayAuthonVC.m */; };
 		F0E1AC4A21942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC4821942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib */; };
-		F0E1AC4E21942E7200A9C17F /* TaoBaoAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC4C21942E7200A9C17F /* TaoBaoAuthonVC.m */; };
-		F0E1AC4F21942E7200A9C17F /* TaoBaoAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC4D21942E7200A9C17F /* TaoBaoAuthonVC.xib */; };
 		F0E1AC5321942ED300A9C17F /* YunYinShangAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC5121942ED300A9C17F /* YunYinShangAuthonVC.m */; };
 		F0E1AC5421942ED300A9C17F /* YunYinShangAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC5221942ED300A9C17F /* YunYinShangAuthonVC.xib */; };
 		F0E1AC5821942F0F00A9C17F /* CardAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC5621942F0F00A9C17F /* CardAuthonVC.m */; };
@@ -192,6 +190,19 @@
 		F0F0E761218D9ECE00B4ABCE /* ApplicationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E75F218D9ECE00B4ABCE /* ApplicationVC.xib */; };
 		F0F0E765218D9EE000B4ABCE /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E763218D9EE000B4ABCE /* SettingVC.m */; };
 		F0F0E766218D9EE000B4ABCE /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E764218D9EE000B4ABCE /* SettingVC.xib */; };
+		F0FF5AC4219526970050AD96 /* AddreeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AC2219526970050AD96 /* AddreeListCell.m */; };
+		F0FF5AC5219526970050AD96 /* AddreeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5AC3219526970050AD96 /* AddreeListCell.xib */; };
+		F0FF5AC821952F600050AD96 /* AddreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AC721952F600050AD96 /* AddreeModel.m */; };
+		F0FF5ACC219539DB0050AD96 /* AddSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5ACA219539DB0050AD96 /* AddSelectCell.m */; };
+		F0FF5ACD219539DB0050AD96 /* AddSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5ACB219539DB0050AD96 /* AddSelectCell.xib */; };
+		F0FF5AD121953BA40050AD96 /* ProductDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5ACF21953BA40050AD96 /* ProductDetailCell.m */; };
+		F0FF5AD221953BA40050AD96 /* ProductDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5AD021953BA40050AD96 /* ProductDetailCell.xib */; };
+		F0FF5AD62195520D0050AD96 /* StagingTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AD42195520D0050AD96 /* StagingTypeCell.m */; };
+		F0FF5AD72195520D0050AD96 /* StagingTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5AD52195520D0050AD96 /* StagingTypeCell.xib */; };
+		F0FF5ADB2195525E0050AD96 /* DistributionTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AD92195525E0050AD96 /* DistributionTypeCell.m */; };
+		F0FF5ADC2195525E0050AD96 /* DistributionTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5ADA2195525E0050AD96 /* DistributionTypeCell.xib */; };
+		F0FF5AE02195A28F0050AD96 /* OrderContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5ADE2195A28F0050AD96 /* OrderContentCell.m */; };
+		F0FF5AE12195A28F0050AD96 /* OrderContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5ADF2195A28F0050AD96 /* OrderContentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -298,9 +309,6 @@
 		F0E1AC4621942E0D00A9C17F /* ZhifubaoPayAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZhifubaoPayAuthonVC.h; sourceTree = "<group>"; };
 		F0E1AC4721942E0D00A9C17F /* ZhifubaoPayAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhifubaoPayAuthonVC.m; sourceTree = "<group>"; };
 		F0E1AC4821942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZhifubaoPayAuthonVC.xib; sourceTree = "<group>"; };
-		F0E1AC4B21942E7200A9C17F /* TaoBaoAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaoBaoAuthonVC.h; sourceTree = "<group>"; };
-		F0E1AC4C21942E7200A9C17F /* TaoBaoAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaoBaoAuthonVC.m; sourceTree = "<group>"; };
-		F0E1AC4D21942E7200A9C17F /* TaoBaoAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaoBaoAuthonVC.xib; sourceTree = "<group>"; };
 		F0E1AC5021942ED300A9C17F /* YunYinShangAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunYinShangAuthonVC.h; sourceTree = "<group>"; };
 		F0E1AC5121942ED300A9C17F /* YunYinShangAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunYinShangAuthonVC.m; sourceTree = "<group>"; };
 		F0E1AC5221942ED300A9C17F /* YunYinShangAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YunYinShangAuthonVC.xib; sourceTree = "<group>"; };
@@ -498,6 +506,26 @@
 		F0F0E762218D9EE000B4ABCE /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		F0F0E763218D9EE000B4ABCE /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		F0F0E764218D9EE000B4ABCE /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		F0FF5AC1219526970050AD96 /* AddreeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddreeListCell.h; sourceTree = "<group>"; };
+		F0FF5AC2219526970050AD96 /* AddreeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddreeListCell.m; sourceTree = "<group>"; };
+		F0FF5AC3219526970050AD96 /* AddreeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddreeListCell.xib; sourceTree = "<group>"; };
+		F0FF5AC621952F600050AD96 /* AddreeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddreeModel.h; sourceTree = "<group>"; };
+		F0FF5AC721952F600050AD96 /* AddreeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddreeModel.m; sourceTree = "<group>"; };
+		F0FF5AC9219539DB0050AD96 /* AddSelectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSelectCell.h; sourceTree = "<group>"; };
+		F0FF5ACA219539DB0050AD96 /* AddSelectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddSelectCell.m; sourceTree = "<group>"; };
+		F0FF5ACB219539DB0050AD96 /* AddSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSelectCell.xib; sourceTree = "<group>"; };
+		F0FF5ACE21953BA40050AD96 /* ProductDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailCell.h; sourceTree = "<group>"; };
+		F0FF5ACF21953BA40050AD96 /* ProductDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailCell.m; sourceTree = "<group>"; };
+		F0FF5AD021953BA40050AD96 /* ProductDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailCell.xib; sourceTree = "<group>"; };
+		F0FF5AD32195520D0050AD96 /* StagingTypeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StagingTypeCell.h; sourceTree = "<group>"; };
+		F0FF5AD42195520D0050AD96 /* StagingTypeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StagingTypeCell.m; sourceTree = "<group>"; };
+		F0FF5AD52195520D0050AD96 /* StagingTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StagingTypeCell.xib; sourceTree = "<group>"; };
+		F0FF5AD82195525E0050AD96 /* DistributionTypeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistributionTypeCell.h; sourceTree = "<group>"; };
+		F0FF5AD92195525E0050AD96 /* DistributionTypeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistributionTypeCell.m; sourceTree = "<group>"; };
+		F0FF5ADA2195525E0050AD96 /* DistributionTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistributionTypeCell.xib; sourceTree = "<group>"; };
+		F0FF5ADD2195A28F0050AD96 /* OrderContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderContentCell.h; sourceTree = "<group>"; };
+		F0FF5ADE2195A28F0050AD96 /* OrderContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderContentCell.m; sourceTree = "<group>"; };
+		F0FF5ADF2195A28F0050AD96 /* OrderContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderContentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -755,6 +783,9 @@
 		F0E1ABDC2193CA4600A9C17F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0FF5ADD2195A28F0050AD96 /* OrderContentCell.h */,
+				F0FF5ADE2195A28F0050AD96 /* OrderContentCell.m */,
+				F0FF5ADF2195A28F0050AD96 /* OrderContentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -770,7 +801,6 @@
 			isa = PBXGroup;
 			children = (
 				F0E1AC4521942DE600A9C17F /* 支付宝认证 */,
-				F0E1AC4421942DDA00A9C17F /* 淘宝认证 */,
 				F0E1AC4221942D9900A9C17F /* 运营商认证 */,
 				F0E1AC4121942D8B00A9C17F /* 银行卡识别 */,
 				F0E1AC4021942D7200A9C17F /* 人脸识别 */,
@@ -951,16 +981,6 @@
 			path = "运营商认证";
 			sourceTree = "<group>";
 		};
-		F0E1AC4421942DDA00A9C17F /* 淘宝认证 */ = {
-			isa = PBXGroup;
-			children = (
-				F0E1AC4B21942E7200A9C17F /* TaoBaoAuthonVC.h */,
-				F0E1AC4C21942E7200A9C17F /* TaoBaoAuthonVC.m */,
-				F0E1AC4D21942E7200A9C17F /* TaoBaoAuthonVC.xib */,
-			);
-			path = "淘宝认证";
-			sourceTree = "<group>";
-		};
 		F0E1AC4521942DE600A9C17F /* 支付宝认证 */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,15 +994,9 @@
 		F0E1AC6C21943C4F00A9C17F /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				F0E1AC6D21943C6400A9C17F /* CommitOrderVC.h */,
-				F0E1AC6E21943C6400A9C17F /* CommitOrderVC.m */,
-				F0E1AC6F21943C6400A9C17F /* CommitOrderVC.xib */,
-				F0E1AC7221943CA500A9C17F /* AddressListVC.h */,
-				F0E1AC7321943CA500A9C17F /* AddressListVC.m */,
-				F0E1AC7421943CA500A9C17F /* AddressListVC.xib */,
-				F0E1AC7721943CD000A9C17F /* AddressEditVC.h */,
-				F0E1AC7821943CD000A9C17F /* AddressEditVC.m */,
-				F0E1AC7921943CD000A9C17F /* AddressEditVC.xib */,
+				F0FF5AC0219518BE0050AD96 /* Model */,
+				F0FF5ABF219518B90050AD96 /* View */,
+				F0FF5ABE219518AF0050AD96 /* Controller */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -1583,6 +1597,53 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F0FF5ABE219518AF0050AD96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC6D21943C6400A9C17F /* CommitOrderVC.h */,
+				F0E1AC6E21943C6400A9C17F /* CommitOrderVC.m */,
+				F0E1AC6F21943C6400A9C17F /* CommitOrderVC.xib */,
+				F0E1AC7221943CA500A9C17F /* AddressListVC.h */,
+				F0E1AC7321943CA500A9C17F /* AddressListVC.m */,
+				F0E1AC7421943CA500A9C17F /* AddressListVC.xib */,
+				F0E1AC7721943CD000A9C17F /* AddressEditVC.h */,
+				F0E1AC7821943CD000A9C17F /* AddressEditVC.m */,
+				F0E1AC7921943CD000A9C17F /* AddressEditVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0FF5ABF219518B90050AD96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0FF5AC1219526970050AD96 /* AddreeListCell.h */,
+				F0FF5AC2219526970050AD96 /* AddreeListCell.m */,
+				F0FF5AC3219526970050AD96 /* AddreeListCell.xib */,
+				F0FF5AC9219539DB0050AD96 /* AddSelectCell.h */,
+				F0FF5ACA219539DB0050AD96 /* AddSelectCell.m */,
+				F0FF5ACB219539DB0050AD96 /* AddSelectCell.xib */,
+				F0FF5ACE21953BA40050AD96 /* ProductDetailCell.h */,
+				F0FF5ACF21953BA40050AD96 /* ProductDetailCell.m */,
+				F0FF5AD021953BA40050AD96 /* ProductDetailCell.xib */,
+				F0FF5AD32195520D0050AD96 /* StagingTypeCell.h */,
+				F0FF5AD42195520D0050AD96 /* StagingTypeCell.m */,
+				F0FF5AD52195520D0050AD96 /* StagingTypeCell.xib */,
+				F0FF5AD82195525E0050AD96 /* DistributionTypeCell.h */,
+				F0FF5AD92195525E0050AD96 /* DistributionTypeCell.m */,
+				F0FF5ADA2195525E0050AD96 /* DistributionTypeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0FF5AC0219518BE0050AD96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0FF5AC621952F600050AD96 /* AddreeModel.h */,
+				F0FF5AC721952F600050AD96 /* AddreeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1642,6 +1703,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FF5ADC2195525E0050AD96 /* DistributionTypeCell.xib in Resources */,
 				F0E1AC7121943C6400A9C17F /* CommitOrderVC.xib in Resources */,
 				F0E1AC7B21943CD000A9C17F /* AddressEditVC.xib in Resources */,
 				F0EEFA962192D885006D1650 /* ApplicationproductCell.xib in Resources */,
@@ -1665,17 +1727,18 @@
 				F0E1AC032193CFD600A9C17F /* SettingLogoutCell.xib in Resources */,
 				F0E1AC5E21942F6700A9C17F /* FaceAuthonVC.xib in Resources */,
 				F0E1AC6321942F9C00A9C17F /* SingleAuthonVC.xib in Resources */,
+				F0FF5AC5219526970050AD96 /* AddreeListCell.xib in Resources */,
 				F0E1AC182193D92D00A9C17F /* SettingFriendVC.xib in Resources */,
 				F0E1AC222193D9DC00A9C17F /* SettingAuthonVC.xib in Resources */,
 				F0F0E703218D987E00B4ABCE /* 成功图片@2x.png in Resources */,
 				F0EEFA4D21928EDC006D1650 /* HomerecommendCell.xib in Resources */,
 				F0F0E731218D9A9900B4ABCE /* GuiideVC.xib in Resources */,
 				F0EEFA4821928E9D006D1650 /* HomeTypeCell.xib in Resources */,
-				F0E1AC4F21942E7200A9C17F /* TaoBaoAuthonVC.xib in Resources */,
 				F0EEFA9B2192E877006D1650 /* SettingHeaderCell.xib in Resources */,
 				F0E1AC5421942ED300A9C17F /* YunYinShangAuthonVC.xib in Resources */,
 				F0B50AD8218FF15E0027BB61 /* WeiboSDK.bundle in Resources */,
 				F0E1AC132193D7AB00A9C17F /* SettingAboutVC.xib in Resources */,
+				F0FF5ACD219539DB0050AD96 /* AddSelectCell.xib in Resources */,
 				F0E1AC4A21942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib in Resources */,
 				F0E1AC0E2193D71B00A9C17F /* SettingProblemVC.xib in Resources */,
 				F0EEFA8A2192D447006D1650 /* HomeEngineVC.xib in Resources */,
@@ -1699,11 +1762,14 @@
 				F0F0E761218D9ECE00B4ABCE /* ApplicationVC.xib in Resources */,
 				F0EEFA4321928CDC006D1650 /* HomeAdCell.xib in Resources */,
 				F0B50A0A218FE76D0027BB61 /* LoginVC.xib in Resources */,
+				F0FF5AD221953BA40050AD96 /* ProductDetailCell.xib in Resources */,
 				F0F0E75C218D9EBA00B4ABCE /* HomeVC.xib in Resources */,
 				F0EEFA6A2192C11D006D1650 /* HomeMessageVC.xib in Resources */,
 				F0EEFA912192D83F006D1650 /* ApplicationHeaderCell.xib in Resources */,
 				F0E1ABF92193CF1B00A9C17F /* SettingUserinfoVC.xib in Resources */,
 				F0B50AE3218FF15E0027BB61 /* ShareSDKConfigFile.bundle in Resources */,
+				F0FF5AE12195A28F0050AD96 /* OrderContentCell.xib in Resources */,
+				F0FF5AD72195520D0050AD96 /* StagingTypeCell.xib in Resources */,
 				F0EEFAA02192E9C5006D1650 /* SettingCommentCell.xib in Resources */,
 				F0F0E706218D987F00B4ABCE /* car3@2x.png in Resources */,
 				F0B50ADB218FF15E0027BB61 /* README.txt in Resources */,
@@ -1770,6 +1836,7 @@
 				F0B50AF8219049F40027BB61 /* AgreeVC.m in Sources */,
 				F0E1AC2B2193E5DD00A9C17F /* SettingRepaymentVC.m in Sources */,
 				F0F0E72C218D9A7E00B4ABCE /* BaseVC.m in Sources */,
+				F0FF5AD121953BA40050AD96 /* ProductDetailCell.m in Sources */,
 				F0F0E737218D9AC400B4ABCE /* UserModel.m in Sources */,
 				F0F0E6E1218D987E00B4ABCE /* LCUtil.m in Sources */,
 				F0F0E6E4218D987E00B4ABCE /* SYPlaceHolderTextView.m in Sources */,
@@ -1779,13 +1846,17 @@
 				F0F0E6E5218D987E00B4ABCE /* UIScrollView+EmptyDataSet.m in Sources */,
 				F0EEFA6E2192C288006D1650 /* HomeSearchVC.m in Sources */,
 				F0F0E6D9218D987E00B4ABCE /* UIView+ZJFrame.m in Sources */,
+				F0FF5AD62195520D0050AD96 /* StagingTypeCell.m in Sources */,
+				F0FF5AC4219526970050AD96 /* AddreeListCell.m in Sources */,
 				F0E1AC3A219426A500A9C17F /* SettingAuthonCell.m in Sources */,
 				F0E1AC7521943CA500A9C17F /* AddressListVC.m in Sources */,
+				F0FF5ACC219539DB0050AD96 /* AddSelectCell.m in Sources */,
 				F0F0E722218D991900B4ABCE /* ZFCustomView.m in Sources */,
 				F0F0E760218D9ECE00B4ABCE /* ApplicationVC.m in Sources */,
 				F0E1AC172193D92D00A9C17F /* SettingFriendVC.m in Sources */,
 				F0F0E6CD218D987E00B4ABCE /* IQBarButtonItem.m in Sources */,
 				F0E1ABF32193CBDA00A9C17F /* SettingCouponCell.m in Sources */,
+				F0FF5AE02195A28F0050AD96 /* OrderContentCell.m in Sources */,
 				F0F0E6E3218D987E00B4ABCE /* UIButton+POImagePosition.m in Sources */,
 				F0F0E6D4218D987E00B4ABCE /* IQUITextFieldView+Additions.m in Sources */,
 				F0F0E6D6218D987E00B4ABCE /* IQUIView+Hierarchy.m in Sources */,
@@ -1809,7 +1880,6 @@
 				F0F0E6DF218D987E00B4ABCE /* ZJScrollSegmentView.m in Sources */,
 				F0F0E723218D991900B4ABCE /* UIViewController+HUD.m in Sources */,
 				F0F0E725218D991900B4ABCE /* NetWorkTool.m in Sources */,
-				F0E1AC4E21942E7200A9C17F /* TaoBaoAuthonVC.m in Sources */,
 				F0B50A05218FE76D0027BB61 /* ForgetPwdVC.m in Sources */,
 				F0E1ABFD2193CFBB00A9C17F /* SettingUserinfoCell.m in Sources */,
 				F0E1AC0D2193D71B00A9C17F /* SettingProblemVC.m in Sources */,
@@ -1830,6 +1900,7 @@
 				F0B50A06218FE76D0027BB61 /* BindVC.m in Sources */,
 				F0F0E705218D987F00B4ABCE /* ZJCustomHud.m in Sources */,
 				F0E1ABD42193C49F00A9C17F /* HomeMessageCell.m in Sources */,
+				F0FF5AC821952F600050AD96 /* AddreeModel.m in Sources */,
 				F0F0E6DA218D987E00B4ABCE /* ZJTitleView.m in Sources */,
 				F0E1AC022193CFD600A9C17F /* SettingLogoutCell.m in Sources */,
 				F0EEFA602192BC9A006D1650 /* SGAdvertScrollView.m in Sources */,
@@ -1845,6 +1916,7 @@
 				F0E1AC35219408DA00A9C17F /* HomeProductDetailVC.m in Sources */,
 				F0EEFA9F2192E9C5006D1650 /* SettingCommentCell.m in Sources */,
 				F0E1AC072193D43100A9C17F /* UpdatePwdVC.m in Sources */,
+				F0FF5ADB2195525E0050AD96 /* DistributionTypeCell.m in Sources */,
 				F0EEFA3B21927B8A006D1650 /* HomeNavTopView.m in Sources */,
 				F0F0E6DC218D987E00B4ABCE /* ZJContentView.m in Sources */,
 				F0E1AC4921942E0D00A9C17F /* ZhifubaoPayAuthonVC.m in Sources */,

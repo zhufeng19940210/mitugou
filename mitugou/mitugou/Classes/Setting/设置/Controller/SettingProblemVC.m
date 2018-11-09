@@ -15,11 +15,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"常见问题";
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
 @end

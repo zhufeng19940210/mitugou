@@ -10,7 +10,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwd_tf;
 @property (weak, nonatomic) IBOutlet UIButton *agree_btn;
 @property (weak, nonatomic) IBOutlet UIButton *eye_btn;
-
 @property (nonatomic,assign)BOOL isAgree;
 @end
 @implementation ResigterVC

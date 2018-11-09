@@ -83,8 +83,8 @@
 -(void)loginWithPhone:(NSString *)phone withPwd:(NSString *)pwd
 {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"phone"] = phone;
-    param[@"password"] = pwd;
+    param[@"shouchi"] = phone;
+    param[@"pwd"] = pwd;
     [[NetWorkTool shareInstacne]postWithURLString:User_Login_URL parameters:param success:^(id  _Nonnull responseObject) {
         NSLog(@"resoponseObject:%@",responseObject);
         
@@ -155,4 +155,5 @@
         }
     }];
 }
+
 @end

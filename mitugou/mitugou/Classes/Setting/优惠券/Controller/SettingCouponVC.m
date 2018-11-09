@@ -19,9 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"优惠券";
-   // [self actionCouponNewData];
-   // [self setupRefresh];
-      [self setupTableView];
+    [self actionCouponNewData];
+    [self setupRefresh];
+    [self setupTableView];
 }
 -(void)setupRefresh
 {

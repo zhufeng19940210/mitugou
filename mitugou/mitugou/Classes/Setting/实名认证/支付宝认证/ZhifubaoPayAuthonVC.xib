@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,8 +19,48 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifubao1" translatesAutoresizingMaskIntoConstraints="NO" id="hSI-m9-p9Z">
+                    <rect key="frame" x="0.0" y="50" width="180" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="220" id="ZOk-6Q-vbQ"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifubao4" translatesAutoresizingMaskIntoConstraints="NO" id="aux-MS-y3Z">
+                    <rect key="frame" x="195" y="50" width="180" height="220"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifubao2" translatesAutoresizingMaskIntoConstraints="NO" id="wEM-Ui-Tww">
+                    <rect key="frame" x="-1" y="282" width="180" height="220"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifubao2" translatesAutoresizingMaskIntoConstraints="NO" id="OtU-BM-YFT">
+                    <rect key="frame" x="194" y="282" width="180" height="220"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aux-MS-y3Z" secondAttribute="trailing" id="5KO-TR-a3G"/>
+                <constraint firstItem="aux-MS-y3Z" firstAttribute="leading" secondItem="hSI-m9-p9Z" secondAttribute="trailing" constant="15" id="6JZ-dJ-R7g"/>
+                <constraint firstItem="hSI-m9-p9Z" firstAttribute="top" secondItem="aux-MS-y3Z" secondAttribute="top" id="6rg-zo-8vs"/>
+                <constraint firstItem="aux-MS-y3Z" firstAttribute="height" secondItem="hSI-m9-p9Z" secondAttribute="height" id="9uy-hX-bv7"/>
+                <constraint firstItem="wEM-Ui-Tww" firstAttribute="top" secondItem="hSI-m9-p9Z" secondAttribute="bottom" constant="12" id="Iew-FY-Xuk"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="OtU-BM-YFT" secondAttribute="trailing" constant="1" id="OgO-Fl-F7t"/>
+                <constraint firstItem="OtU-BM-YFT" firstAttribute="width" secondItem="hSI-m9-p9Z" secondAttribute="width" id="RAS-Cf-vOY"/>
+                <constraint firstItem="OtU-BM-YFT" firstAttribute="leading" secondItem="wEM-Ui-Tww" secondAttribute="trailing" constant="15" id="a0a-5K-rmY"/>
+                <constraint firstItem="hSI-m9-p9Z" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="bcR-AQ-pcj"/>
+                <constraint firstItem="wEM-Ui-Tww" firstAttribute="width" secondItem="hSI-m9-p9Z" secondAttribute="width" id="cjR-Ok-3rk"/>
+                <constraint firstItem="OtU-BM-YFT" firstAttribute="height" secondItem="hSI-m9-p9Z" secondAttribute="height" id="cnE-aI-LCK"/>
+                <constraint firstItem="hSI-m9-p9Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="j84-H0-aBb"/>
+                <constraint firstItem="aux-MS-y3Z" firstAttribute="width" secondItem="hSI-m9-p9Z" secondAttribute="width" id="lBs-7u-hB7"/>
+                <constraint firstItem="wEM-Ui-Tww" firstAttribute="height" secondItem="hSI-m9-p9Z" secondAttribute="height" id="nbP-TL-8oh"/>
+                <constraint firstItem="wEM-Ui-Tww" firstAttribute="top" secondItem="OtU-BM-YFT" secondAttribute="top" id="y10-HR-Etq"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="zhifubao1" width="236" height="356"/>
+        <image name="zhifubao2" width="236" height="356"/>
+        <image name="zhifubao4" width="236" height="356"/>
+    </resources>
 </document>
