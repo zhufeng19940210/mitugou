@@ -4,12 +4,18 @@
 //  Copyright © 2018 zhufeng. All rights reserved.
 
 #import "ApplicationHeaderCell.h"
-
 @implementation ApplicationHeaderCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
-
+/**
+ 立即申请
+ @param sender 立即申请的方法
+ */
+- (IBAction)actionApplicatinBtn:(UIButton *)sender
+{
+    if (self.actionBlock) {
+        self.actionBlock(sender);
+    }
+}
 @end

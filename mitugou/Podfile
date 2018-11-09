@@ -28,4 +28,6 @@ target 'mitugou' do
   pod 'MBProgressHUD'
   #导入massory
   pod 'Masonry'
+  #导入图片选择器
+  pod 'TZImagePickerController'
 end

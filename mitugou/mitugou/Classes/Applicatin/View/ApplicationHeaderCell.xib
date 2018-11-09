@@ -34,6 +34,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" title="立即申请" backgroundImage="bg"/>
+                        <connections>
+                            <action selector="actionApplicatinBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6DY-qH-lkM"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获取你的专属额度" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-sS-2IF">
                         <rect key="frame" x="82" y="111" width="155" height="23"/>
@@ -68,6 +71,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="319" height="301"/>
+            <connections>
+                <outlet property="count_lab" destination="FEE-sS-2IF" id="2N7-RV-KEq"/>
+            </connections>
             <point key="canvasLocation" x="3.5" y="20.5"/>
         </collectionViewCell>
     </objects>

@@ -3,7 +3,6 @@
 //  Created by zhufeng on 2018/11/3.
 //  Copyright © 2018年 zhufeng. All rights reserved.
 #import "BaseVC.h"
-#import "UIScrollView+EmptyDataSet.h"
 @interface BaseVC ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @end
 @implementation BaseVC
@@ -15,7 +14,7 @@
     {   self.edgesForExtendedLayout = UIRectEdgeNone;
         NSDictionary * attributes = @{
                                       NSForegroundColorAttributeName:[UIColor blackColor],
-                                      NSFontAttributeName:[UIFont systemFontOfSize:17]
+                                      NSFontAttributeName:[UIFont boldSystemFontOfSize:17]
                                       };
         [self.navigationController.navigationBar setTitleTextAttributes:attributes];
         // 设置状态栏覆盖
@@ -40,8 +39,8 @@
 - (void)setBackwardButton{
     NSArray *viewControllers = [self.navigationController viewControllers];
     if (viewControllers.count > 1) {
-        UIImage *image =[UIImage imageNamed:@"return_back2"];
-        UIImage *selectImage = [UIImage imageNamed:@"return_back2"];
+        UIImage *image =[UIImage imageNamed:@"return_black"];
+        UIImage *selectImage = [UIImage imageNamed:@"return_white"];
         UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 40)];
         [leftBtn setImage:image forState:UIControlStateNormal];
         [leftBtn setImage:selectImage forState:UIControlStateHighlighted];
@@ -158,26 +157,55 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-- (void)setViewRefresh:(UITableView *)tableView withHeaderAction:(SEL)hAction andFooterAction:(SEL)fAction target:(id)target{
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:target refreshingAction:hAction];
-    header.lastUpdatedTimeLabel.hidden = YES;
+- (NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _dataArray;
+}
+//刷新列表
+- (void)setViewRefreshTableView:(UITableView *)tableView withHeaderAction:(SEL)hAction andFooterAction:(SEL)fAction target:(id)target
+{
     // 设置header
-    tableView.mj_header = header;
-    
-    tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:target refreshingAction:fAction];
+    if (hAction) {
+        tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingTarget:target refreshingAction:hAction];
+    }
+    //header.lastUpdatedTimeLabel.hidden = YES;
+    if (fAction) {
+        tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:target refreshingAction:fAction];
+    }
+    //设置空的数据
     [self setEmptyTableView:tableView];
 }
 
-- (void)setEmptyTableView:(UITableView *)tableView{
+- (void)setViewRefreshColletionView:(UICollectionView *)collectionView withHeaderAction:(SEL)hAction andFooterAction:(SEL)fAction target:(id)target{
+    // 设置header
+    if (hAction) {
+        collectionView.mj_header= [MJRefreshNormalHeader headerWithRefreshingTarget:target refreshingAction:hAction];
+    }
+    //header.lastUpdatedTimeLabel.hidden = YES;
+    if (fAction) {
+        collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:target refreshingAction:fAction];
+    }
+    //设置空的数据
+    [self setEmptyCollectionView:collectionView];
+}
+-(void)setEmptyCollectionView:(UICollectionView *)colletionView
+{
+    colletionView.emptyDataSetSource = self;
+    colletionView.emptyDataSetDelegate = self;
+}
+
+-(void)setEmptyTableView:(UITableView *)tableView
+{
     tableView.emptyDataSetSource = self;
     tableView.emptyDataSetDelegate = self;
 }
-
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
     NSString *title = @"暂无数据";
     NSDictionary *attributes = @{
                                  NSFontAttributeName:[UIFont systemFontOfSize:17],
-                                 NSForegroundColorAttributeName:[UIColor whiteColor]
+                                 NSForegroundColorAttributeName:GrayFontColor
                                  };
     return [[NSAttributedString alloc] initWithString:title attributes:attributes];
 }
@@ -186,12 +214,10 @@
     return YES;
 }
 
-- (NSMutableArray *)dataArray{
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray arrayWithCapacity:0];
-    }
-    return _dataArray;
+- (float)getLabelHeightWithText:(NSString *)text width:(float)width font: (float)font
+{
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil];
+    return rect.size.height;
 }
-
 
 @end

@@ -13,8 +13,6 @@
 #import "HomeMessageVC.h"
 #import "HomeSortVC.h"
 #import "HomeSearchVC.h"
-#import "HomeAccessoryVC.h"
-#import "HomePhoneVC.h"
 #import "HomeEngineVC.h"
 @interface HomeVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -121,10 +119,12 @@
             if (type == HomeTypeCar) {
                 //机车专区
                 HomeEngineVC *enginevc = [[HomeEngineVC alloc]init];
+                enginevc.type = 0;
                 [self.navigationController pushViewController:enginevc animated:YES];
             }else{
                 //手机专区
-                HomePhoneVC *phonevc = [[HomePhoneVC alloc]init];
+                HomeEngineVC *phonevc = [[HomeEngineVC alloc]init];
+                phonevc.type = 2;
                 [self.navigationController pushViewController:phonevc animated:YES];
             }
         };
@@ -142,16 +142,19 @@
         prductCell.actionCallback = ^(HomeProduct type) {
             if (type == HomeProductHot) {
                 //手机热卖
-                HomePhoneVC *phonevc = [[HomePhoneVC alloc]init];
+                HomeEngineVC *phonevc  = [[HomeEngineVC alloc]init];
+                phonevc.type = 2;
                 [self.navigationController pushViewController:phonevc animated:YES];
             }else if (type == HomeProductCar){
                 //机车
                 HomeEngineVC *enginevc = [[HomeEngineVC alloc]init];
+                enginevc.type = 0;
                 [self.navigationController pushViewController:enginevc animated:YES];
             }else if (type == HomeProductPeijian){
                 //机车配件
-                HomeAccessoryVC *accessoryvc = [[HomeAccessoryVC alloc]init];
-                [self.navigationController pushViewController:accessoryvc animated:YES];
+                HomeEngineVC *peijianvc = [[HomeEngineVC alloc]init];
+                peijianvc.type = 1;
+                [self.navigationController pushViewController:peijianvc animated:YES];
             }
         };
         homeCell = prductCell;

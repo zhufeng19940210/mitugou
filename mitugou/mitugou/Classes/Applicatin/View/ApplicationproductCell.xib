@@ -56,6 +56,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="206" height="236"/>
+            <connections>
+                <outlet property="icon_img" destination="Vqc-4M-MIp" id="4zT-Oc-6sg"/>
+                <outlet property="price_lab" destination="m0d-XZ-uQ0" id="hxi-Pn-6dO"/>
+                <outlet property="title_lab" destination="BvE-TL-W7E" id="kLY-5h-o2T"/>
+            </connections>
             <point key="canvasLocation" x="-12" y="30"/>
         </collectionViewCell>
     </objects>

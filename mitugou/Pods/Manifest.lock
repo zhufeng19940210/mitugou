@@ -29,6 +29,7 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SVProgressHUD (2.2.5)
+  - TZImagePickerController (3.0.9)
 
 DEPENDENCIES:
   - AFNetworking
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - SDCycleScrollView
   - SDWebImage
   - SVProgressHUD
+  - TZImagePickerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -56,6 +58,7 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - SVProgressHUD
+    - TZImagePickerController
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -69,7 +72,8 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
 
-PODFILE CHECKSUM: fee7fbb05dd2e53a688f7cee405fab612fa7c1d3
+PODFILE CHECKSUM: fc642035ab42191bebee0ed84149d6d550370db7
 
 COCOAPODS: 1.5.3

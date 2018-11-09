@@ -44,6 +44,59 @@
 		F0B50AEF218FF17C0027BB61 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B50AEE218FF17B0027BB61 /* libc++.tbd */; };
 		F0B50AF8219049F40027BB61 /* AgreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B50AF6219049F40027BB61 /* AgreeVC.m */; };
 		F0B50AF9219049F40027BB61 /* AgreeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B50AF7219049F40027BB61 /* AgreeVC.xib */; };
+		F0E1ABD42193C49F00A9C17F /* HomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1ABD22193C49F00A9C17F /* HomeMessageCell.m */; };
+		F0E1ABD52193C49F00A9C17F /* HomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1ABD32193C49F00A9C17F /* HomeMessageCell.xib */; };
+		F0E1ABEE2193CB2F00A9C17F /* SettingCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1ABEC2193CB2F00A9C17F /* SettingCouponVC.m */; };
+		F0E1ABEF2193CB2F00A9C17F /* SettingCouponVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1ABED2193CB2F00A9C17F /* SettingCouponVC.xib */; };
+		F0E1ABF32193CBDA00A9C17F /* SettingCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1ABF12193CBDA00A9C17F /* SettingCouponCell.m */; };
+		F0E1ABF42193CBDA00A9C17F /* SettingCouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1ABF22193CBDA00A9C17F /* SettingCouponCell.xib */; };
+		F0E1ABF82193CF1B00A9C17F /* SettingUserinfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1ABF62193CF1B00A9C17F /* SettingUserinfoVC.m */; };
+		F0E1ABF92193CF1B00A9C17F /* SettingUserinfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1ABF72193CF1B00A9C17F /* SettingUserinfoVC.xib */; };
+		F0E1ABFD2193CFBB00A9C17F /* SettingUserinfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1ABFB2193CFBB00A9C17F /* SettingUserinfoCell.m */; };
+		F0E1ABFE2193CFBB00A9C17F /* SettingUserinfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1ABFC2193CFBB00A9C17F /* SettingUserinfoCell.xib */; };
+		F0E1AC022193CFD600A9C17F /* SettingLogoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC002193CFD600A9C17F /* SettingLogoutCell.m */; };
+		F0E1AC032193CFD600A9C17F /* SettingLogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC012193CFD600A9C17F /* SettingLogoutCell.xib */; };
+		F0E1AC072193D43100A9C17F /* UpdatePwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC052193D43100A9C17F /* UpdatePwdVC.m */; };
+		F0E1AC082193D43100A9C17F /* UpdatePwdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC062193D43100A9C17F /* UpdatePwdVC.xib */; };
+		F0E1AC0D2193D71B00A9C17F /* SettingProblemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC0B2193D71B00A9C17F /* SettingProblemVC.m */; };
+		F0E1AC0E2193D71B00A9C17F /* SettingProblemVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC0C2193D71B00A9C17F /* SettingProblemVC.xib */; };
+		F0E1AC122193D7AB00A9C17F /* SettingAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC102193D7AB00A9C17F /* SettingAboutVC.m */; };
+		F0E1AC132193D7AB00A9C17F /* SettingAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC112193D7AB00A9C17F /* SettingAboutVC.xib */; };
+		F0E1AC172193D92D00A9C17F /* SettingFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC152193D92D00A9C17F /* SettingFriendVC.m */; };
+		F0E1AC182193D92D00A9C17F /* SettingFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC162193D92D00A9C17F /* SettingFriendVC.xib */; };
+		F0E1AC212193D9DC00A9C17F /* SettingAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC1F2193D9DC00A9C17F /* SettingAuthonVC.m */; };
+		F0E1AC222193D9DC00A9C17F /* SettingAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC202193D9DC00A9C17F /* SettingAuthonVC.xib */; };
+		F0E1AC262193E5A100A9C17F /* SettingLoanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC242193E5A100A9C17F /* SettingLoanVC.m */; };
+		F0E1AC272193E5A100A9C17F /* SettingLoanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC252193E5A100A9C17F /* SettingLoanVC.xib */; };
+		F0E1AC2B2193E5DD00A9C17F /* SettingRepaymentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC292193E5DD00A9C17F /* SettingRepaymentVC.m */; };
+		F0E1AC2C2193E5DD00A9C17F /* SettingRepaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC2A2193E5DD00A9C17F /* SettingRepaymentVC.xib */; };
+		F0E1AC302193EBCB00A9C17F /* ProductTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC2E2193EBCB00A9C17F /* ProductTypeCell.m */; };
+		F0E1AC312193EBCB00A9C17F /* ProductTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC2F2193EBCB00A9C17F /* ProductTypeCell.xib */; };
+		F0E1AC35219408DA00A9C17F /* HomeProductDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC33219408DA00A9C17F /* HomeProductDetailVC.m */; };
+		F0E1AC36219408DA00A9C17F /* HomeProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC34219408DA00A9C17F /* HomeProductDetailVC.xib */; };
+		F0E1AC3A219426A500A9C17F /* SettingAuthonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC38219426A500A9C17F /* SettingAuthonCell.m */; };
+		F0E1AC3B219426A500A9C17F /* SettingAuthonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC39219426A500A9C17F /* SettingAuthonCell.xib */; };
+		F0E1AC4921942E0D00A9C17F /* ZhifubaoPayAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC4721942E0D00A9C17F /* ZhifubaoPayAuthonVC.m */; };
+		F0E1AC4A21942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC4821942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib */; };
+		F0E1AC4E21942E7200A9C17F /* TaoBaoAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC4C21942E7200A9C17F /* TaoBaoAuthonVC.m */; };
+		F0E1AC4F21942E7200A9C17F /* TaoBaoAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC4D21942E7200A9C17F /* TaoBaoAuthonVC.xib */; };
+		F0E1AC5321942ED300A9C17F /* YunYinShangAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC5121942ED300A9C17F /* YunYinShangAuthonVC.m */; };
+		F0E1AC5421942ED300A9C17F /* YunYinShangAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC5221942ED300A9C17F /* YunYinShangAuthonVC.xib */; };
+		F0E1AC5821942F0F00A9C17F /* CardAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC5621942F0F00A9C17F /* CardAuthonVC.m */; };
+		F0E1AC5921942F0F00A9C17F /* CardAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC5721942F0F00A9C17F /* CardAuthonVC.xib */; };
+		F0E1AC5D21942F6700A9C17F /* FaceAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC5B21942F6700A9C17F /* FaceAuthonVC.m */; };
+		F0E1AC5E21942F6700A9C17F /* FaceAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC5C21942F6700A9C17F /* FaceAuthonVC.xib */; };
+		F0E1AC6221942F9C00A9C17F /* SingleAuthonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC6021942F9C00A9C17F /* SingleAuthonVC.m */; };
+		F0E1AC6321942F9C00A9C17F /* SingleAuthonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC6121942F9C00A9C17F /* SingleAuthonVC.xib */; };
+		F0E1AC66219436AD00A9C17F /* OrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC65219436AD00A9C17F /* OrderListVC.m */; };
+		F0E1AC6A219437B000A9C17F /* OrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC68219437B000A9C17F /* OrderDetailVC.m */; };
+		F0E1AC6B219437B000A9C17F /* OrderDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC69219437B000A9C17F /* OrderDetailVC.xib */; };
+		F0E1AC7021943C6400A9C17F /* CommitOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC6E21943C6400A9C17F /* CommitOrderVC.m */; };
+		F0E1AC7121943C6400A9C17F /* CommitOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC6F21943C6400A9C17F /* CommitOrderVC.xib */; };
+		F0E1AC7521943CA500A9C17F /* AddressListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC7321943CA500A9C17F /* AddressListVC.m */; };
+		F0E1AC7621943CA500A9C17F /* AddressListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC7421943CA500A9C17F /* AddressListVC.xib */; };
+		F0E1AC7A21943CD000A9C17F /* AddressEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E1AC7821943CD000A9C17F /* AddressEditVC.m */; };
+		F0E1AC7B21943CD000A9C17F /* AddressEditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E1AC7921943CD000A9C17F /* AddressEditVC.xib */; };
 		F0EEFA3B21927B8A006D1650 /* HomeNavTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA3A21927B8A006D1650 /* HomeNavTopView.m */; };
 		F0EEFA3E219289A7006D1650 /* NotificationCenterName.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA3D219289A7006D1650 /* NotificationCenterName.m */; };
 		F0EEFA4221928CDC006D1650 /* HomeAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA4021928CDC006D1650 /* HomeAdCell.m */; };
@@ -65,10 +118,6 @@
 		F0EEFA6A2192C11D006D1650 /* HomeMessageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA682192C11D006D1650 /* HomeMessageVC.xib */; };
 		F0EEFA6E2192C288006D1650 /* HomeSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA6C2192C288006D1650 /* HomeSearchVC.m */; };
 		F0EEFA6F2192C288006D1650 /* HomeSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA6D2192C288006D1650 /* HomeSearchVC.xib */; };
-		F0EEFA7F2192D39F006D1650 /* HomeAccessoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA7D2192D39F006D1650 /* HomeAccessoryVC.m */; };
-		F0EEFA802192D39F006D1650 /* HomeAccessoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA7E2192D39F006D1650 /* HomeAccessoryVC.xib */; };
-		F0EEFA842192D427006D1650 /* HomePhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA822192D427006D1650 /* HomePhoneVC.m */; };
-		F0EEFA852192D427006D1650 /* HomePhoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA832192D427006D1650 /* HomePhoneVC.xib */; };
 		F0EEFA892192D447006D1650 /* HomeEngineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA872192D447006D1650 /* HomeEngineVC.m */; };
 		F0EEFA8A2192D447006D1650 /* HomeEngineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA882192D447006D1650 /* HomeEngineVC.xib */; };
 		F0EEFA8C2192D5D8006D1650 /* 协议.html in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA8B2192D5D5006D1650 /* 协议.html */; };
@@ -198,6 +247,86 @@
 		F0B50AF5219049F40027BB61 /* AgreeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreeVC.h; sourceTree = "<group>"; };
 		F0B50AF6219049F40027BB61 /* AgreeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgreeVC.m; sourceTree = "<group>"; };
 		F0B50AF7219049F40027BB61 /* AgreeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreeVC.xib; sourceTree = "<group>"; };
+		F0E1ABD12193C49F00A9C17F /* HomeMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeMessageCell.h; sourceTree = "<group>"; };
+		F0E1ABD22193C49F00A9C17F /* HomeMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeMessageCell.m; sourceTree = "<group>"; };
+		F0E1ABD32193C49F00A9C17F /* HomeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMessageCell.xib; sourceTree = "<group>"; };
+		F0E1ABEB2193CB2F00A9C17F /* SettingCouponVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCouponVC.h; sourceTree = "<group>"; };
+		F0E1ABEC2193CB2F00A9C17F /* SettingCouponVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCouponVC.m; sourceTree = "<group>"; };
+		F0E1ABED2193CB2F00A9C17F /* SettingCouponVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCouponVC.xib; sourceTree = "<group>"; };
+		F0E1ABF02193CBDA00A9C17F /* SettingCouponCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCouponCell.h; sourceTree = "<group>"; };
+		F0E1ABF12193CBDA00A9C17F /* SettingCouponCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCouponCell.m; sourceTree = "<group>"; };
+		F0E1ABF22193CBDA00A9C17F /* SettingCouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCouponCell.xib; sourceTree = "<group>"; };
+		F0E1ABF52193CF1B00A9C17F /* SettingUserinfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingUserinfoVC.h; sourceTree = "<group>"; };
+		F0E1ABF62193CF1B00A9C17F /* SettingUserinfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingUserinfoVC.m; sourceTree = "<group>"; };
+		F0E1ABF72193CF1B00A9C17F /* SettingUserinfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingUserinfoVC.xib; sourceTree = "<group>"; };
+		F0E1ABFA2193CFBB00A9C17F /* SettingUserinfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingUserinfoCell.h; sourceTree = "<group>"; };
+		F0E1ABFB2193CFBB00A9C17F /* SettingUserinfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingUserinfoCell.m; sourceTree = "<group>"; };
+		F0E1ABFC2193CFBB00A9C17F /* SettingUserinfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingUserinfoCell.xib; sourceTree = "<group>"; };
+		F0E1ABFF2193CFD600A9C17F /* SettingLogoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingLogoutCell.h; sourceTree = "<group>"; };
+		F0E1AC002193CFD600A9C17F /* SettingLogoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingLogoutCell.m; sourceTree = "<group>"; };
+		F0E1AC012193CFD600A9C17F /* SettingLogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingLogoutCell.xib; sourceTree = "<group>"; };
+		F0E1AC042193D43100A9C17F /* UpdatePwdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdatePwdVC.h; sourceTree = "<group>"; };
+		F0E1AC052193D43100A9C17F /* UpdatePwdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdatePwdVC.m; sourceTree = "<group>"; };
+		F0E1AC062193D43100A9C17F /* UpdatePwdVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdatePwdVC.xib; sourceTree = "<group>"; };
+		F0E1AC0A2193D71B00A9C17F /* SettingProblemVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingProblemVC.h; sourceTree = "<group>"; };
+		F0E1AC0B2193D71B00A9C17F /* SettingProblemVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingProblemVC.m; sourceTree = "<group>"; };
+		F0E1AC0C2193D71B00A9C17F /* SettingProblemVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProblemVC.xib; sourceTree = "<group>"; };
+		F0E1AC0F2193D7AB00A9C17F /* SettingAboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingAboutVC.h; sourceTree = "<group>"; };
+		F0E1AC102193D7AB00A9C17F /* SettingAboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingAboutVC.m; sourceTree = "<group>"; };
+		F0E1AC112193D7AB00A9C17F /* SettingAboutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAboutVC.xib; sourceTree = "<group>"; };
+		F0E1AC142193D92D00A9C17F /* SettingFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingFriendVC.h; sourceTree = "<group>"; };
+		F0E1AC152193D92D00A9C17F /* SettingFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingFriendVC.m; sourceTree = "<group>"; };
+		F0E1AC162193D92D00A9C17F /* SettingFriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingFriendVC.xib; sourceTree = "<group>"; };
+		F0E1AC1E2193D9DC00A9C17F /* SettingAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingAuthonVC.h; sourceTree = "<group>"; };
+		F0E1AC1F2193D9DC00A9C17F /* SettingAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingAuthonVC.m; sourceTree = "<group>"; };
+		F0E1AC202193D9DC00A9C17F /* SettingAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAuthonVC.xib; sourceTree = "<group>"; };
+		F0E1AC232193E5A100A9C17F /* SettingLoanVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingLoanVC.h; sourceTree = "<group>"; };
+		F0E1AC242193E5A100A9C17F /* SettingLoanVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingLoanVC.m; sourceTree = "<group>"; };
+		F0E1AC252193E5A100A9C17F /* SettingLoanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingLoanVC.xib; sourceTree = "<group>"; };
+		F0E1AC282193E5DD00A9C17F /* SettingRepaymentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingRepaymentVC.h; sourceTree = "<group>"; };
+		F0E1AC292193E5DD00A9C17F /* SettingRepaymentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingRepaymentVC.m; sourceTree = "<group>"; };
+		F0E1AC2A2193E5DD00A9C17F /* SettingRepaymentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingRepaymentVC.xib; sourceTree = "<group>"; };
+		F0E1AC2D2193EBCB00A9C17F /* ProductTypeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductTypeCell.h; sourceTree = "<group>"; };
+		F0E1AC2E2193EBCB00A9C17F /* ProductTypeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductTypeCell.m; sourceTree = "<group>"; };
+		F0E1AC2F2193EBCB00A9C17F /* ProductTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTypeCell.xib; sourceTree = "<group>"; };
+		F0E1AC32219408DA00A9C17F /* HomeProductDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeProductDetailVC.h; sourceTree = "<group>"; };
+		F0E1AC33219408DA00A9C17F /* HomeProductDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeProductDetailVC.m; sourceTree = "<group>"; };
+		F0E1AC34219408DA00A9C17F /* HomeProductDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeProductDetailVC.xib; sourceTree = "<group>"; };
+		F0E1AC37219426A500A9C17F /* SettingAuthonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingAuthonCell.h; sourceTree = "<group>"; };
+		F0E1AC38219426A500A9C17F /* SettingAuthonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingAuthonCell.m; sourceTree = "<group>"; };
+		F0E1AC39219426A500A9C17F /* SettingAuthonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAuthonCell.xib; sourceTree = "<group>"; };
+		F0E1AC4621942E0D00A9C17F /* ZhifubaoPayAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZhifubaoPayAuthonVC.h; sourceTree = "<group>"; };
+		F0E1AC4721942E0D00A9C17F /* ZhifubaoPayAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhifubaoPayAuthonVC.m; sourceTree = "<group>"; };
+		F0E1AC4821942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZhifubaoPayAuthonVC.xib; sourceTree = "<group>"; };
+		F0E1AC4B21942E7200A9C17F /* TaoBaoAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaoBaoAuthonVC.h; sourceTree = "<group>"; };
+		F0E1AC4C21942E7200A9C17F /* TaoBaoAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaoBaoAuthonVC.m; sourceTree = "<group>"; };
+		F0E1AC4D21942E7200A9C17F /* TaoBaoAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaoBaoAuthonVC.xib; sourceTree = "<group>"; };
+		F0E1AC5021942ED300A9C17F /* YunYinShangAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunYinShangAuthonVC.h; sourceTree = "<group>"; };
+		F0E1AC5121942ED300A9C17F /* YunYinShangAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YunYinShangAuthonVC.m; sourceTree = "<group>"; };
+		F0E1AC5221942ED300A9C17F /* YunYinShangAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YunYinShangAuthonVC.xib; sourceTree = "<group>"; };
+		F0E1AC5521942F0F00A9C17F /* CardAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardAuthonVC.h; sourceTree = "<group>"; };
+		F0E1AC5621942F0F00A9C17F /* CardAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardAuthonVC.m; sourceTree = "<group>"; };
+		F0E1AC5721942F0F00A9C17F /* CardAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAuthonVC.xib; sourceTree = "<group>"; };
+		F0E1AC5A21942F6700A9C17F /* FaceAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceAuthonVC.h; sourceTree = "<group>"; };
+		F0E1AC5B21942F6700A9C17F /* FaceAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceAuthonVC.m; sourceTree = "<group>"; };
+		F0E1AC5C21942F6700A9C17F /* FaceAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceAuthonVC.xib; sourceTree = "<group>"; };
+		F0E1AC5F21942F9C00A9C17F /* SingleAuthonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleAuthonVC.h; sourceTree = "<group>"; };
+		F0E1AC6021942F9C00A9C17F /* SingleAuthonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleAuthonVC.m; sourceTree = "<group>"; };
+		F0E1AC6121942F9C00A9C17F /* SingleAuthonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleAuthonVC.xib; sourceTree = "<group>"; };
+		F0E1AC64219436AD00A9C17F /* OrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListVC.h; sourceTree = "<group>"; };
+		F0E1AC65219436AD00A9C17F /* OrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListVC.m; sourceTree = "<group>"; };
+		F0E1AC67219437B000A9C17F /* OrderDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailVC.h; sourceTree = "<group>"; };
+		F0E1AC68219437B000A9C17F /* OrderDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailVC.m; sourceTree = "<group>"; };
+		F0E1AC69219437B000A9C17F /* OrderDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailVC.xib; sourceTree = "<group>"; };
+		F0E1AC6D21943C6400A9C17F /* CommitOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitOrderVC.h; sourceTree = "<group>"; };
+		F0E1AC6E21943C6400A9C17F /* CommitOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitOrderVC.m; sourceTree = "<group>"; };
+		F0E1AC6F21943C6400A9C17F /* CommitOrderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitOrderVC.xib; sourceTree = "<group>"; };
+		F0E1AC7221943CA500A9C17F /* AddressListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressListVC.h; sourceTree = "<group>"; };
+		F0E1AC7321943CA500A9C17F /* AddressListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressListVC.m; sourceTree = "<group>"; };
+		F0E1AC7421943CA500A9C17F /* AddressListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressListVC.xib; sourceTree = "<group>"; };
+		F0E1AC7721943CD000A9C17F /* AddressEditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressEditVC.h; sourceTree = "<group>"; };
+		F0E1AC7821943CD000A9C17F /* AddressEditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressEditVC.m; sourceTree = "<group>"; };
+		F0E1AC7921943CD000A9C17F /* AddressEditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressEditVC.xib; sourceTree = "<group>"; };
 		F0EEFA3921927B8A006D1650 /* HomeNavTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeNavTopView.h; sourceTree = "<group>"; };
 		F0EEFA3A21927B8A006D1650 /* HomeNavTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeNavTopView.m; sourceTree = "<group>"; };
 		F0EEFA3C219289A7006D1650 /* NotificationCenterName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenterName.h; sourceTree = "<group>"; };
@@ -231,12 +360,6 @@
 		F0EEFA6B2192C288006D1650 /* HomeSearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSearchVC.h; sourceTree = "<group>"; };
 		F0EEFA6C2192C288006D1650 /* HomeSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSearchVC.m; sourceTree = "<group>"; };
 		F0EEFA6D2192C288006D1650 /* HomeSearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSearchVC.xib; sourceTree = "<group>"; };
-		F0EEFA7C2192D39F006D1650 /* HomeAccessoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeAccessoryVC.h; sourceTree = "<group>"; };
-		F0EEFA7D2192D39F006D1650 /* HomeAccessoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeAccessoryVC.m; sourceTree = "<group>"; };
-		F0EEFA7E2192D39F006D1650 /* HomeAccessoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAccessoryVC.xib; sourceTree = "<group>"; };
-		F0EEFA812192D427006D1650 /* HomePhoneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePhoneVC.h; sourceTree = "<group>"; };
-		F0EEFA822192D427006D1650 /* HomePhoneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePhoneVC.m; sourceTree = "<group>"; };
-		F0EEFA832192D427006D1650 /* HomePhoneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePhoneVC.xib; sourceTree = "<group>"; };
 		F0EEFA862192D447006D1650 /* HomeEngineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeEngineVC.h; sourceTree = "<group>"; };
 		F0EEFA872192D447006D1650 /* HomeEngineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeEngineVC.m; sourceTree = "<group>"; };
 		F0EEFA882192D447006D1650 /* HomeEngineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEngineVC.xib; sourceTree = "<group>"; };
@@ -573,6 +696,297 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		F0E1ABD62193CA1400A9C17F /* 邀请好友 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABD92193CA3200A9C17F /* Model */,
+				F0E1ABD82193CA2E00A9C17F /* View */,
+				F0E1ABD72193CA2700A9C17F /* Controller */,
+			);
+			path = "邀请好友";
+			sourceTree = "<group>";
+		};
+		F0E1ABD72193CA2700A9C17F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC142193D92D00A9C17F /* SettingFriendVC.h */,
+				F0E1AC152193D92D00A9C17F /* SettingFriendVC.m */,
+				F0E1AC162193D92D00A9C17F /* SettingFriendVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0E1ABD82193CA2E00A9C17F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0E1ABD92193CA3200A9C17F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E1ABDA2193CA3700A9C17F /* 商品订单 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABDD2193CA4A00A9C17F /* Model */,
+				F0E1ABDC2193CA4600A9C17F /* View */,
+				F0E1ABDB2193CA3F00A9C17F /* Controller */,
+			);
+			path = "商品订单";
+			sourceTree = "<group>";
+		};
+		F0E1ABDB2193CA3F00A9C17F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC64219436AD00A9C17F /* OrderListVC.h */,
+				F0E1AC65219436AD00A9C17F /* OrderListVC.m */,
+				F0E1AC67219437B000A9C17F /* OrderDetailVC.h */,
+				F0E1AC68219437B000A9C17F /* OrderDetailVC.m */,
+				F0E1AC69219437B000A9C17F /* OrderDetailVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0E1ABDC2193CA4600A9C17F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0E1ABDD2193CA4A00A9C17F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E1ABDE2193CA5300A9C17F /* 实名认证 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC4521942DE600A9C17F /* 支付宝认证 */,
+				F0E1AC4421942DDA00A9C17F /* 淘宝认证 */,
+				F0E1AC4221942D9900A9C17F /* 运营商认证 */,
+				F0E1AC4121942D8B00A9C17F /* 银行卡识别 */,
+				F0E1AC4021942D7200A9C17F /* 人脸识别 */,
+				F0E1AC3F21942D6700A9C17F /* 个人信息 */,
+				F0E1AC3C21942CCC00A9C17F /* Main */,
+			);
+			path = "实名认证";
+			sourceTree = "<group>";
+		};
+		F0E1ABDF2193CA5E00A9C17F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC1E2193D9DC00A9C17F /* SettingAuthonVC.h */,
+				F0E1AC1F2193D9DC00A9C17F /* SettingAuthonVC.m */,
+				F0E1AC202193D9DC00A9C17F /* SettingAuthonVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0E1ABE02193CA6300A9C17F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E1ABE12193CA6800A9C17F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC37219426A500A9C17F /* SettingAuthonCell.h */,
+				F0E1AC38219426A500A9C17F /* SettingAuthonCell.m */,
+				F0E1AC39219426A500A9C17F /* SettingAuthonCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0E1ABE22193CA6E00A9C17F /* 优惠券 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABE52193CA8900A9C17F /* View */,
+				F0E1ABE42193CA8200A9C17F /* Model */,
+				F0E1ABE32193CA7800A9C17F /* Controller */,
+			);
+			path = "优惠券";
+			sourceTree = "<group>";
+		};
+		F0E1ABE32193CA7800A9C17F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABEB2193CB2F00A9C17F /* SettingCouponVC.h */,
+				F0E1ABEC2193CB2F00A9C17F /* SettingCouponVC.m */,
+				F0E1ABED2193CB2F00A9C17F /* SettingCouponVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0E1ABE42193CA8200A9C17F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E1ABE52193CA8900A9C17F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABF02193CBDA00A9C17F /* SettingCouponCell.h */,
+				F0E1ABF12193CBDA00A9C17F /* SettingCouponCell.m */,
+				F0E1ABF22193CBDA00A9C17F /* SettingCouponCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0E1ABE62193CA9700A9C17F /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABE92193CAAB00A9C17F /* View */,
+				F0E1ABE82193CAA500A9C17F /* Model */,
+				F0E1ABE72193CAA000A9C17F /* Controller */,
+			);
+			path = "设置";
+			sourceTree = "<group>";
+		};
+		F0E1ABE72193CAA000A9C17F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABF52193CF1B00A9C17F /* SettingUserinfoVC.h */,
+				F0E1ABF62193CF1B00A9C17F /* SettingUserinfoVC.m */,
+				F0E1ABF72193CF1B00A9C17F /* SettingUserinfoVC.xib */,
+				F0E1AC0A2193D71B00A9C17F /* SettingProblemVC.h */,
+				F0E1AC0B2193D71B00A9C17F /* SettingProblemVC.m */,
+				F0E1AC0C2193D71B00A9C17F /* SettingProblemVC.xib */,
+				F0E1AC0F2193D7AB00A9C17F /* SettingAboutVC.h */,
+				F0E1AC102193D7AB00A9C17F /* SettingAboutVC.m */,
+				F0E1AC112193D7AB00A9C17F /* SettingAboutVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0E1ABE82193CAA500A9C17F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E1ABE92193CAAB00A9C17F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABFA2193CFBB00A9C17F /* SettingUserinfoCell.h */,
+				F0E1ABFB2193CFBB00A9C17F /* SettingUserinfoCell.m */,
+				F0E1ABFC2193CFBB00A9C17F /* SettingUserinfoCell.xib */,
+				F0E1ABFF2193CFD600A9C17F /* SettingLogoutCell.h */,
+				F0E1AC002193CFD600A9C17F /* SettingLogoutCell.m */,
+				F0E1AC012193CFD600A9C17F /* SettingLogoutCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0E1ABEA2193CABC00A9C17F /* Mian */ = {
+			isa = PBXGroup;
+			children = (
+				F0F0E477218D53D000B4ABCE /* Controller */,
+				F0F0E476218D53D000B4ABCE /* Other */,
+				F0F0E478218D53D000B4ABCE /* Model */,
+				F0F0E479218D53D000B4ABCE /* View */,
+			);
+			path = Mian;
+			sourceTree = "<group>";
+		};
+		F0E1AC3C21942CCC00A9C17F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1ABE12193CA6800A9C17F /* View */,
+				F0E1ABE02193CA6300A9C17F /* Model */,
+				F0E1ABDF2193CA5E00A9C17F /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F0E1AC3F21942D6700A9C17F /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC5F21942F9C00A9C17F /* SingleAuthonVC.h */,
+				F0E1AC6021942F9C00A9C17F /* SingleAuthonVC.m */,
+				F0E1AC6121942F9C00A9C17F /* SingleAuthonVC.xib */,
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
+		F0E1AC4021942D7200A9C17F /* 人脸识别 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC5A21942F6700A9C17F /* FaceAuthonVC.h */,
+				F0E1AC5B21942F6700A9C17F /* FaceAuthonVC.m */,
+				F0E1AC5C21942F6700A9C17F /* FaceAuthonVC.xib */,
+			);
+			path = "人脸识别";
+			sourceTree = "<group>";
+		};
+		F0E1AC4121942D8B00A9C17F /* 银行卡识别 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC5521942F0F00A9C17F /* CardAuthonVC.h */,
+				F0E1AC5621942F0F00A9C17F /* CardAuthonVC.m */,
+				F0E1AC5721942F0F00A9C17F /* CardAuthonVC.xib */,
+			);
+			path = "银行卡识别";
+			sourceTree = "<group>";
+		};
+		F0E1AC4221942D9900A9C17F /* 运营商认证 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC5021942ED300A9C17F /* YunYinShangAuthonVC.h */,
+				F0E1AC5121942ED300A9C17F /* YunYinShangAuthonVC.m */,
+				F0E1AC5221942ED300A9C17F /* YunYinShangAuthonVC.xib */,
+			);
+			path = "运营商认证";
+			sourceTree = "<group>";
+		};
+		F0E1AC4421942DDA00A9C17F /* 淘宝认证 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC4B21942E7200A9C17F /* TaoBaoAuthonVC.h */,
+				F0E1AC4C21942E7200A9C17F /* TaoBaoAuthonVC.m */,
+				F0E1AC4D21942E7200A9C17F /* TaoBaoAuthonVC.xib */,
+			);
+			path = "淘宝认证";
+			sourceTree = "<group>";
+		};
+		F0E1AC4521942DE600A9C17F /* 支付宝认证 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC4621942E0D00A9C17F /* ZhifubaoPayAuthonVC.h */,
+				F0E1AC4721942E0D00A9C17F /* ZhifubaoPayAuthonVC.m */,
+				F0E1AC4821942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib */,
+			);
+			path = "支付宝认证";
+			sourceTree = "<group>";
+		};
+		F0E1AC6C21943C4F00A9C17F /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC6D21943C6400A9C17F /* CommitOrderVC.h */,
+				F0E1AC6E21943C6400A9C17F /* CommitOrderVC.m */,
+				F0E1AC6F21943C6400A9C17F /* CommitOrderVC.xib */,
+				F0E1AC7221943CA500A9C17F /* AddressListVC.h */,
+				F0E1AC7321943CA500A9C17F /* AddressListVC.m */,
+				F0E1AC7421943CA500A9C17F /* AddressListVC.xib */,
+				F0E1AC7721943CD000A9C17F /* AddressEditVC.h */,
+				F0E1AC7821943CD000A9C17F /* AddressEditVC.m */,
+				F0E1AC7921943CD000A9C17F /* AddressEditVC.xib */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		F0EEFA5D2192BC9A006D1650 /* SGAdvertScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,16 +1005,6 @@
 				F0EEFA722192D27F006D1650 /* Controller */,
 			);
 			path = "机车专区";
-			sourceTree = "<group>";
-		};
-		F0EEFA712192D279006D1650 /* 手机专区 */ = {
-			isa = PBXGroup;
-			children = (
-				F0EEFA772192D2AB006D1650 /* View */,
-				F0EEFA762192D2A6006D1650 /* Model */,
-				F0EEFA752192D29E006D1650 /* Controller */,
-			);
-			path = "手机专区";
 			sourceTree = "<group>";
 		};
 		F0EEFA722192D27F006D1650 /* Controller */ = {
@@ -627,68 +1031,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F0EEFA752192D29E006D1650 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F0EEFA812192D427006D1650 /* HomePhoneVC.h */,
-				F0EEFA822192D427006D1650 /* HomePhoneVC.m */,
-				F0EEFA832192D427006D1650 /* HomePhoneVC.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F0EEFA762192D2A6006D1650 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F0EEFA772192D2AB006D1650 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F0EEFA782192D34B006D1650 /* 配件专区 */ = {
-			isa = PBXGroup;
-			children = (
-				F0EEFA7B2192D361006D1650 /* Model */,
-				F0EEFA7A2192D35D006D1650 /* View */,
-				F0EEFA792192D356006D1650 /* Controller */,
-			);
-			path = "配件专区";
-			sourceTree = "<group>";
-		};
-		F0EEFA792192D356006D1650 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F0EEFA7C2192D39F006D1650 /* HomeAccessoryVC.h */,
-				F0EEFA7D2192D39F006D1650 /* HomeAccessoryVC.m */,
-				F0EEFA7E2192D39F006D1650 /* HomeAccessoryVC.xib */,
-			);
-			name = Controller;
-			path = "../New Group/Controller";
-			sourceTree = "<group>";
-		};
-		F0EEFA7A2192D35D006D1650 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F0EEFA7B2192D361006D1650 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		F0F0E46A218D53CF00B4ABCE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F0E1AC6C21943C4F00A9C17F /* Order */,
 				F0F0E729218D9A6400B4ABCE /* Guide */,
 				F0F0E728218D9A5E00B4ABCE /* Base */,
 				F0F0E727218D9A5600B4ABCE /* LSF */,
@@ -721,8 +1067,6 @@
 		F0F0E46D218D53CF00B4ABCE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F0EEFA782192D34B006D1650 /* 配件专区 */,
-				F0EEFA712192D279006D1650 /* 手机专区 */,
 				F0EEFA702192D272006D1650 /* 机车专区 */,
 				F0F0E758218D9EBA00B4ABCE /* HomeVC.h */,
 				F0F0E759218D9EBA00B4ABCE /* HomeVC.m */,
@@ -736,6 +1080,9 @@
 				F0EEFA6B2192C288006D1650 /* HomeSearchVC.h */,
 				F0EEFA6C2192C288006D1650 /* HomeSearchVC.m */,
 				F0EEFA6D2192C288006D1650 /* HomeSearchVC.xib */,
+				F0E1AC32219408DA00A9C17F /* HomeProductDetailVC.h */,
+				F0E1AC33219408DA00A9C17F /* HomeProductDetailVC.m */,
+				F0E1AC34219408DA00A9C17F /* HomeProductDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -770,6 +1117,12 @@
 				F0EEFA582192A7D9006D1650 /* HomeForyouCell.h */,
 				F0EEFA592192A7D9006D1650 /* HomeForyouCell.m */,
 				F0EEFA5A2192A7D9006D1650 /* HomeForyouCell.xib */,
+				F0E1ABD12193C49F00A9C17F /* HomeMessageCell.h */,
+				F0E1ABD22193C49F00A9C17F /* HomeMessageCell.m */,
+				F0E1ABD32193C49F00A9C17F /* HomeMessageCell.xib */,
+				F0E1AC2D2193EBCB00A9C17F /* ProductTypeCell.h */,
+				F0E1AC2E2193EBCB00A9C17F /* ProductTypeCell.m */,
+				F0E1AC2F2193EBCB00A9C17F /* ProductTypeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -825,10 +1178,12 @@
 		F0F0E475218D53D000B4ABCE /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				F0F0E477218D53D000B4ABCE /* Controller */,
-				F0F0E476218D53D000B4ABCE /* Other */,
-				F0F0E478218D53D000B4ABCE /* Model */,
-				F0F0E479218D53D000B4ABCE /* View */,
+				F0E1ABEA2193CABC00A9C17F /* Mian */,
+				F0E1ABE62193CA9700A9C17F /* 设置 */,
+				F0E1ABE22193CA6E00A9C17F /* 优惠券 */,
+				F0E1ABDE2193CA5300A9C17F /* 实名认证 */,
+				F0E1ABDA2193CA3700A9C17F /* 商品订单 */,
+				F0E1ABD62193CA1400A9C17F /* 邀请好友 */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -846,6 +1201,12 @@
 				F0F0E762218D9EE000B4ABCE /* SettingVC.h */,
 				F0F0E763218D9EE000B4ABCE /* SettingVC.m */,
 				F0F0E764218D9EE000B4ABCE /* SettingVC.xib */,
+				F0E1AC232193E5A100A9C17F /* SettingLoanVC.h */,
+				F0E1AC242193E5A100A9C17F /* SettingLoanVC.m */,
+				F0E1AC252193E5A100A9C17F /* SettingLoanVC.xib */,
+				F0E1AC282193E5DD00A9C17F /* SettingRepaymentVC.h */,
+				F0E1AC292193E5DD00A9C17F /* SettingRepaymentVC.m */,
+				F0E1AC2A2193E5DD00A9C17F /* SettingRepaymentVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1197,6 +1558,9 @@
 				F0B50AF5219049F40027BB61 /* AgreeVC.h */,
 				F0B50AF6219049F40027BB61 /* AgreeVC.m */,
 				F0B50AF7219049F40027BB61 /* AgreeVC.xib */,
+				F0E1AC042193D43100A9C17F /* UpdatePwdVC.h */,
+				F0E1AC052193D43100A9C17F /* UpdatePwdVC.m */,
+				F0E1AC062193D43100A9C17F /* UpdatePwdVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1278,11 +1642,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E1AC7121943C6400A9C17F /* CommitOrderVC.xib in Resources */,
+				F0E1AC7B21943CD000A9C17F /* AddressEditVC.xib in Resources */,
 				F0EEFA962192D885006D1650 /* ApplicationproductCell.xib in Resources */,
 				F00E07A7218D2A5A0079D952 /* LaunchScreen.storyboard in Resources */,
 				F0EEFA5721929078006D1650 /* HomeOtherCell.xib in Resources */,
+				F0E1AC5921942F0F00A9C17F /* CardAuthonVC.xib in Resources */,
 				F0B50A08218FE76D0027BB61 /* ResigterVC.xib in Resources */,
 				F0B50A03218FE76D0027BB61 /* BindVC.xib in Resources */,
+				F0E1AC312193EBCB00A9C17F /* ProductTypeCell.xib in Resources */,
+				F0E1AC7621943CA500A9C17F /* AddressListVC.xib in Resources */,
+				F0E1AC36219408DA00A9C17F /* HomeProductDetailVC.xib in Resources */,
 				F0B50ADF218FF15E0027BB61 /* ShareSDKUI.bundle in Resources */,
 				F0EEFA8C2192D5D8006D1650 /* 协议.html in Resources */,
 				F0F0E707218D987F00B4ABCE /* 失败图片@2x.png in Resources */,
@@ -1292,29 +1662,47 @@
 				F0EEFA6F2192C288006D1650 /* HomeSearchVC.xib in Resources */,
 				F0EEFA652192C101006D1650 /* HomeSortVC.xib in Resources */,
 				F00E07A4218D2A5A0079D952 /* Assets.xcassets in Resources */,
+				F0E1AC032193CFD600A9C17F /* SettingLogoutCell.xib in Resources */,
+				F0E1AC5E21942F6700A9C17F /* FaceAuthonVC.xib in Resources */,
+				F0E1AC6321942F9C00A9C17F /* SingleAuthonVC.xib in Resources */,
+				F0E1AC182193D92D00A9C17F /* SettingFriendVC.xib in Resources */,
+				F0E1AC222193D9DC00A9C17F /* SettingAuthonVC.xib in Resources */,
 				F0F0E703218D987E00B4ABCE /* 成功图片@2x.png in Resources */,
 				F0EEFA4D21928EDC006D1650 /* HomerecommendCell.xib in Resources */,
 				F0F0E731218D9A9900B4ABCE /* GuiideVC.xib in Resources */,
 				F0EEFA4821928E9D006D1650 /* HomeTypeCell.xib in Resources */,
+				F0E1AC4F21942E7200A9C17F /* TaoBaoAuthonVC.xib in Resources */,
 				F0EEFA9B2192E877006D1650 /* SettingHeaderCell.xib in Resources */,
+				F0E1AC5421942ED300A9C17F /* YunYinShangAuthonVC.xib in Resources */,
 				F0B50AD8218FF15E0027BB61 /* WeiboSDK.bundle in Resources */,
+				F0E1AC132193D7AB00A9C17F /* SettingAboutVC.xib in Resources */,
+				F0E1AC4A21942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib in Resources */,
+				F0E1AC0E2193D71B00A9C17F /* SettingProblemVC.xib in Resources */,
 				F0EEFA8A2192D447006D1650 /* HomeEngineVC.xib in Resources */,
 				F0F0E701218D987E00B4ABCE /* car4@2x.png in Resources */,
 				F0F0E6D0218D987E00B4ABCE /* IQKeyboardManager.bundle in Resources */,
 				F00E07A2218D2A570079D952 /* Main.storyboard in Resources */,
-				F0EEFA852192D427006D1650 /* HomePhoneVC.xib in Resources */,
+				F0E1ABD52193C49F00A9C17F /* HomeMessageCell.xib in Resources */,
+				F0E1AC082193D43100A9C17F /* UpdatePwdVC.xib in Resources */,
+				F0E1AC6B219437B000A9C17F /* OrderDetailVC.xib in Resources */,
 				F0F0E766218D9EE000B4ABCE /* SettingVC.xib in Resources */,
-				F0EEFA802192D39F006D1650 /* HomeAccessoryVC.xib in Resources */,
+				F0E1ABEF2193CB2F00A9C17F /* SettingCouponVC.xib in Resources */,
+				F0E1AC2C2193E5DD00A9C17F /* SettingRepaymentVC.xib in Resources */,
 				F0F0E704218D987F00B4ABCE /* car5@2x.png in Resources */,
+				F0E1ABF42193CBDA00A9C17F /* SettingCouponCell.xib in Resources */,
 				F0EEFA5C2192A7D9006D1650 /* HomeForyouCell.xib in Resources */,
 				F0B50A07218FE76D0027BB61 /* ForgetPwdVC.xib in Resources */,
+				F0E1ABFE2193CFBB00A9C17F /* SettingUserinfoCell.xib in Resources */,
 				F0F0E702218D987E00B4ABCE /* car2@2x.png in Resources */,
+				F0E1AC3B219426A500A9C17F /* SettingAuthonCell.xib in Resources */,
+				F0E1AC272193E5A100A9C17F /* SettingLoanVC.xib in Resources */,
 				F0F0E761218D9ECE00B4ABCE /* ApplicationVC.xib in Resources */,
 				F0EEFA4321928CDC006D1650 /* HomeAdCell.xib in Resources */,
 				F0B50A0A218FE76D0027BB61 /* LoginVC.xib in Resources */,
 				F0F0E75C218D9EBA00B4ABCE /* HomeVC.xib in Resources */,
 				F0EEFA6A2192C11D006D1650 /* HomeMessageVC.xib in Resources */,
 				F0EEFA912192D83F006D1650 /* ApplicationHeaderCell.xib in Resources */,
+				F0E1ABF92193CF1B00A9C17F /* SettingUserinfoVC.xib in Resources */,
 				F0B50AE3218FF15E0027BB61 /* ShareSDKConfigFile.bundle in Resources */,
 				F0EEFAA02192E9C5006D1650 /* SettingCommentCell.xib in Resources */,
 				F0F0E706218D987F00B4ABCE /* car3@2x.png in Resources */,
@@ -1354,12 +1742,14 @@
 				"${PODS_ROOT}/Bugtags/Bugtags.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Bugtags.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1373,22 +1763,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E1AC5D21942F6700A9C17F /* FaceAuthonVC.m in Sources */,
 				F0F0E6D1218D987E00B4ABCE /* IQKeyboardManager.m in Sources */,
 				F0F0E6FD218D987E00B4ABCE /* YTKNetworkAgent.m in Sources */,
 				F0F0E6CB218D987E00B4ABCE /* IQToolbar.m in Sources */,
 				F0B50AF8219049F40027BB61 /* AgreeVC.m in Sources */,
-				F0EEFA7F2192D39F006D1650 /* HomeAccessoryVC.m in Sources */,
+				F0E1AC2B2193E5DD00A9C17F /* SettingRepaymentVC.m in Sources */,
 				F0F0E72C218D9A7E00B4ABCE /* BaseVC.m in Sources */,
 				F0F0E737218D9AC400B4ABCE /* UserModel.m in Sources */,
 				F0F0E6E1218D987E00B4ABCE /* LCUtil.m in Sources */,
 				F0F0E6E4218D987E00B4ABCE /* SYPlaceHolderTextView.m in Sources */,
 				F0F0E6FA218D987E00B4ABCE /* YTKNetworkPrivate.m in Sources */,
+				F0E1AC302193EBCB00A9C17F /* ProductTypeCell.m in Sources */,
+				F0E1AC212193D9DC00A9C17F /* SettingAuthonVC.m in Sources */,
 				F0F0E6E5218D987E00B4ABCE /* UIScrollView+EmptyDataSet.m in Sources */,
 				F0EEFA6E2192C288006D1650 /* HomeSearchVC.m in Sources */,
 				F0F0E6D9218D987E00B4ABCE /* UIView+ZJFrame.m in Sources */,
+				F0E1AC3A219426A500A9C17F /* SettingAuthonCell.m in Sources */,
+				F0E1AC7521943CA500A9C17F /* AddressListVC.m in Sources */,
 				F0F0E722218D991900B4ABCE /* ZFCustomView.m in Sources */,
 				F0F0E760218D9ECE00B4ABCE /* ApplicationVC.m in Sources */,
+				F0E1AC172193D92D00A9C17F /* SettingFriendVC.m in Sources */,
 				F0F0E6CD218D987E00B4ABCE /* IQBarButtonItem.m in Sources */,
+				F0E1ABF32193CBDA00A9C17F /* SettingCouponCell.m in Sources */,
 				F0F0E6E3218D987E00B4ABCE /* UIButton+POImagePosition.m in Sources */,
 				F0F0E6D4218D987E00B4ABCE /* IQUITextFieldView+Additions.m in Sources */,
 				F0F0E6D6218D987E00B4ABCE /* IQUIView+Hierarchy.m in Sources */,
@@ -1398,56 +1795,74 @@
 				F0F0E6CC218D987E00B4ABCE /* IQTitleBarButtonItem.m in Sources */,
 				F0EEFA512192905F006D1650 /* HomeProductCell.m in Sources */,
 				F0F0E6E2218D987E00B4ABCE /* UIButton+countDown.m in Sources */,
+				F0E1ABEE2193CB2F00A9C17F /* SettingCouponVC.m in Sources */,
+				F0E1AC5321942ED300A9C17F /* YunYinShangAuthonVC.m in Sources */,
+				F0E1AC66219436AD00A9C17F /* OrderListVC.m in Sources */,
 				F0EEFA892192D447006D1650 /* HomeEngineVC.m in Sources */,
 				F0F0E6D8218D987E00B4ABCE /* IQKeyboardReturnKeyHandler.m in Sources */,
 				F0F0E75B218D9EBA00B4ABCE /* HomeVC.m in Sources */,
 				F0EEFA692192C11D006D1650 /* HomeMessageVC.m in Sources */,
 				F0EEFA5B2192A7D9006D1650 /* HomeForyouCell.m in Sources */,
+				F0E1ABF82193CF1B00A9C17F /* SettingUserinfoVC.m in Sources */,
 				F0F0E6FE218D987E00B4ABCE /* YTKChainRequestAgent.m in Sources */,
-				F0EEFA842192D427006D1650 /* HomePhoneVC.m in Sources */,
 				F0EEFA952192D885006D1650 /* ApplicationproductCell.m in Sources */,
 				F0F0E6DF218D987E00B4ABCE /* ZJScrollSegmentView.m in Sources */,
 				F0F0E723218D991900B4ABCE /* UIViewController+HUD.m in Sources */,
 				F0F0E725218D991900B4ABCE /* NetWorkTool.m in Sources */,
+				F0E1AC4E21942E7200A9C17F /* TaoBaoAuthonVC.m in Sources */,
 				F0B50A05218FE76D0027BB61 /* ForgetPwdVC.m in Sources */,
+				F0E1ABFD2193CFBB00A9C17F /* SettingUserinfoCell.m in Sources */,
+				F0E1AC0D2193D71B00A9C17F /* SettingProblemVC.m in Sources */,
 				F0F0E6F8218D987E00B4ABCE /* YTKNetworkConfig.m in Sources */,
 				F0EEFA902192D83E006D1650 /* ApplicationHeaderCell.m in Sources */,
+				F0E1AC122193D7AB00A9C17F /* SettingAboutVC.m in Sources */,
 				F0B50A09218FE76D0027BB61 /* ResigterVC.m in Sources */,
 				F0F0E6F9218D987E00B4ABCE /* YTKChainRequest.m in Sources */,
 				F0F0E6CE218D987E00B4ABCE /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				F0EEFA3E219289A7006D1650 /* NotificationCenterName.m in Sources */,
+				F0E1AC6221942F9C00A9C17F /* SingleAuthonVC.m in Sources */,
 				F0F0E6FB218D987E00B4ABCE /* YTKBaseRequest.m in Sources */,
 				F0EEFA4721928E9D006D1650 /* HomeTypeCell.m in Sources */,
+				F0E1AC262193E5A100A9C17F /* SettingLoanVC.m in Sources */,
 				F0F0E6FC218D987E00B4ABCE /* YTKBatchRequest.m in Sources */,
 				F0EEFA9A2192E877006D1650 /* SettingHeaderCell.m in Sources */,
 				F0EEFA4C21928EDC006D1650 /* HomerecommendCell.m in Sources */,
 				F0B50A06218FE76D0027BB61 /* BindVC.m in Sources */,
 				F0F0E705218D987F00B4ABCE /* ZJCustomHud.m in Sources */,
+				F0E1ABD42193C49F00A9C17F /* HomeMessageCell.m in Sources */,
 				F0F0E6DA218D987E00B4ABCE /* ZJTitleView.m in Sources */,
+				F0E1AC022193CFD600A9C17F /* SettingLogoutCell.m in Sources */,
 				F0EEFA602192BC9A006D1650 /* SGAdvertScrollView.m in Sources */,
 				F0F0E724218D991900B4ABCE /* JsonTool.m in Sources */,
 				F0F0E6E0218D987E00B4ABCE /* ZJScrollPageView.m in Sources */,
 				F0EEFA4221928CDC006D1650 /* HomeAdCell.m in Sources */,
 				F0F0E6CA218D987E00B4ABCE /* IQTextView.m in Sources */,
 				F0F0E6D7218D987E00B4ABCE /* IQUIViewController+Additions.m in Sources */,
+				F0E1AC5821942F0F00A9C17F /* CardAuthonVC.m in Sources */,
 				F0F0E751218D9D1100B4ABCE /* ResponeModel.m in Sources */,
 				F0F0E765218D9EE000B4ABCE /* SettingVC.m in Sources */,
 				F0F0E6D5218D987E00B4ABCE /* IQUIScrollView+Additions.m in Sources */,
+				F0E1AC35219408DA00A9C17F /* HomeProductDetailVC.m in Sources */,
 				F0EEFA9F2192E9C5006D1650 /* SettingCommentCell.m in Sources */,
+				F0E1AC072193D43100A9C17F /* UpdatePwdVC.m in Sources */,
 				F0EEFA3B21927B8A006D1650 /* HomeNavTopView.m in Sources */,
 				F0F0E6DC218D987E00B4ABCE /* ZJContentView.m in Sources */,
+				F0E1AC4921942E0D00A9C17F /* ZhifubaoPayAuthonVC.m in Sources */,
 				F0F0E757218D9EA300B4ABCE /* MyNavigationController.m in Sources */,
 				F0EEFA5621929078006D1650 /* HomeOtherCell.m in Sources */,
 				F0F0E6DD218D987E00B4ABCE /* ZJCollectionView.m in Sources */,
+				F0E1AC7A21943CD000A9C17F /* AddressEditVC.m in Sources */,
 				F0F0E6DE218D987E00B4ABCE /* ZJSegmentStyle.m in Sources */,
 				F0EEFA642192C101006D1650 /* HomeSortVC.m in Sources */,
 				F0F0E730218D9A9900B4ABCE /* GuiideVC.m in Sources */,
 				F00E07AA218D2A5A0079D952 /* main.m in Sources */,
+				F0E1AC7021943C6400A9C17F /* CommitOrderVC.m in Sources */,
 				F0F0E6DB218D987E00B4ABCE /* UIViewController+ZJScrollPageController.m in Sources */,
 				F00E079C218D2A570079D952 /* AppDelegate.m in Sources */,
 				F0F0E6CF218D987E00B4ABCE /* IQPreviousNextView.m in Sources */,
 				F0F0E754218D9E6300B4ABCE /* TabBarController.m in Sources */,
 				F0F0E700218D987E00B4ABCE /* YTKRequest.m in Sources */,
+				F0E1AC6A219437B000A9C17F /* OrderDetailVC.m in Sources */,
 				F0F0E6D2218D987E00B4ABCE /* IQNSArray+Sort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
