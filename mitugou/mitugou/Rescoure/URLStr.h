@@ -5,12 +5,13 @@
 
 #ifndef URLStr_h
 #define URLStr_h
-#define BaseUrl @"http://106.12.192.149:8080"
+#define BaseUrl @"http://106.12.192.149:8080/htshop"
+
 ///登录注册接口
-#define User_Login_URL [BaseUrl stringByAppendingString:@"/Single/user/login"]
+#define User_Login_URL [BaseUrl stringByAppendingString:@"/userAuthentication/login"]
 ///注册接口
-#define User_Register_URL [BaseUrl stringByAppendingString:@"/Single/user/register"]
+#define User_Register_URL [BaseUrl stringByAppendingString:@"/userAuthentication/register"]
 ///获取验证码
-#define User_Get_Code [BaseUrl stringByAppendingString:@"/Single/user/code"]
+#define User_Get_Code [BaseUrl stringByAppendingString:@"/userAuthentication/Veritycode"]
 
 #endif /* URLStr_h */

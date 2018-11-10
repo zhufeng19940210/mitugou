@@ -1,10 +1,7 @@
-//
 //  UIButton+countDown.m
 //  LiquoriceDoctorProject
-//
 //  Created by HenryCheng on 15/12/4.
 //  Copyright © 2015年 iMac. All rights reserved.
-//
 
 #import "UIButton+countDown.h"
 
@@ -23,16 +20,16 @@
         if (timeOut <= 0) {
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.backgroundColor = mColor;
+                //self.backgroundColor = mColor;
                 [self setTitle:title forState:UIControlStateNormal];
                 self.userInteractionEnabled = YES;
             });
         } else {
             int seconds = timeOut % 60;
-            NSString *timeStr = [NSString stringWithFormat:@"%0.2d", seconds];
+            NSString *timeStr = [NSString stringWithFormat:@"%d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.backgroundColor = color;
-                [self setTitle:[NSString stringWithFormat:@"%@%@",timeStr,subTitle] forState:UIControlStateNormal];
+                // self.backgroundColor = color;
+                [self setTitle:[NSString stringWithFormat:@"倒计时（%@%@)",timeStr,subTitle] forState:UIControlStateNormal];
                 self.userInteractionEnabled = NO;
             });
             timeOut--;

@@ -77,19 +77,22 @@
     app.window.rootViewController = tabbar;
     [app.window makeKeyAndVisible];
     //开始去登录
-    //[self loginWithPhone:phone withPwd:pwd];
+    [self loginWithPhone:phone withPwd:pwd];
 }
 
 -(void)loginWithPhone:(NSString *)phone withPwd:(NSString *)pwd
 {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"shouchi"] = phone;
-    param[@"pwd"] = pwd;
+    param[@"phone"] = phone;
+    param[@"password"] = pwd;
+    [SVProgressHUD showWithStatus:@"正在登录"];
     [[NetWorkTool shareInstacne]postWithURLString:User_Login_URL parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
         NSLog(@"resoponseObject:%@",responseObject);
-        
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"error:%@",error);
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
     }];
 }
 /**

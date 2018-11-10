@@ -4,6 +4,7 @@
 //  Copyright © 2018年 zhufeng. All rights reserved.
 #import "ResigterVC.h"
 #import "AgreeVC.h"
+#import "UIButton+countDown.h"
 @interface ResigterVC ()
 @property (weak, nonatomic) IBOutlet UITextField *phoe_tf;
 @property (weak, nonatomic) IBOutlet UITextField *code_tf;
@@ -66,10 +67,15 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"phone"] = phone;
     param[@"password"] = pwd;
+    param[@"verifyCode"] = code;
+    [SVProgressHUD showWithStatus:@"正在注册"];
     [[NetWorkTool shareInstacne]postWithURLString:User_Register_URL parameters:param success:^(id  _Nonnull responseObject) {
-        NSLog(@"responseObject:%@",responseObject);
+        [SVProgressHUD dismiss];
+        NSLog(@"注册成功:data:%@",responseObject);
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"error:%@",error);
+        [SVProgressHUD dismiss];
+        [ZFCustomView showWithError:FailRequestTip];
+        return;
     }];
 }
 /**
@@ -88,16 +94,22 @@
         [self showHint:@"手机号码有误" yOffset:-200];
         return;
     }
+    [sender startWithTime:59 title:@"获取验证码" countDownTitle:@"S" mainColor:MainThemeColor countColor:[UIColor clearColor]];
     //获取验证码
-    [self getCodeWithPhone:phone];
+    //[self getCodeWithPhone:phone];
 }
 -(void)getCodeWithPhone:(NSString *)phone
 {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"phone"] = phone;
+    [SVProgressHUD showWithStatus:@"获取验证码"];
     [[NetWorkTool shareInstacne]postWithURLString:User_Get_Code parameters:param success:^(id  _Nonnull responseObject) {
-        NSLog(@"responseobject:%@",responseObject);
+        [SVProgressHUD dismiss];
+        NSLog(@"获取验证码:%@",responseObject);
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"error:%@",error);
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
     }];
 }
 /**
@@ -124,4 +136,5 @@
     AgreeVC *agreevc =  [[AgreeVC alloc]init];
     [self.navigationController pushViewController:agreevc animated:YES];
 }
+
 @end

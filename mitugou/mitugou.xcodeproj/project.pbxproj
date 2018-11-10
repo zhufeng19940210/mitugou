@@ -203,6 +203,8 @@
 		F0FD36092196872E00F6C93B /* PersonCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD36072196872E00F6C93B /* PersonCardVC.xib */; };
 		F0FD360D2196874000F6C93B /* PeronsBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD360B2196874000F6C93B /* PeronsBaseVC.m */; };
 		F0FD360E2196874000F6C93B /* PeronsBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD360C2196874000F6C93B /* PeronsBaseVC.xib */; };
+		F0FD36172196A94500F6C93B /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0FD36152196A94500F6C93B /* AlipaySDK.bundle */; };
+		F0FD36182196A94500F6C93B /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FD36162196A94500F6C93B /* AlipaySDK.framework */; };
 		F0FF5AC4219526970050AD96 /* AddreeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AC2219526970050AD96 /* AddreeListCell.m */; };
 		F0FF5AC5219526970050AD96 /* AddreeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5AC3219526970050AD96 /* AddreeListCell.xib */; };
 		F0FF5AC821952F600050AD96 /* AddreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AC721952F600050AD96 /* AddreeModel.m */; };
@@ -539,6 +541,8 @@
 		F0FD360A2196874000F6C93B /* PeronsBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeronsBaseVC.h; sourceTree = "<group>"; };
 		F0FD360B2196874000F6C93B /* PeronsBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeronsBaseVC.m; sourceTree = "<group>"; };
 		F0FD360C2196874000F6C93B /* PeronsBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeronsBaseVC.xib; sourceTree = "<group>"; };
+		F0FD36152196A94500F6C93B /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		F0FD36162196A94500F6C93B /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		F0FF5AC1219526970050AD96 /* AddreeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddreeListCell.h; sourceTree = "<group>"; };
 		F0FF5AC2219526970050AD96 /* AddreeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddreeListCell.m; sourceTree = "<group>"; };
 		F0FF5AC3219526970050AD96 /* AddreeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddreeListCell.xib; sourceTree = "<group>"; };
@@ -568,6 +572,7 @@
 			files = (
 				F0B50AEF218FF17C0027BB61 /* libc++.tbd in Frameworks */,
 				F0B50AED218FF1720027BB61 /* libz.tbd in Frameworks */,
+				F0FD36182196A94500F6C93B /* AlipaySDK.framework in Frameworks */,
 				F0B50AEB218FF16C0027BB61 /* libsqlite3.0.tbd in Frameworks */,
 				F0B50ADC218FF15E0027BB61 /* TencentOpenAPI.framework in Frameworks */,
 				F0B50AE2218FF15E0027BB61 /* ShareSDKUI.framework in Frameworks */,
@@ -679,6 +684,7 @@
 		F0B50AB9218FF15D0027BB61 /* PlatformSDK */ = {
 			isa = PBXGroup;
 			children = (
+				F0FD36142196A94500F6C93B /* AlipaySDK */,
 				F0B50ABA218FF15D0027BB61 /* SinaWeiboSDK */,
 				F0B50ABF218FF15D0027BB61 /* WeChatSDKFull */,
 				F0B50AC5218FF15D0027BB61 /* QQSDK */,
@@ -1714,6 +1720,15 @@
 			path = "联系人信息";
 			sourceTree = "<group>";
 		};
+		F0FD36142196A94500F6C93B /* AlipaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD36152196A94500F6C93B /* AlipaySDK.bundle */,
+				F0FD36162196A94500F6C93B /* AlipaySDK.framework */,
+			);
+			path = AlipaySDK;
+			sourceTree = "<group>";
+		};
 		F0FF5ABE219518AF0050AD96 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1862,6 +1877,7 @@
 				F0FF5ACD219539DB0050AD96 /* AddSelectCell.xib in Resources */,
 				F0E1AC4A21942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib in Resources */,
 				F0E1AC0E2193D71B00A9C17F /* SettingProblemVC.xib in Resources */,
+				F0FD36172196A94500F6C93B /* AlipaySDK.bundle in Resources */,
 				F0EEFA8A2192D447006D1650 /* HomeEngineVC.xib in Resources */,
 				F0F0E701218D987E00B4ABCE /* car4@2x.png in Resources */,
 				F0F0E6D0218D987E00B4ABCE /* IQKeyboardManager.bundle in Resources */,
@@ -2222,6 +2238,7 @@
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformConnector",
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK",
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/Required",
+					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformSDK/AlipaySDK",
 				);
 				GCC_PREFIX_HEADER = /Users/zhufeng/Desktop/lanpangzi/mitugou/mitugou/mitugou/PrefixHeader.pch;
 				INFOPLIST_FILE = mitugou/Info.plist;
@@ -2263,6 +2280,7 @@
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformConnector",
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK",
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/Required",
+					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformSDK/AlipaySDK",
 				);
 				GCC_PREFIX_HEADER = /Users/zhufeng/Desktop/lanpangzi/mitugou/mitugou/mitugou/PrefixHeader.pch;
 				INFOPLIST_FILE = mitugou/Info.plist;
