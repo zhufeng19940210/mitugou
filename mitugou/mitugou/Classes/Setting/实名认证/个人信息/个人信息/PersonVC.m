@@ -1,15 +1,16 @@
-//  SingleAuthonVC.m
+//  PersonVC.m
 //  mitugou
-//  Created by zhufeng on 2018/11/8.
+//  Created by zhufeng on 2018/11/10.
 //  Copyright © 2018 zhufeng. All rights reserved.
+//
 
-#import "SingleAuthonVC.h"
+#import "PersonVC.h"
 
-@interface SingleAuthonVC ()
+@interface PersonVC ()
 
 @end
 
-@implementation SingleAuthonVC
+@implementation PersonVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

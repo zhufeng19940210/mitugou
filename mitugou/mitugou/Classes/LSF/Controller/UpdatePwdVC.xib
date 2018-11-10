@@ -47,7 +47,7 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdV-WF-vjh">
-                    <rect key="frame" x="10" y="224" width="355" height="48"/>
+                    <rect key="frame" x="20" y="224" width="335" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="Guk-kp-zjW"/>
                     </constraints>
@@ -69,11 +69,11 @@
                 <constraint firstItem="A4H-sD-XD0" firstAttribute="top" secondItem="pV5-LM-2IA" secondAttribute="bottom" constant="15" id="VSf-9g-Cqd"/>
                 <constraint firstItem="IoR-kg-NBD" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="Z7o-eY-9Qx"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="IoR-kg-NBD" secondAttribute="trailing" constant="10" id="bYf-Md-jbX"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="RdV-WF-vjh" secondAttribute="trailing" constant="10" id="cWd-Bm-3bJ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="RdV-WF-vjh" secondAttribute="trailing" constant="20" id="cWd-Bm-3bJ"/>
                 <constraint firstItem="RdV-WF-vjh" firstAttribute="top" secondItem="IoR-kg-NBD" secondAttribute="bottom" constant="41" id="geO-wO-zmu"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="pV5-LM-2IA" secondAttribute="trailing" constant="10" id="pgd-Cy-bBw"/>
                 <constraint firstItem="pV5-LM-2IA" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="wuf-DZ-Js9"/>
-                <constraint firstItem="RdV-WF-vjh" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="zAV-IT-8Tm"/>
+                <constraint firstItem="RdV-WF-vjh" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="zAV-IT-8Tm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="24.5" y="51.5"/>

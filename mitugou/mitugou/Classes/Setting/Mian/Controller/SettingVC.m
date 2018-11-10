@@ -13,10 +13,12 @@
 #import "SettingLoanVC.h"
 #import "SettingRepaymentVC.h"
 #import "HomeMessageVC.h"
-@interface SettingVC ()<UICollectionViewDelegate,UICollectionViewDataSource,TZImagePickerControllerDelegate>
+#import "ShareView.h"
+@interface SettingVC ()<UICollectionViewDelegate,UICollectionViewDataSource,TZImagePickerControllerDelegate,ShareViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSMutableArray *imageArray;
 @property (nonatomic,strong)NSMutableArray *titleArray;
+@property (nonatomic,strong)ShareView *shareView;
 @end
 
 @implementation SettingVC
@@ -50,8 +52,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
+    [self setupShareView];
     [self setupData];
     [self setupCollectionView];
+}
+-(void)setupShareView{
+    ShareView *shareview = [[ShareView alloc]init];
+    self.shareView  = shareview;
+    self.shareView.delegate = self;
 }
 -(void)setupData
 {
@@ -139,8 +147,8 @@
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            SettingFriendVC *friendVC = [[SettingFriendVC alloc]init];
-            [self.navigationController pushViewController:friendVC animated:YES];
+            //分享的东西
+            [self.shareView shareViewShow];
         }
         if (indexPath.row == 1) {
             OrderListVC *ordervc = [[OrderListVC alloc]init];
@@ -193,5 +201,18 @@
 #pragma mark - Y间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return 0;
+}
+#pragma mark SharViewDelegate
+-(void)shareWithTag:(int)tag
+{
+    if (tag == 0) {
+        NSLog(@"微信分享");
+    }else if (tag == 1){
+        NSLog(@"朋友圈分享");
+    }else if (tag == 2){
+        NSLog(@"qq分享");
+    }else if (tag == 4 ){
+        NSLog(@"微博分享");
+    }
 }
 @end

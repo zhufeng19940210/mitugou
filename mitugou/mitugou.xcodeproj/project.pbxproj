@@ -190,6 +190,19 @@
 		F0F0E761218D9ECE00B4ABCE /* ApplicationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E75F218D9ECE00B4ABCE /* ApplicationVC.xib */; };
 		F0F0E765218D9EE000B4ABCE /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E763218D9EE000B4ABCE /* SettingVC.m */; };
 		F0F0E766218D9EE000B4ABCE /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E764218D9EE000B4ABCE /* SettingVC.xib */; };
+		F0FD35EC21966BCC00F6C93B /* SingleAuthonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD35EA21966BCC00F6C93B /* SingleAuthonCell.m */; };
+		F0FD35ED21966BCC00F6C93B /* SingleAuthonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD35EB21966BCC00F6C93B /* SingleAuthonCell.xib */; };
+		F0FD35F0219681C200F6C93B /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD35EE219681C200F6C93B /* ShareView.m */; };
+		F0FD35F92196865100F6C93B /* ContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD35F72196865100F6C93B /* ContactVC.m */; };
+		F0FD35FA2196865100F6C93B /* ContactVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD35F82196865100F6C93B /* ContactVC.xib */; };
+		F0FD35FE2196870600F6C93B /* WorkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD35FC2196870600F6C93B /* WorkVC.m */; };
+		F0FD35FF2196870600F6C93B /* WorkVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD35FD2196870600F6C93B /* WorkVC.xib */; };
+		F0FD36032196871C00F6C93B /* PersonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD36012196871C00F6C93B /* PersonVC.m */; };
+		F0FD36042196871C00F6C93B /* PersonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD36022196871C00F6C93B /* PersonVC.xib */; };
+		F0FD36082196872E00F6C93B /* PersonCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD36062196872E00F6C93B /* PersonCardVC.m */; };
+		F0FD36092196872E00F6C93B /* PersonCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD36072196872E00F6C93B /* PersonCardVC.xib */; };
+		F0FD360D2196874000F6C93B /* PeronsBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD360B2196874000F6C93B /* PeronsBaseVC.m */; };
+		F0FD360E2196874000F6C93B /* PeronsBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD360C2196874000F6C93B /* PeronsBaseVC.xib */; };
 		F0FF5AC4219526970050AD96 /* AddreeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AC2219526970050AD96 /* AddreeListCell.m */; };
 		F0FF5AC5219526970050AD96 /* AddreeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FF5AC3219526970050AD96 /* AddreeListCell.xib */; };
 		F0FF5AC821952F600050AD96 /* AddreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FF5AC721952F600050AD96 /* AddreeModel.m */; };
@@ -506,6 +519,26 @@
 		F0F0E762218D9EE000B4ABCE /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		F0F0E763218D9EE000B4ABCE /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		F0F0E764218D9EE000B4ABCE /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		F0FD35E921966BCC00F6C93B /* SingleAuthonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleAuthonCell.h; sourceTree = "<group>"; };
+		F0FD35EA21966BCC00F6C93B /* SingleAuthonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleAuthonCell.m; sourceTree = "<group>"; };
+		F0FD35EB21966BCC00F6C93B /* SingleAuthonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleAuthonCell.xib; sourceTree = "<group>"; };
+		F0FD35EE219681C200F6C93B /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		F0FD35EF219681C200F6C93B /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		F0FD35F62196865100F6C93B /* ContactVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactVC.h; sourceTree = "<group>"; };
+		F0FD35F72196865100F6C93B /* ContactVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactVC.m; sourceTree = "<group>"; };
+		F0FD35F82196865100F6C93B /* ContactVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactVC.xib; sourceTree = "<group>"; };
+		F0FD35FB2196870600F6C93B /* WorkVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkVC.h; sourceTree = "<group>"; };
+		F0FD35FC2196870600F6C93B /* WorkVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkVC.m; sourceTree = "<group>"; };
+		F0FD35FD2196870600F6C93B /* WorkVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkVC.xib; sourceTree = "<group>"; };
+		F0FD36002196871C00F6C93B /* PersonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonVC.h; sourceTree = "<group>"; };
+		F0FD36012196871C00F6C93B /* PersonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonVC.m; sourceTree = "<group>"; };
+		F0FD36022196871C00F6C93B /* PersonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonVC.xib; sourceTree = "<group>"; };
+		F0FD36052196872E00F6C93B /* PersonCardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonCardVC.h; sourceTree = "<group>"; };
+		F0FD36062196872E00F6C93B /* PersonCardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonCardVC.m; sourceTree = "<group>"; };
+		F0FD36072196872E00F6C93B /* PersonCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCardVC.xib; sourceTree = "<group>"; };
+		F0FD360A2196874000F6C93B /* PeronsBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeronsBaseVC.h; sourceTree = "<group>"; };
+		F0FD360B2196874000F6C93B /* PeronsBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeronsBaseVC.m; sourceTree = "<group>"; };
+		F0FD360C2196874000F6C93B /* PeronsBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeronsBaseVC.xib; sourceTree = "<group>"; };
 		F0FF5AC1219526970050AD96 /* AddreeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddreeListCell.h; sourceTree = "<group>"; };
 		F0FF5AC2219526970050AD96 /* AddreeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddreeListCell.m; sourceTree = "<group>"; };
 		F0FF5AC3219526970050AD96 /* AddreeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddreeListCell.xib; sourceTree = "<group>"; };
@@ -944,9 +977,14 @@
 		F0E1AC3F21942D6700A9C17F /* 个人信息 */ = {
 			isa = PBXGroup;
 			children = (
-				F0E1AC5F21942F9C00A9C17F /* SingleAuthonVC.h */,
-				F0E1AC6021942F9C00A9C17F /* SingleAuthonVC.m */,
-				F0E1AC6121942F9C00A9C17F /* SingleAuthonVC.xib */,
+				F0FD35F52196863D00F6C93B /* 联系人信息 */,
+				F0FD35F42196863600F6C93B /* 工作信息 */,
+				F0FD35F32196862C00F6C93B /* 个人信息 */,
+				F0FD35F22196862200F6C93B /* 上传身份证照片 */,
+				F0FD35F12196860E00F6C93B /* 基本信息 */,
+				F0FD35E821966BA600F6C93B /* Model */,
+				F0FD35E721966BA200F6C93B /* View */,
+				F0FD35E621966B8C00F6C93B /* Controller */,
 			);
 			path = "个人信息";
 			sourceTree = "<group>";
@@ -1276,6 +1314,8 @@
 		F0F0E47D218D53D000B4ABCE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0FD35EF219681C200F6C93B /* ShareView.h */,
+				F0FD35EE219681C200F6C93B /* ShareView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1597,6 +1637,83 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F0FD35E621966B8C00F6C93B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E1AC5F21942F9C00A9C17F /* SingleAuthonVC.h */,
+				F0E1AC6021942F9C00A9C17F /* SingleAuthonVC.m */,
+				F0E1AC6121942F9C00A9C17F /* SingleAuthonVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0FD35E721966BA200F6C93B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD35E921966BCC00F6C93B /* SingleAuthonCell.h */,
+				F0FD35EA21966BCC00F6C93B /* SingleAuthonCell.m */,
+				F0FD35EB21966BCC00F6C93B /* SingleAuthonCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0FD35E821966BA600F6C93B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0FD35F12196860E00F6C93B /* 基本信息 */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD360A2196874000F6C93B /* PeronsBaseVC.h */,
+				F0FD360B2196874000F6C93B /* PeronsBaseVC.m */,
+				F0FD360C2196874000F6C93B /* PeronsBaseVC.xib */,
+			);
+			path = "基本信息";
+			sourceTree = "<group>";
+		};
+		F0FD35F22196862200F6C93B /* 上传身份证照片 */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD36052196872E00F6C93B /* PersonCardVC.h */,
+				F0FD36062196872E00F6C93B /* PersonCardVC.m */,
+				F0FD36072196872E00F6C93B /* PersonCardVC.xib */,
+			);
+			path = "上传身份证照片";
+			sourceTree = "<group>";
+		};
+		F0FD35F32196862C00F6C93B /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD36002196871C00F6C93B /* PersonVC.h */,
+				F0FD36012196871C00F6C93B /* PersonVC.m */,
+				F0FD36022196871C00F6C93B /* PersonVC.xib */,
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
+		F0FD35F42196863600F6C93B /* 工作信息 */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD35FB2196870600F6C93B /* WorkVC.h */,
+				F0FD35FC2196870600F6C93B /* WorkVC.m */,
+				F0FD35FD2196870600F6C93B /* WorkVC.xib */,
+			);
+			path = "工作信息";
+			sourceTree = "<group>";
+		};
+		F0FD35F52196863D00F6C93B /* 联系人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD35F62196865100F6C93B /* ContactVC.h */,
+				F0FD35F72196865100F6C93B /* ContactVC.m */,
+				F0FD35F82196865100F6C93B /* ContactVC.xib */,
+			);
+			path = "联系人信息";
+			sourceTree = "<group>";
+		};
 		F0FF5ABE219518AF0050AD96 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1704,10 +1821,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0FF5ADC2195525E0050AD96 /* DistributionTypeCell.xib in Resources */,
+				F0FD35FF2196870600F6C93B /* WorkVC.xib in Resources */,
 				F0E1AC7121943C6400A9C17F /* CommitOrderVC.xib in Resources */,
 				F0E1AC7B21943CD000A9C17F /* AddressEditVC.xib in Resources */,
 				F0EEFA962192D885006D1650 /* ApplicationproductCell.xib in Resources */,
 				F00E07A7218D2A5A0079D952 /* LaunchScreen.storyboard in Resources */,
+				F0FD35FA2196865100F6C93B /* ContactVC.xib in Resources */,
+				F0FD360E2196874000F6C93B /* PeronsBaseVC.xib in Resources */,
 				F0EEFA5721929078006D1650 /* HomeOtherCell.xib in Resources */,
 				F0E1AC5921942F0F00A9C17F /* CardAuthonVC.xib in Resources */,
 				F0B50A08218FE76D0027BB61 /* ResigterVC.xib in Resources */,
@@ -1724,6 +1844,7 @@
 				F0EEFA6F2192C288006D1650 /* HomeSearchVC.xib in Resources */,
 				F0EEFA652192C101006D1650 /* HomeSortVC.xib in Resources */,
 				F00E07A4218D2A5A0079D952 /* Assets.xcassets in Resources */,
+				F0FD36042196871C00F6C93B /* PersonVC.xib in Resources */,
 				F0E1AC032193CFD600A9C17F /* SettingLogoutCell.xib in Resources */,
 				F0E1AC5E21942F6700A9C17F /* FaceAuthonVC.xib in Resources */,
 				F0E1AC6321942F9C00A9C17F /* SingleAuthonVC.xib in Resources */,
@@ -1749,6 +1870,7 @@
 				F0E1AC082193D43100A9C17F /* UpdatePwdVC.xib in Resources */,
 				F0E1AC6B219437B000A9C17F /* OrderDetailVC.xib in Resources */,
 				F0F0E766218D9EE000B4ABCE /* SettingVC.xib in Resources */,
+				F0FD35ED21966BCC00F6C93B /* SingleAuthonCell.xib in Resources */,
 				F0E1ABEF2193CB2F00A9C17F /* SettingCouponVC.xib in Resources */,
 				F0E1AC2C2193E5DD00A9C17F /* SettingRepaymentVC.xib in Resources */,
 				F0F0E704218D987F00B4ABCE /* car5@2x.png in Resources */,
@@ -1770,6 +1892,7 @@
 				F0B50AE3218FF15E0027BB61 /* ShareSDKConfigFile.bundle in Resources */,
 				F0FF5AE12195A28F0050AD96 /* OrderContentCell.xib in Resources */,
 				F0FF5AD72195520D0050AD96 /* StagingTypeCell.xib in Resources */,
+				F0FD36092196872E00F6C93B /* PersonCardVC.xib in Resources */,
 				F0EEFAA02192E9C5006D1650 /* SettingCommentCell.xib in Resources */,
 				F0F0E706218D987F00B4ABCE /* car3@2x.png in Resources */,
 				F0B50ADB218FF15E0027BB61 /* README.txt in Resources */,
@@ -1839,9 +1962,11 @@
 				F0FF5AD121953BA40050AD96 /* ProductDetailCell.m in Sources */,
 				F0F0E737218D9AC400B4ABCE /* UserModel.m in Sources */,
 				F0F0E6E1218D987E00B4ABCE /* LCUtil.m in Sources */,
+				F0FD35EC21966BCC00F6C93B /* SingleAuthonCell.m in Sources */,
 				F0F0E6E4218D987E00B4ABCE /* SYPlaceHolderTextView.m in Sources */,
 				F0F0E6FA218D987E00B4ABCE /* YTKNetworkPrivate.m in Sources */,
 				F0E1AC302193EBCB00A9C17F /* ProductTypeCell.m in Sources */,
+				F0FD36082196872E00F6C93B /* PersonCardVC.m in Sources */,
 				F0E1AC212193D9DC00A9C17F /* SettingAuthonVC.m in Sources */,
 				F0F0E6E5218D987E00B4ABCE /* UIScrollView+EmptyDataSet.m in Sources */,
 				F0EEFA6E2192C288006D1650 /* HomeSearchVC.m in Sources */,
@@ -1855,10 +1980,14 @@
 				F0F0E760218D9ECE00B4ABCE /* ApplicationVC.m in Sources */,
 				F0E1AC172193D92D00A9C17F /* SettingFriendVC.m in Sources */,
 				F0F0E6CD218D987E00B4ABCE /* IQBarButtonItem.m in Sources */,
+				F0FD360D2196874000F6C93B /* PeronsBaseVC.m in Sources */,
+				F0FD35F0219681C200F6C93B /* ShareView.m in Sources */,
 				F0E1ABF32193CBDA00A9C17F /* SettingCouponCell.m in Sources */,
+				F0FD35F92196865100F6C93B /* ContactVC.m in Sources */,
 				F0FF5AE02195A28F0050AD96 /* OrderContentCell.m in Sources */,
 				F0F0E6E3218D987E00B4ABCE /* UIButton+POImagePosition.m in Sources */,
 				F0F0E6D4218D987E00B4ABCE /* IQUITextFieldView+Additions.m in Sources */,
+				F0FD35FE2196870600F6C93B /* WorkVC.m in Sources */,
 				F0F0E6D6218D987E00B4ABCE /* IQUIView+Hierarchy.m in Sources */,
 				F0F0E6D3218D987E00B4ABCE /* IQUIWindow+Hierarchy.m in Sources */,
 				F0F0E6FF218D987E00B4ABCE /* YTKBatchRequestAgent.m in Sources */,
@@ -1878,6 +2007,7 @@
 				F0F0E6FE218D987E00B4ABCE /* YTKChainRequestAgent.m in Sources */,
 				F0EEFA952192D885006D1650 /* ApplicationproductCell.m in Sources */,
 				F0F0E6DF218D987E00B4ABCE /* ZJScrollSegmentView.m in Sources */,
+				F0FD36032196871C00F6C93B /* PersonVC.m in Sources */,
 				F0F0E723218D991900B4ABCE /* UIViewController+HUD.m in Sources */,
 				F0F0E725218D991900B4ABCE /* NetWorkTool.m in Sources */,
 				F0B50A05218FE76D0027BB61 /* ForgetPwdVC.m in Sources */,

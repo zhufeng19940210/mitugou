@@ -1,29 +1,30 @@
-//  SettingAuthonVC.m
+//  SingleAuthonVC.m
 //  mitugou
 //  Created by zhufeng on 2018/11/8.
 //  Copyright © 2018 zhufeng. All rights reserved.
-#import "SettingAuthonVC.h"
-#import "SettingAuthonCell.h"
 #import "SingleAuthonVC.h"
-#import "FaceAuthonVC.h"
-#import "CardAuthonVC.h"
-#import "YunYinShangAuthonVC.h"
-#import "ZhifubaoPayAuthonVC.h"
-@interface SettingAuthonVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "SingleAuthonCell.h"
+#import "ContactVC.h"    //联系人信息
+#import "WorkVC.h"       //工作信息
+#import "PersonVC.h"     //个人信息
+#import "PersonCardVC.h" //上传身份证照片
+#import "PeronsBaseVC.h" //基本信息
+@interface SingleAuthonVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic,strong)NSMutableArray *titleArray;
 @end
-@implementation SettingAuthonVC
+
+@implementation SingleAuthonVC
 -(NSMutableArray *)titleArray
 {
     if (!_titleArray) {
-        _titleArray = [NSMutableArray arrayWithObjects:@"个人信息认证",@"人脸识别认证",@"银行卡认证",@"运营商认证",@"支付宝认证", nil];
+        _titleArray = [NSMutableArray arrayWithObjects:@"基本信息",@"上传身份证照片",@"个人信息",@"工作信息",@"联系人信息", nil];
     }
     return _titleArray;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"实名认证";
+    self.navigationItem.title = @"个人信息";
     self.view.backgroundColor = RGB(240, 240, 240);
     [self setupData];
     [self setupTableView];
@@ -37,7 +38,7 @@
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     self.tableview.backgroundColor = [UIColor clearColor];
-    [self.tableview registerNib:[UINib nibWithNibName:@"SettingAuthonCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SettingAuthonCell"];
+    [self.tableview registerNib:[UINib nibWithNibName:@"SingleAuthonCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SingleAuthonCell"];
 }
 #pragma mark -- uitableviewdelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -46,12 +47,13 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return  1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50;
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -71,8 +73,8 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SettingAuthonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingAuthonCell"];
-    cell.content_lab.text = self.titleArray[indexPath.section];
+    SingleAuthonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleAuthonCell"];
+    cell.title_lab.text = self.titleArray[indexPath.section];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -80,28 +82,26 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
-        //个人信息
-        SingleAuthonVC *uservc = [[SingleAuthonVC alloc]init];
-        [self.navigationController pushViewController:uservc animated:YES];
+        //基本信息
+        PeronsBaseVC *basevc = [[PeronsBaseVC alloc]init];
+        [self.navigationController pushViewController:basevc animated:YES];
     }else if(indexPath.section == 1){
-        //人脸识别
-        FaceAuthonVC *facevc = [[FaceAuthonVC alloc]init];
-        [self.navigationController pushViewController:facevc animated:YES];
-    }else if(indexPath.section == 2){
-        //银行卡认证
-        CardAuthonVC *cardvc = [[CardAuthonVC alloc]init];
+        //上传证件照片
+        PersonCardVC *cardvc = [[PersonCardVC alloc]init];
         [self.navigationController pushViewController:cardvc animated:YES];
+    }else if(indexPath.section == 2){
+        //个人信息
+        PersonVC *personvc = [[PersonVC alloc]init];
+        [self.navigationController pushViewController:personvc animated:YES];
     }else if(indexPath.section == 3){
-        //运营商认证
-        YunYinShangAuthonVC *yunxinshangvc = [[YunYinShangAuthonVC alloc]init];
-        [self.navigationController pushViewController:yunxinshangvc animated:YES];
+        //工作信息
+        WorkVC *workvc = [[WorkVC alloc]init];
+        [self.navigationController pushViewController:workvc animated:YES];
     }else if(indexPath.section == 4){
-        //支付宝认证
-        ZhifubaoPayAuthonVC *zhifubaovc = [[ZhifubaoPayAuthonVC alloc]init];
-        [self.navigationController pushViewController:zhifubaovc animated:YES];
+        //联系人信息
+        ContactVC *contactvc = [[ContactVC alloc]init];
+        [self.navigationController pushViewController:contactvc animated:YES];
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+
 @end
