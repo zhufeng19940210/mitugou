@@ -19,9 +19,18 @@
 @property (nonatomic,strong)NSMutableArray *imageArray;
 @property (nonatomic,strong)NSMutableArray *titleArray;
 @property (nonatomic,strong)ShareView *shareView;
+@property (nonatomic,strong)NSMutableArray *photoeArray;
 @end
 
 @implementation SettingVC
+-(NSMutableArray *)photoeArray
+{
+    if (!_photoeArray) {
+        _photoeArray = [NSMutableArray array];
+    }
+    return _photoeArray;
+}
+
 -(NSMutableArray *)imageArray
 {
     if (!_imageArray) {
@@ -131,17 +140,71 @@
  */
 -(void)changeIconMethod
 {
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:3 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
     [imagePickerVc setAllowPreview:NO];
     [imagePickerVc setAllowPickingVideo:NO];
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-        [self uploadpath:photos[0]];
+       // [self uploadpath:photos[0]];
+        [self.photoeArray removeAllObjects];
+        [self.photoeArray addObjectsFromArray:photos];
+        [self uploadpathes];
     }];
     [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
 //删除图片
--(void)uploadpath:(UIImage *)image{
-    
+-(void)uploadpathes{
+    NSLog(@"sefl.phont.count:%lu",(unsigned long)self.photoeArray.count);
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = @"88888888";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html",nil];
+    [manager POST:@"http://47.93.238.67:9999/htshop/borrowAuthentication/modifyalipayAuth" parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        for (int i = 0; i <self.photoeArray.count; i ++) {
+            NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+            formatter.dateFormat=@"yyyyMMddHHmmss";
+            NSString *str=[formatter stringFromDate:[NSDate date]];
+            NSString *fileName=[NSString stringWithFormat:@"%@.jpg",str];
+            NSLog(@"selectimageurl:%@",fileName);
+            UIImage *image = self.photoeArray[i];
+            NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+            NSLog(@"iMAGEdata:%@",imageData);
+            [formData appendPartWithFileData:imageData name:@"dd" fileName:fileName mimeType:@"image/jpg"];
+        }
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success:%@",responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showInfoWithStatus:@"服务器失败"];
+        return;
+    }];
+}
+-(void)uploadpath:(UIImage *)selectImage{
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = @"88888888";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html",nil];
+    [manager POST:@"http://47.93.238.67:9999/htshop/borrowAuthentication/modifyalipayAuth" parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        for (int i = 0; i <self.photoeArray.count; i ++) {
+            NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+            formatter.dateFormat=@"yyyyMMddHHmmss";
+            NSString *str=[formatter stringFromDate:[NSDate date]];
+            NSString *fileName=[NSString stringWithFormat:@"%@.jpg",str];
+            NSLog(@"selectimageurl:%@",fileName);
+            NSData *imageData = UIImageJPEGRepresentation(selectImage, 0.5);
+            NSLog(@"iMAGEdata:%@",imageData);
+            [formData appendPartWithFileData:imageData name:@"dd" fileName:fileName mimeType:@"image/jpg"];
+        }
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success:%@",responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showInfoWithStatus:@"服务器失败"];
+        return;
+    }];
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

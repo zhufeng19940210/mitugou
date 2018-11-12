@@ -12,12 +12,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *agree_btn;
 @property (weak, nonatomic) IBOutlet UIButton *eye_btn;
 @property (nonatomic,assign)BOOL isAgree;
+@property (nonatomic,copy)NSString *code_str; //获取验证码code_str
 @end
 @implementation ResigterVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"注册";
+    self.isAgree = NO;
 }
 /**
  显示眼睛出来
@@ -59,6 +61,10 @@
         [self showHint:@"密码不能为空" yOffset:-200];
         return;
     }
+    if (!self.isAgree) {
+        [self showHint:@"请先同意协议" yOffset:-200];
+        return;
+    }
     //开始去注册用户
     [self RegisterWithPhone:phone WithCode:code WithPwd:pwd];
 }
@@ -94,23 +100,28 @@
         [self showHint:@"手机号码有误" yOffset:-200];
         return;
     }
-    [sender startWithTime:59 title:@"获取验证码" countDownTitle:@"S" mainColor:MainThemeColor countColor:[UIColor clearColor]];
-    //获取验证码
-    //[self getCodeWithPhone:phone];
-}
--(void)getCodeWithPhone:(NSString *)phone
-{
+    [SVProgressHUD showWithStatus:@"获取验证码中"];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"phone"] = phone;
-    [SVProgressHUD showWithStatus:@"获取验证码"];
     [[NetWorkTool shareInstacne]postWithURLString:User_Get_Code parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         NSLog(@"获取验证码:%@",responseObject);
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+            [ZFCustomView showWithSuccess:@"获取成功"];
+            self.code_str = res.data[@"msg"];
+            NSLog(@"code_str:%@",self.code_str);
+            [sender startWithTime:59 title:@"获取验证码" countDownTitle:@"S" mainColor:MainThemeColor countColor:[UIColor clearColor]];
+        }else{
+            [ZFCustomView showWithError:@"获取失败"];
+            return;
+        }
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
         return;
     }];
+
 }
 /**
  同意按钮
