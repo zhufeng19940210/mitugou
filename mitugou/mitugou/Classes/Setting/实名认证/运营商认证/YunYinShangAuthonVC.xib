@@ -156,7 +156,7 @@
                         <action selector="actionForgePwdBtn:" destination="-1" eventType="touchUpInside" id="CFs-Es-swb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-1r-BDz">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-1r-BDz">
                     <rect key="frame" x="19.5" y="368" width="336" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="6Js-BT-Qf1"/>

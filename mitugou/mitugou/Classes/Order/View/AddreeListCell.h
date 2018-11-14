@@ -10,10 +10,6 @@ typedef NS_ENUM(NSInteger,AddressOpertaionType) {
     AddressOpertaionTypeEdit      = 3000,//编辑按钮
 };
 @interface AddreeListCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *name_lab;
-@property (weak, nonatomic) IBOutlet UILabel *phone_lab;
-@property (weak, nonatomic) IBOutlet UILabel *detail_lab;
-@property (weak, nonatomic) IBOutlet UIButton *default_btn;
 @property (nonatomic,strong)AddreeModel *addressModel;
 @property (nonatomic,copy)void(^acitonBlock)(AddressOpertaionType type);
 @end

@@ -110,7 +110,6 @@
             if (type ==  SettingHeaderTypeIcon) {
                 //头像
                 [self changeIconMethod];
-                
             }else if (type == SettingHeaderTypeMsg){
                 //消息
                 HomeMessageVC *messagevc = [[HomeMessageVC alloc]init];

@@ -7,6 +7,5 @@
 @interface ResponeModel : NSObject
 @property (nonatomic,copy) NSString *code;
 @property (nonatomic,copy) NSString *message;
-
 @property (nonatomic,strong) id data;
 @end

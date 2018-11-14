@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PeronsBaseVC">
             <connections>
+                <outlet property="card_tf" destination="Yyp-ru-64i" id="KgT-ye-VyQ"/>
+                <outlet property="name_tf" destination="qq5-NG-jZ2" id="bvb-j5-RlY"/>
+                <outlet property="sex_tf" destination="RIy-og-czO" id="JJX-lH-JUb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -60,6 +63,9 @@
                     <state key="normal" title="保存" backgroundImage="bg">
                         <color key="titleColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="actionSaveBtn:" destination="-1" eventType="touchUpInside" id="nzg-aF-mXh"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRi-g7-20e">
                     <rect key="frame" x="10" y="40" width="31" height="18"/>
@@ -83,7 +89,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入输入性别" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RIy-og-czO">
+                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入输入性别" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RIy-og-czO">
                     <rect key="frame" x="99" y="94" width="266" height="19"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,6 +101,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="na9-RS-GXQ">
+                    <rect key="frame" x="0.0" y="73" width="375" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="XGA-Qu-ufv"/>
+                    </constraints>
+                    <connections>
+                        <action selector="actionSelectSexBtn:" destination="-1" eventType="touchUpInside" id="JCC-hZ-En4"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -108,10 +123,12 @@
                 <constraint firstItem="O7Y-pq-cGe" firstAttribute="top" secondItem="dZS-Ff-Get" secondAttribute="bottom" constant="20" id="HRt-MR-8eH"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="RSh-v0-Acd" secondAttribute="trailing" constant="20" id="JFv-S4-FmP"/>
                 <constraint firstItem="Gkx-xf-wuX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NYC-gJ-sqr"/>
+                <constraint firstItem="na9-RS-GXQ" firstAttribute="top" secondItem="qq5-NG-jZ2" secondAttribute="bottom" constant="14" id="Ngq-iG-WRe"/>
                 <constraint firstAttribute="trailing" secondItem="dZS-Ff-Get" secondAttribute="trailing" id="OqC-P7-yGt"/>
                 <constraint firstItem="Yyp-ru-64i" firstAttribute="leading" secondItem="r9A-72-DIW" secondAttribute="trailing" constant="12" id="Pxe-z1-ymx"/>
                 <constraint firstItem="Gkx-xf-wuX" firstAttribute="top" secondItem="r9A-72-DIW" secondAttribute="bottom" constant="15" id="Qbp-ZM-PDO"/>
                 <constraint firstItem="qq5-NG-jZ2" firstAttribute="centerY" secondItem="ZRi-g7-20e" secondAttribute="centerY" id="VhD-6H-hlE"/>
+                <constraint firstItem="na9-RS-GXQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="XID-vF-hto"/>
                 <constraint firstAttribute="trailing" secondItem="Gkx-xf-wuX" secondAttribute="trailing" id="Xov-eH-r4D"/>
                 <constraint firstItem="ZRi-g7-20e" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="YpH-q7-2aP"/>
                 <constraint firstAttribute="trailing" secondItem="o9D-vv-Sad" secondAttribute="trailing" id="ZBb-wO-hja"/>
@@ -125,6 +142,7 @@
                 <constraint firstItem="RSh-v0-Acd" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="slv-6X-Noi"/>
                 <constraint firstItem="o9D-vv-Sad" firstAttribute="top" secondItem="RIy-og-czO" secondAttribute="bottom" constant="15" id="szP-S2-wCa"/>
                 <constraint firstItem="r9A-72-DIW" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="tCh-1f-ay6"/>
+                <constraint firstItem="na9-RS-GXQ" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="wbN-Zp-xEC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="25.5" y="51.5"/>

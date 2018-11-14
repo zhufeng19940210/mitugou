@@ -12,6 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonCardVC">
             <connections>
+                <outlet property="add_img1" destination="YVc-md-bZK" id="5KP-1k-Ze2"/>
+                <outlet property="add_img2" destination="YpE-hw-ORy" id="cLc-mE-Wwc"/>
+                <outlet property="add_img3" destination="8On-vc-TVz" id="Cyo-bd-KWQ"/>
+                <outlet property="add_title1" destination="4SK-ey-X4U" id="TCb-Fw-zr4"/>
+                <outlet property="add_title2" destination="Oat-T6-NIK" id="RDd-9B-Kk0"/>
+                <outlet property="add_title3" destination="nhz-2Q-3bS" id="Ifd-PN-LjZ"/>
+                <outlet property="down_img" destination="cuV-QO-p2P" id="yV2-PU-ANI"/>
+                <outlet property="handle_img" destination="pBR-xn-0Gl" id="NTX-b0-Un0"/>
+                <outlet property="up_img" destination="3TU-hz-QYo" id="Sa0-wu-1Ug"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,6 +81,9 @@
                     <state key="normal" title="保存" backgroundImage="bg">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="actionSaveBtn:" destination="-1" eventType="touchUpInside" id="nBW-Ox-6tg"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份证正面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SK-ey-X4U">
                     <rect key="frame" x="62.5" y="142" width="66.5" height="16"/>

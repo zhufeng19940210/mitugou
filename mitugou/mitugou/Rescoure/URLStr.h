@@ -45,4 +45,24 @@
 #define Userinfo_PersonalAuth_Url_Update [BaseUrl stringByAppendingString:@"/borrowAuthentication/modifypersonalAuth"]
 ///查找运营商信息
 #define Userinfo_PersonalAuth_Url_Find [BaseUrl stringByAppendingString:@"/borrowAuthentication/findpersonal"]
+/*================================地址信息===============================*/
+///查找全部的地址
+#define Userinfo_Address_FindAll [BaseUrl stringByAppendingString:@"/address/findbyAll"]
+///添加一个收货地址
+#define Userinfo_Address_Add [BaseUrl stringByAppendingString:@"/address/addbyId"]
+///删除收货地址
+#define Userinfo_Address_Del [BaseUrl stringByAppendingString:@"/address/deletebyId"]
+///修改收货地址
+#define Userinfo_Address_Update [BaseUrl stringByAppendingString:@"/address/updatebyid"]
+///设置默认地址
+#define Userinfo_Address_Default [BaseUrl stringByAppendingString:@"/address/defaultStatus"]
+/*================================商品信息===============================*/
+///查找全部的商品
+#define Userinfo_Product_All [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
+///查找机车的商品
+///查找配件的商品
+///查找手机的商品
+/*================================首页信息===============================*/
+
+
 #endif /* URLStr_h */

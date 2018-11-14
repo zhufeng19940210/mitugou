@@ -68,7 +68,6 @@
         return 5;
     }
 }
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SettingAuthonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingAuthonCell"];

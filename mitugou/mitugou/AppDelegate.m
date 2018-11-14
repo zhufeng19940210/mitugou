@@ -7,7 +7,7 @@
 #import "ResigterVC.h"
 #import "TabBarController.h"
 #import "MyNavigationController.h"
-#import "GuiideVC.h"
+#import "GuideVC.h"
 @interface AppDelegate ()
 @end
 @implementation AppDelegate
@@ -16,7 +16,8 @@
     self.window  = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     UIViewController *rootViewController = nil;
-    BOOL isFirst = [[NSUserDefaults standardUserDefaults]boolForKey:@"isFirst"];
+    BOOL isFirst = [[NSUserDefaults standardUserDefaults]boolForKey:ISFirst
+                    ];
     if (isFirst) {
         if ([UserModel isOnline]) {
             //登录成功
@@ -30,8 +31,8 @@
         }
     }else{
         //引导页
-        LoginVC *loginVC = [[LoginVC alloc]init];
-        MyNavigationController *nav = [[MyNavigationController alloc]initWithRootViewController:loginVC];
+        GuideVC *guidevc = [[GuideVC alloc]init];
+        MyNavigationController *nav = [[MyNavigationController alloc]initWithRootViewController:guidevc];
         rootViewController = nav;
     }
     self.window.rootViewController = rootViewController;
@@ -42,6 +43,20 @@
 -(void)seutpThirdInitlation
 {
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    //这里设置下样式
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+    //设置背景颜色
+    [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
+    //设置前景色
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    //遮罩的颜色
+    //[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeCustom];
+    //设置遮罩的颜色
+    //[SVProgressHUD setBackgroundLayerColor:[UIColor yellowColor]];
+    //动画的样式(菊花)|默认是圆圈
+    //[SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
+    //显示时间
+    [SVProgressHUD setMinimumDismissTimeInterval:1.0];//显示的时间
     ///三方登录的东西
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
         [platformsRegister setupQQWithAppId:MOBSSDKQQAppID appkey:MOBSSDKQQAppKey];
@@ -50,26 +65,18 @@
     }];
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This
-}
 
+}
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers,
-}
 
+}
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+  
 }
-
-
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+  
 }
-
-
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
 }
-
-
 @end

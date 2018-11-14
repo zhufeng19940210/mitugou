@@ -178,8 +178,6 @@
 		F0F0E724218D991900B4ABCE /* JsonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E71F218D991900B4ABCE /* JsonTool.m */; };
 		F0F0E725218D991900B4ABCE /* NetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E720218D991900B4ABCE /* NetWorkTool.m */; };
 		F0F0E72C218D9A7E00B4ABCE /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E72B218D9A7E00B4ABCE /* BaseVC.m */; };
-		F0F0E730218D9A9900B4ABCE /* GuiideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E72E218D9A9900B4ABCE /* GuiideVC.m */; };
-		F0F0E731218D9A9900B4ABCE /* GuiideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E72F218D9A9900B4ABCE /* GuiideVC.xib */; };
 		F0F0E737218D9AC400B4ABCE /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E736218D9AC400B4ABCE /* UserModel.m */; };
 		F0F0E751218D9D1100B4ABCE /* ResponeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E750218D9D1100B4ABCE /* ResponeModel.m */; };
 		F0F0E754218D9E6300B4ABCE /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E753218D9E6300B4ABCE /* TabBarController.m */; };
@@ -190,6 +188,11 @@
 		F0F0E761218D9ECE00B4ABCE /* ApplicationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E75F218D9ECE00B4ABCE /* ApplicationVC.xib */; };
 		F0F0E765218D9EE000B4ABCE /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0E763218D9EE000B4ABCE /* SettingVC.m */; };
 		F0F0E766218D9EE000B4ABCE /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E764218D9EE000B4ABCE /* SettingVC.xib */; };
+		F0F6C79D219A6A78009F91A5 /* LZPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */; };
+		F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6C79C219A6A77009F91A5 /* LZPickerView.m */; };
+		F0FC0DB4219C124E0013D765 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC0DB3219C124D0013D765 /* ProductModel.m */; };
+		F0FC0DCF219C24B60013D765 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC0DCC219C24B50013D765 /* GuideVC.m */; };
+		F0FC0DD0219C24B60013D765 /* GuideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FC0DCE219C24B60013D765 /* GuideVC.xib */; };
 		F0FD35EC21966BCC00F6C93B /* SingleAuthonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD35EA21966BCC00F6C93B /* SingleAuthonCell.m */; };
 		F0FD35ED21966BCC00F6C93B /* SingleAuthonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FD35EB21966BCC00F6C93B /* SingleAuthonCell.xib */; };
 		F0FD35F0219681C200F6C93B /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD35EE219681C200F6C93B /* ShareView.m */; };
@@ -500,9 +503,6 @@
 		F0F0E726218D99E100B4ABCE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F0F0E72A218D9A7E00B4ABCE /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		F0F0E72B218D9A7E00B4ABCE /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
-		F0F0E72D218D9A9900B4ABCE /* GuiideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuiideVC.h; sourceTree = "<group>"; };
-		F0F0E72E218D9A9900B4ABCE /* GuiideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuiideVC.m; sourceTree = "<group>"; };
-		F0F0E72F218D9A9900B4ABCE /* GuiideVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuiideVC.xib; sourceTree = "<group>"; };
 		F0F0E735218D9AC400B4ABCE /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		F0F0E736218D9AC400B4ABCE /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		F0F0E74E218D9C9600B4ABCE /* URLStr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLStr.h; sourceTree = "<group>"; };
@@ -521,6 +521,14 @@
 		F0F0E762218D9EE000B4ABCE /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		F0F0E763218D9EE000B4ABCE /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		F0F0E764218D9EE000B4ABCE /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		F0F6C79A219A6A77009F91A5 /* LZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPickerView.h; sourceTree = "<group>"; };
+		F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZPickerView.xib; sourceTree = "<group>"; };
+		F0F6C79C219A6A77009F91A5 /* LZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerView.m; sourceTree = "<group>"; };
+		F0FC0DB2219C124D0013D765 /* ProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
+		F0FC0DB3219C124D0013D765 /* ProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
+		F0FC0DCC219C24B50013D765 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
+		F0FC0DCD219C24B50013D765 /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
+		F0FC0DCE219C24B60013D765 /* GuideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideVC.xib; sourceTree = "<group>"; };
 		F0FD35E921966BCC00F6C93B /* SingleAuthonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleAuthonCell.h; sourceTree = "<group>"; };
 		F0FD35EA21966BCC00F6C93B /* SingleAuthonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleAuthonCell.m; sourceTree = "<group>"; };
 		F0FD35EB21966BCC00F6C93B /* SingleAuthonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleAuthonCell.xib; sourceTree = "<group>"; };
@@ -1085,6 +1093,8 @@
 		F0EEFA742192D28A006D1650 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0FC0DB2219C124D0013D765 /* ProductModel.h */,
+				F0FC0DB3219C124D0013D765 /* ProductModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1329,6 +1339,7 @@
 		F0F0E47E218D53D000B4ABCE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F0F6C799219A6A77009F91A5 /* LZPickerView */,
 				F0EEFA5D2192BC9A006D1650 /* SGAdvertScrollView */,
 				F0B50AB6218FF15D0027BB61 /* SDK */,
 				F0F0E65B218D987300B4ABCE /* Category */,
@@ -1593,9 +1604,9 @@
 		F0F0E729218D9A6400B4ABCE /* Guide */ = {
 			isa = PBXGroup;
 			children = (
-				F0F0E72D218D9A9900B4ABCE /* GuiideVC.h */,
-				F0F0E72E218D9A9900B4ABCE /* GuiideVC.m */,
-				F0F0E72F218D9A9900B4ABCE /* GuiideVC.xib */,
+				F0FC0DCD219C24B50013D765 /* GuideVC.h */,
+				F0FC0DCC219C24B50013D765 /* GuideVC.m */,
+				F0FC0DCE219C24B60013D765 /* GuideVC.xib */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -1641,6 +1652,16 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F0F6C799219A6A77009F91A5 /* LZPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				F0F6C79A219A6A77009F91A5 /* LZPickerView.h */,
+				F0F6C79C219A6A77009F91A5 /* LZPickerView.m */,
+				F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */,
+			);
+			path = LZPickerView;
 			sourceTree = "<group>";
 		};
 		F0FD35E621966B8C00F6C93B /* Controller */ = {
@@ -1837,6 +1858,7 @@
 			files = (
 				F0FF5ADC2195525E0050AD96 /* DistributionTypeCell.xib in Resources */,
 				F0FD35FF2196870600F6C93B /* WorkVC.xib in Resources */,
+				F0FC0DD0219C24B60013D765 /* GuideVC.xib in Resources */,
 				F0E1AC7121943C6400A9C17F /* CommitOrderVC.xib in Resources */,
 				F0E1AC7B21943CD000A9C17F /* AddressEditVC.xib in Resources */,
 				F0EEFA962192D885006D1650 /* ApplicationproductCell.xib in Resources */,
@@ -1868,7 +1890,6 @@
 				F0E1AC222193D9DC00A9C17F /* SettingAuthonVC.xib in Resources */,
 				F0F0E703218D987E00B4ABCE /* 成功图片@2x.png in Resources */,
 				F0EEFA4D21928EDC006D1650 /* HomerecommendCell.xib in Resources */,
-				F0F0E731218D9A9900B4ABCE /* GuiideVC.xib in Resources */,
 				F0EEFA4821928E9D006D1650 /* HomeTypeCell.xib in Resources */,
 				F0EEFA9B2192E877006D1650 /* SettingHeaderCell.xib in Resources */,
 				F0E1AC5421942ED300A9C17F /* YunYinShangAuthonVC.xib in Resources */,
@@ -1905,6 +1926,7 @@
 				F0EEFA6A2192C11D006D1650 /* HomeMessageVC.xib in Resources */,
 				F0EEFA912192D83F006D1650 /* ApplicationHeaderCell.xib in Resources */,
 				F0E1ABF92193CF1B00A9C17F /* SettingUserinfoVC.xib in Resources */,
+				F0F6C79D219A6A78009F91A5 /* LZPickerView.xib in Resources */,
 				F0B50AE3218FF15E0027BB61 /* ShareSDKConfigFile.bundle in Resources */,
 				F0FF5AE12195A28F0050AD96 /* OrderContentCell.xib in Resources */,
 				F0FF5AD72195520D0050AD96 /* StagingTypeCell.xib in Resources */,
@@ -1987,6 +2009,7 @@
 				F0F0E6E5218D987E00B4ABCE /* UIScrollView+EmptyDataSet.m in Sources */,
 				F0EEFA6E2192C288006D1650 /* HomeSearchVC.m in Sources */,
 				F0F0E6D9218D987E00B4ABCE /* UIView+ZJFrame.m in Sources */,
+				F0FC0DB4219C124E0013D765 /* ProductModel.m in Sources */,
 				F0FF5AD62195520D0050AD96 /* StagingTypeCell.m in Sources */,
 				F0FF5AC4219526970050AD96 /* AddreeListCell.m in Sources */,
 				F0E1AC3A219426A500A9C17F /* SettingAuthonCell.m in Sources */,
@@ -2002,6 +2025,7 @@
 				F0FD35F92196865100F6C93B /* ContactVC.m in Sources */,
 				F0FF5AE02195A28F0050AD96 /* OrderContentCell.m in Sources */,
 				F0F0E6E3218D987E00B4ABCE /* UIButton+POImagePosition.m in Sources */,
+				F0FC0DCF219C24B60013D765 /* GuideVC.m in Sources */,
 				F0F0E6D4218D987E00B4ABCE /* IQUITextFieldView+Additions.m in Sources */,
 				F0FD35FE2196870600F6C93B /* WorkVC.m in Sources */,
 				F0F0E6D6218D987E00B4ABCE /* IQUIView+Hierarchy.m in Sources */,
@@ -2070,9 +2094,9 @@
 				F0EEFA5621929078006D1650 /* HomeOtherCell.m in Sources */,
 				F0F0E6DD218D987E00B4ABCE /* ZJCollectionView.m in Sources */,
 				F0E1AC7A21943CD000A9C17F /* AddressEditVC.m in Sources */,
+				F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */,
 				F0F0E6DE218D987E00B4ABCE /* ZJSegmentStyle.m in Sources */,
 				F0EEFA642192C101006D1650 /* HomeSortVC.m in Sources */,
-				F0F0E730218D9A9900B4ABCE /* GuiideVC.m in Sources */,
 				F00E07AA218D2A5A0079D952 /* main.m in Sources */,
 				F0E1AC7021943C6400A9C17F /* CommitOrderVC.m in Sources */,
 				F0F0E6DB218D987E00B4ABCE /* UIViewController+ZJScrollPageController.m in Sources */,

@@ -17,6 +17,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"运营商认证";
+    [self seutpData];
+}
+-(void)seutpData
+{
+    WEAKSELF
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_PersonalAuth_Url_Find parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+                [SVProgressHUD showSuccessWithStatus:@"获取成功"];
+                NSDictionary *authinfo = res.data[@"authInfo"];
+                NSString *phone     = authinfo[@"authPhone"];
+                NSString *serverpwd = authinfo[@"authpassword"];
+                NSString *card      = authinfo[@"authIdcard"];
+                NSString *name      = authinfo[@"authName"];
+                weakSelf.phone_tf.text      = phone;
+                weakSelf.serverpwd_tf.text  = serverpwd;
+                weakSelf.card_tf.text       = card;
+                weakSelf.name_lab.text      = name;
+        }
+        if ([res.code isEqualToString:@"2"]) {
+            [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
+            return;
+        }
+        else{
+            [SVProgressHUD showErrorWithStatus:@"获取失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 /**
  忘记密码
@@ -59,7 +97,29 @@
         [self showHint:@"姓名不能为空 " yOffset:-200];
         return;
     }
-    //开始去上传资料
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    param[@"authName"] = name;
+    param[@"authPhone"] = phone;
+    param[@"authIdcard"] = card;
+    param[@"authpassword"] = serverpwd;
+    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_PersonalAuth_Url_Update parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+            [SVProgressHUD showSuccessWithStatus:@"上传成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"上传失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 /**
  同意按钮
@@ -77,8 +137,6 @@
         [self.agree_btn setImage:[UIImage imageNamed:@"aregree_nor.png"] forState:UIControlStateNormal];
         self.save_btn.enabled = NO;
         [self.save_btn setBackgroundImage:[UIImage imageNamed:@"bg_gary"] forState:UIControlStateNormal];
-    
     }
 }
-
 @end

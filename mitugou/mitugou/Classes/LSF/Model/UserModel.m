@@ -24,16 +24,15 @@ static NSString *UserModelKey = @"UserModelKey";
 {
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:UserModelKey];
     UserModel *user =[UserModel mj_objectWithKeyValues:dict];
-    if (user.F_Id.length>0)
+    if (user.phone.length>0)
         return YES;
     return NO;
 }
-
 + (void)logout
 {
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:UserModelKey];
     UserModel *user =[UserModel mj_objectWithKeyValues:dict];
-    user.F_Id = nil;
+    user.phone = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:user.mj_keyValues forKey:UserModelKey];
     [defaults synchronize];

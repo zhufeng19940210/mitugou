@@ -19,7 +19,35 @@
  */
 -(void)setupData
 {
-    
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Contact_Url_Find parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+                [SVProgressHUD showSuccessWithStatus:@"获取成功"];
+                NSDictionary *infodata = res.data[@"infodata"];
+                NSString *name     = infodata[@"contactname"];
+                NSString *phone    = infodata[@"contactphone"];
+                NSString *relation = infodata[@"relation"];
+                self.name_tf.text = name;
+                self.phone_tf.text = phone;
+                self.society_tf.text = relation;
+        }if ([res.code isEqualToString:@"2"]) {
+            [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
+            return;
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"获取失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 /**
  保存方法
@@ -42,9 +70,29 @@
         [self showHint:@"联系人社会关系不能为空" yOffset:-200];
         return;
     }
-    //开始去发送请求了
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    param[@"contactname"] = name;
+    param[@"contactphone"] = phone;
+    param[@"relation"] = society;
+    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Contact_Url_Update parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+            [SVProgressHUD showSuccessWithStatus:@"上传成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"上传失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

@@ -78,9 +78,17 @@
     [[NetWorkTool shareInstacne]postWithURLString:User_Register_URL parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         NSLog(@"注册成功:data:%@",responseObject);
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+            [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"注册失败"];
+            return;
+        }
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
-        [ZFCustomView showWithError:FailRequestTip];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
         return;
     }];
 }
@@ -100,7 +108,7 @@
         [self showHint:@"手机号码有误" yOffset:-200];
         return;
     }
-    [SVProgressHUD showWithStatus:@"获取验证码中"];
+    [SVProgressHUD showWithStatus:@"获取验证码"];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"phone"] = phone;
     [[NetWorkTool shareInstacne]postWithURLString:User_Get_Code parameters:param success:^(id  _Nonnull responseObject) {
@@ -108,12 +116,12 @@
         NSLog(@"获取验证码:%@",responseObject);
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if ([res.code isEqualToString:@"1"]) {
-            [ZFCustomView showWithSuccess:@"获取成功"];
-            self.code_str = res.data[@"msg"];
+            [SVProgressHUD showSuccessWithStatus:@"获取成功"];
+            self.code_str = res.data[@"verityCode"];
             NSLog(@"code_str:%@",self.code_str);
             [sender startWithTime:59 title:@"获取验证码" countDownTitle:@"S" mainColor:MainThemeColor countColor:[UIColor clearColor]];
         }else{
-            [ZFCustomView showWithError:@"获取失败"];
+            [SVProgressHUD showErrorWithStatus:@"获取失败"];
             return;
         }
     } failure:^(NSError * _Nonnull error) {

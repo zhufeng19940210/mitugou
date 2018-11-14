@@ -8,5 +8,6 @@
 NSString *const SHOWTOPTOOLVIEW = @"SHOWTOPTOOLVIEW";
 /** 隐藏顶部自定义工具条View通知 */
 NSString *const HIDETOPTOOLVIEW = @"HIDETOPTOOLVIEW";
-
+/** 修改成功通知 */
+NSString *const UPDATESUCCESS = @"UPDATESUCCESS";
 @end

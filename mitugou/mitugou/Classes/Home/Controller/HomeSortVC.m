@@ -7,6 +7,7 @@
 #import "ProductTypeCell.h"
 #import "HomeProductDetailVC.h"
 #import "HomeEngineVC.h"
+#import "ProductModel.h"
 @interface HomeSortVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSMutableArray *jicheArray;
@@ -44,6 +45,25 @@
 //请求数据
 -(void)setupData
 {
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Product_All parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+            [SVProgressHUD showSuccessWithStatus:@"获取成功"];
+            NSMutableArray *commodirysArray = [NSMutableArray array];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"获取失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 //初始化collectionview
 -(void)setupCollectionView

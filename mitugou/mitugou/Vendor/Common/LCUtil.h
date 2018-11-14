@@ -58,4 +58,6 @@
 +(NSString *)getTimeStr;
 //判断网络请求
 +(BOOL)isVaildNetWorkStatus;
+//图片压缩
++(NSData *)zipNSDataWithImage:(UIImage *)sourceImage;
 @end

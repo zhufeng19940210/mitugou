@@ -9,7 +9,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phone_lab;
 @property (weak, nonatomic) IBOutlet IQTextView *address_lab;
 @property (weak, nonatomic) IBOutlet UIButton *default_btn;
-@property (nonatomic,copy)NSString *default_type; //默认地址
+@property (nonatomic,assign)NSInteger default_type; //默认地址
 @end
 @implementation AddressEditVC
 
@@ -18,11 +18,23 @@
     if (self.isEdit) {
         //是编辑
         self.navigationItem.title = @"编辑地址";
+        self.name_tf.text     =  self.addressmodel.receName;
+        self.phone_lab.text   =  self.addressmodel.phone;
+        self.address_lab.text =  self.addressmodel.detailAddr;
+        if (self.addressmodel.isDefault  == 1) {
+            //是默认地址
+            [self.default_btn setImage:[UIImage imageNamed:@"address_select"] forState:UIControlStateNormal];
+        }else{
+            //不是默认地址
+            [self.default_btn setImage:[UIImage imageNamed:@"address_normal"] forState:UIControlStateNormal];
+        }
     }else{
       //添加地址
         self.navigationItem.title = @"添加地址";
         self.address_lab.placeholder = @"请输入详细地址信息,如道路、门牌号、小区、楼栋号、单元等";
         self.address_lab.font = [UIFont systemFontOfSize:15];
+        //默认不是
+        self.default_type = 0;
     }
 }
 /**
@@ -50,7 +62,42 @@
         [self showHint:@"详细地址不能为空" yOffset:-200];
         return;
     }
-    //开始去添加或者编辑的功能
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    param[@"receName"] = name;
+    param[@"phone"] = phone;
+    param[@"detailAddr"] = addres;
+    param[@"isDefault"] = [NSString stringWithFormat:@"%ld",(long)self.default_type];
+    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Address_Add parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+            if (self.isEdit) {
+                ///编辑成功
+                [[NSNotificationCenter defaultCenter]postNotificationName:UPDATESUCCESS object:nil];
+                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                ///添加成功
+                [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }else{
+            if (self.isEdit) {
+                [SVProgressHUD showErrorWithStatus:@"修改失败"];
+                return;
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"添加失败"];
+                return;
+            }
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 /**
  设置默认地址
@@ -60,10 +107,10 @@
 {
     sender.selected = !sender.selected;
     if (sender.selected) {
-        self.default_type = @"1";
+        self.default_type = 1;
         [self.default_btn setImage:[UIImage imageNamed:@"address_select"] forState:UIControlStateNormal];
     }else{
-        self.default_type = @"2";
+        self.default_type = 0;
         [self.default_btn setImage:[UIImage imageNamed:@"address_normal"] forState:UIControlStateNormal];
     }
 }

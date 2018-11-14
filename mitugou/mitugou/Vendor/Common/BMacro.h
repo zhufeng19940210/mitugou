@@ -105,16 +105,7 @@
 
 //通知类型的key   === ZF 7月5日
 #define ISFirst       @"isFirstRun"
-//确定选择的角色
-#define SelectJuSetKey    @"selectJuseKey"
-//发布圈
-#define NotificationSendCircleNoti  @"NotificationSendCircleNoti"
-//更新购物车的角标
-#define NotificationCarNumberNoti  @"NotificationCarNumberNoti"
-//退出登录
-#define NotificationLogoutNoti  @"NotificationLogoutNoti"
-//商品编辑的删除的通知
-#define NotificationEditNoti  @"NotificationEditNoti"
-
+///记录token值
+#define ZF_TOKEN      @"zf_token"
 
 #endif /* BMacro_h */

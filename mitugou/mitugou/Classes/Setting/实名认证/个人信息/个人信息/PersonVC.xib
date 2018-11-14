@@ -12,7 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonVC">
             <connections>
+                <outlet property="address_tf" destination="7YE-qF-qq2" id="iz6-YD-waS"/>
+                <outlet property="marrige_tf" destination="ofd-Ei-Kll" id="qaE-2Q-A1T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="xueli_tf" destination="f5z-3Q-WwU" id="wz7-wI-kgU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -60,6 +63,9 @@
                     <state key="normal" title="保存" backgroundImage="bg">
                         <color key="titleColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="actionSaveBtn:" destination="-1" eventType="touchUpInside" id="GX9-4R-NPT"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="居住地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He9-uR-hjm">
                     <rect key="frame" x="15" y="40" width="62" height="18"/>
@@ -67,7 +73,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入婚姻状况" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ofd-Ei-Kll">
+                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入婚姻状况" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ofd-Ei-Kll">
                     <rect key="frame" x="97" y="148" width="268" height="19"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -83,7 +89,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入最高学历" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f5z-3Q-WwU">
+                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入最高学历" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f5z-3Q-WwU">
                     <rect key="frame" x="97" y="94" width="268" height="19"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,6 +101,18 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f65-M6-N4Z">
+                    <rect key="frame" x="0.0" y="73" width="375" height="56"/>
+                    <connections>
+                        <action selector="actionXueliBtn:" destination="-1" eventType="touchUpInside" id="qqM-Gc-QGZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mm-oL-WrI">
+                    <rect key="frame" x="0.0" y="128" width="375" height="55"/>
+                    <connections>
+                        <action selector="actionMarigeBtn:" destination="-1" eventType="touchUpInside" id="wzf-Hb-qYO"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -102,21 +120,29 @@
                 <constraint firstAttribute="trailing" secondItem="WH3-nY-QcS" secondAttribute="trailing" id="0fL-Zd-Pwm"/>
                 <constraint firstItem="VRI-ey-cS0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2c2-zq-2oT"/>
                 <constraint firstItem="feQ-Gc-FbJ" firstAttribute="top" secondItem="bvQ-9x-VVH" secondAttribute="bottom" constant="20" id="3Zj-SK-zhK"/>
+                <constraint firstItem="6mm-oL-WrI" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="3vZ-KP-t8H"/>
                 <constraint firstItem="pUQ-7N-8y3" firstAttribute="top" secondItem="VRI-ey-cS0" secondAttribute="bottom" constant="30" id="68F-93-YfA"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="f5z-3Q-WwU" secondAttribute="trailing" constant="10" id="71w-VR-pb7"/>
                 <constraint firstItem="WH3-nY-QcS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AaG-fH-NRz"/>
                 <constraint firstItem="ofd-Ei-Kll" firstAttribute="centerY" secondItem="Fg7-lH-QWD" secondAttribute="centerY" id="Bzs-he-HAy"/>
                 <constraint firstItem="f5z-3Q-WwU" firstAttribute="leading" secondItem="feQ-Gc-FbJ" secondAttribute="trailing" constant="20" id="DEe-68-DO3"/>
+                <constraint firstItem="pUQ-7N-8y3" firstAttribute="top" secondItem="6mm-oL-WrI" secondAttribute="bottom" constant="29.5" id="FfT-b5-RhF"/>
+                <constraint firstItem="f65-M6-N4Z" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="G0B-AR-TaW"/>
                 <constraint firstItem="He9-uR-hjm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="GhE-El-tN7"/>
+                <constraint firstItem="f65-M6-N4Z" firstAttribute="top" secondItem="7YE-qF-qq2" secondAttribute="bottom" constant="14" id="HjR-Qh-MeA"/>
                 <constraint firstAttribute="trailing" secondItem="bvQ-9x-VVH" secondAttribute="trailing" id="ICL-Mc-qlL"/>
                 <constraint firstItem="WH3-nY-QcS" firstAttribute="top" secondItem="f5z-3Q-WwU" secondAttribute="bottom" constant="15" id="IfR-wc-Xrk"/>
                 <constraint firstItem="pUQ-7N-8y3" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="MDM-b5-6w3"/>
                 <constraint firstItem="VRI-ey-cS0" firstAttribute="top" secondItem="Fg7-lH-QWD" secondAttribute="bottom" constant="15" id="NCe-lV-Ev3"/>
+                <constraint firstItem="6mm-oL-WrI" firstAttribute="top" secondItem="f5z-3Q-WwU" secondAttribute="bottom" constant="15" id="OZO-tx-W5s"/>
                 <constraint firstItem="7YE-qF-qq2" firstAttribute="centerY" secondItem="He9-uR-hjm" secondAttribute="centerY" id="Qqp-I4-09n"/>
+                <constraint firstItem="6mm-oL-WrI" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="SzC-Ji-EES"/>
                 <constraint firstItem="He9-uR-hjm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="XjZ-Nc-7cA"/>
                 <constraint firstItem="Fg7-lH-QWD" firstAttribute="top" secondItem="WH3-nY-QcS" secondAttribute="bottom" constant="20" id="YKg-V7-4XF"/>
+                <constraint firstItem="f65-M6-N4Z" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="YhZ-4D-fqh"/>
                 <constraint firstItem="ofd-Ei-Kll" firstAttribute="leading" secondItem="Fg7-lH-QWD" secondAttribute="trailing" constant="20" id="bLk-rk-bh0"/>
                 <constraint firstItem="7YE-qF-qq2" firstAttribute="leading" secondItem="He9-uR-hjm" secondAttribute="trailing" constant="20" id="dxa-KI-pDl"/>
+                <constraint firstItem="ofd-Ei-Kll" firstAttribute="top" secondItem="f65-M6-N4Z" secondAttribute="bottom" constant="19" id="goI-0k-eeY"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="pUQ-7N-8y3" secondAttribute="trailing" constant="20" id="kaN-1O-uc8"/>
                 <constraint firstItem="bvQ-9x-VVH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pBs-cK-Mjf"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="7YE-qF-qq2" secondAttribute="trailing" constant="10" id="qoG-dN-Zpi"/>
@@ -127,6 +153,7 @@
                 <constraint firstItem="bvQ-9x-VVH" firstAttribute="top" secondItem="7YE-qF-qq2" secondAttribute="bottom" constant="14" id="z3u-As-mdK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
     <resources>

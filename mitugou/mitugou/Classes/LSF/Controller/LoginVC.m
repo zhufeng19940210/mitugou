@@ -22,7 +22,7 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 /**
  眼睛改变颜色
@@ -70,25 +70,37 @@
         [self showHint:@"密码不能为空" yOffset:-200];
         return;
     }
-    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    app.window.backgroundColor = [UIColor whiteColor];
-    TabBarController *tabbar = [[TabBarController alloc]init];
-    app.window.backgroundColor = [UIColor whiteColor];
-    app.window.rootViewController = tabbar;
-    [app.window makeKeyAndVisible];
     //开始去登录
     [self loginWithPhone:phone withPwd:pwd];
 }
-
 -(void)loginWithPhone:(NSString *)phone withPwd:(NSString *)pwd
 {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"phone"] = phone;
     param[@"password"] = pwd;
-    [SVProgressHUD showWithStatus:@"正在登录"];
+    [SVProgressHUD show];
     [[NetWorkTool shareInstacne]postWithURLString:User_Login_URL parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         NSLog(@"resoponseObject:%@",responseObject);
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if ([res.code isEqualToString:@"1"]) {
+            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            NSString *token = res.data[@"token"];
+            [[NSUserDefaults standardUserDefaults]setValue:token forKey:ZF_TOKEN];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            UserModel *usermodel = [UserModel mj_objectWithKeyValues:res.data[@"user"]];
+            [UserModel save:usermodel];
+            //跳转到首页
+            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+            app.window.backgroundColor = [UIColor whiteColor];
+            TabBarController *tabbar = [[TabBarController alloc]init];
+            app.window.backgroundColor = [UIColor whiteColor];
+            app.window.rootViewController = tabbar;
+            [app.window makeKeyAndVisible];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+            return;
+        }
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
