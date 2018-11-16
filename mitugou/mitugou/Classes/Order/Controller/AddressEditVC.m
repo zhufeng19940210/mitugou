@@ -73,7 +73,7 @@
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Address_Add parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code==1) {
             if (self.isEdit) {
                 ///编辑成功
                 [[NSNotificationCenter defaultCenter]postNotificationName:UPDATESUCCESS object:nil];
@@ -81,6 +81,7 @@
                 [self.navigationController popViewControllerAnimated:YES];
             }else{
                 ///添加成功
+                [[NSNotificationCenter defaultCenter]postNotificationName:UPDATESUCCESS object:nil];
                 [SVProgressHUD showSuccessWithStatus:@"添加成功"];
                 [self.navigationController popViewControllerAnimated:YES];
             }

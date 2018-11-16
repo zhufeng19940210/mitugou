@@ -29,7 +29,7 @@
         NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code ==1) {
                 [SVProgressHUD showSuccessWithStatus:@"获取成功"];
                 NSDictionary *infodata = res.data[@"infodata"];
                 NSString *address   = infodata[@"address"];
@@ -39,7 +39,7 @@
                 self.xueli_tf.text   = education;
                 self.marrige_tf.text = marriage;
         }
-        if ([res.code isEqualToString:@"2"]) {
+        if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }
@@ -117,7 +117,7 @@
         [SVProgressHUD dismiss];
         NSLog(@"responseObject:%@",responseObject);
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"上传成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

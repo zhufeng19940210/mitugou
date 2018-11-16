@@ -25,7 +25,7 @@
         NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
                 [SVProgressHUD showSuccessWithStatus:@"获取成功"];
                 NSDictionary *infoData = res.data[@"infodata"];
                 //什么东西都去想了
@@ -36,7 +36,7 @@
                 self.monthlyincome_tf.text = income;
                 self.total_age_tf.text = working;
         }
-        if ([res.code isEqualToString:@"2"]) {
+        if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }
@@ -81,7 +81,7 @@
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Work_Url_Update parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code ==1) {
             [SVProgressHUD showSuccessWithStatus:@"上传成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

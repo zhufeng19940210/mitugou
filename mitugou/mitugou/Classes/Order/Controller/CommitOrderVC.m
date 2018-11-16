@@ -9,10 +9,12 @@
 #import "StagingTypeCell.h"
 #import "DistributionTypeCell.h"
 #import "AddressListVC.h"
+#import "AddreeModel.h"
 @interface CommitOrderVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *total_lab;
 @property (nonatomic,strong)NSMutableArray *addressArray;
+@property (nonatomic,strong)AddreeModel *addressmodel;
 @end
 @implementation CommitOrderVC
 -(NSMutableArray *)addressArray
@@ -32,7 +34,16 @@
 //请求数据
 -(void)setupData
 {
-    NSLog(@"请求数据");
+    NSLog(@"请求默认数据");
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Address_FindAll parameters:param success:^(id  _Nonnull responseObject) {
+        
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 //设置tableview
 -(void)setupTableView

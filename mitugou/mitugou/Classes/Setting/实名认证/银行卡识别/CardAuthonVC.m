@@ -91,7 +91,7 @@
         NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
                 [SVProgressHUD showSuccessWithStatus:@"获取成功"];
                 NSDictionary *authInfo = res.data[@"authInfo"];
                 NSString *upimage   = authInfo[@"backbank"];
@@ -103,7 +103,7 @@
                 [weakSelf.up_img sd_setImageWithURL:[NSURL URLWithString:downimage] placeholderImage:nil];
                 [weakSelf.down_img sd_setImageWithURL:[NSURL URLWithString:upimage] placeholderImage:nil];
         }
-        if ([res.code isEqualToString:@"2"]) {
+        if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }
@@ -159,7 +159,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"上传成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

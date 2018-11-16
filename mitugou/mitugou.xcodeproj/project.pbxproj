@@ -109,7 +109,6 @@
 		F0EEFA5721929078006D1650 /* HomeOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA5521929078006D1650 /* HomeOtherCell.xib */; };
 		F0EEFA5B2192A7D9006D1650 /* HomeForyouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA592192A7D9006D1650 /* HomeForyouCell.m */; };
 		F0EEFA5C2192A7D9006D1650 /* HomeForyouCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA5A2192A7D9006D1650 /* HomeForyouCell.xib */; };
-		F0EEFA602192BC9A006D1650 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA5E2192BC9A006D1650 /* SGAdvertScrollView.m */; };
 		F0EEFA642192C101006D1650 /* HomeSortVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA622192C101006D1650 /* HomeSortVC.m */; };
 		F0EEFA652192C101006D1650 /* HomeSortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEFA632192C101006D1650 /* HomeSortVC.xib */; };
 		F0EEFA692192C11D006D1650 /* HomeMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EEFA672192C11D006D1650 /* HomeMessageVC.m */; };
@@ -190,6 +189,7 @@
 		F0F0E766218D9EE000B4ABCE /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F0E764218D9EE000B4ABCE /* SettingVC.xib */; };
 		F0F6C79D219A6A78009F91A5 /* LZPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */; };
 		F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6C79C219A6A77009F91A5 /* LZPickerView.m */; };
+		F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */; };
 		F0FC0DB4219C124E0013D765 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC0DB3219C124D0013D765 /* ProductModel.m */; };
 		F0FC0DCF219C24B60013D765 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC0DCC219C24B50013D765 /* GuideVC.m */; };
 		F0FC0DD0219C24B60013D765 /* GuideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FC0DCE219C24B60013D765 /* GuideVC.xib */; };
@@ -375,8 +375,6 @@
 		F0EEFA582192A7D9006D1650 /* HomeForyouCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeForyouCell.h; sourceTree = "<group>"; };
 		F0EEFA592192A7D9006D1650 /* HomeForyouCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeForyouCell.m; sourceTree = "<group>"; };
 		F0EEFA5A2192A7D9006D1650 /* HomeForyouCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeForyouCell.xib; sourceTree = "<group>"; };
-		F0EEFA5E2192BC9A006D1650 /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
-		F0EEFA5F2192BC9A006D1650 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
 		F0EEFA612192C101006D1650 /* HomeSortVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSortVC.h; sourceTree = "<group>"; };
 		F0EEFA622192C101006D1650 /* HomeSortVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSortVC.m; sourceTree = "<group>"; };
 		F0EEFA632192C101006D1650 /* HomeSortVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSortVC.xib; sourceTree = "<group>"; };
@@ -524,6 +522,8 @@
 		F0F6C79A219A6A77009F91A5 /* LZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPickerView.h; sourceTree = "<group>"; };
 		F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZPickerView.xib; sourceTree = "<group>"; };
 		F0F6C79C219A6A77009F91A5 /* LZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerView.m; sourceTree = "<group>"; };
+		F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
+		F0F6D4B7219E75C80004FCB3 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
 		F0FC0DB2219C124D0013D765 /* ProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
 		F0FC0DB3219C124D0013D765 /* ProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
 		F0FC0DCC219C24B50013D765 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
@@ -1053,16 +1053,6 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
-		F0EEFA5D2192BC9A006D1650 /* SGAdvertScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				F0EEFA5E2192BC9A006D1650 /* SGAdvertScrollView.m */,
-				F0EEFA5F2192BC9A006D1650 /* SGAdvertScrollView.h */,
-			);
-			name = SGAdvertScrollView;
-			path = "../../../../../../Downloads/SGAdvertScrollView-master/SGAdvertScrollView";
-			sourceTree = "<group>";
-		};
 		F0EEFA702192D272006D1650 /* 机车专区 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1339,8 +1329,8 @@
 		F0F0E47E218D53D000B4ABCE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F0F6D4B5219E75C80004FCB3 /* SGAdvertScrollView */,
 				F0F6C799219A6A77009F91A5 /* LZPickerView */,
-				F0EEFA5D2192BC9A006D1650 /* SGAdvertScrollView */,
 				F0B50AB6218FF15D0027BB61 /* SDK */,
 				F0F0E65B218D987300B4ABCE /* Category */,
 				F0F0E657218D987300B4ABCE /* Common */,
@@ -1662,6 +1652,15 @@
 				F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */,
 			);
 			path = LZPickerView;
+			sourceTree = "<group>";
+		};
+		F0F6D4B5219E75C80004FCB3 /* SGAdvertScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */,
+				F0F6D4B7219E75C80004FCB3 /* SGAdvertScrollView.h */,
+			);
+			path = SGAdvertScrollView;
 			sourceTree = "<group>";
 		};
 		F0FD35E621966B8C00F6C93B /* Controller */ = {
@@ -2073,7 +2072,6 @@
 				F0FF5AC821952F600050AD96 /* AddreeModel.m in Sources */,
 				F0F0E6DA218D987E00B4ABCE /* ZJTitleView.m in Sources */,
 				F0E1AC022193CFD600A9C17F /* SettingLogoutCell.m in Sources */,
-				F0EEFA602192BC9A006D1650 /* SGAdvertScrollView.m in Sources */,
 				F0F0E724218D991900B4ABCE /* JsonTool.m in Sources */,
 				F0F0E6E0218D987E00B4ABCE /* ZJScrollPageView.m in Sources */,
 				F0EEFA4221928CDC006D1650 /* HomeAdCell.m in Sources */,
@@ -2096,6 +2094,7 @@
 				F0E1AC7A21943CD000A9C17F /* AddressEditVC.m in Sources */,
 				F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */,
 				F0F0E6DE218D987E00B4ABCE /* ZJSegmentStyle.m in Sources */,
+				F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */,
 				F0EEFA642192C101006D1650 /* HomeSortVC.m in Sources */,
 				F00E07AA218D2A5A0079D952 /* main.m in Sources */,
 				F0E1AC7021943C6400A9C17F /* CommitOrderVC.m in Sources */,

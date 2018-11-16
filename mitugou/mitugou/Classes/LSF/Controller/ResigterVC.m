@@ -79,7 +79,7 @@
         [SVProgressHUD dismiss];
         NSLog(@"注册成功:data:%@",responseObject);
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"注册成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{
@@ -115,7 +115,7 @@
         [SVProgressHUD dismiss];
         NSLog(@"获取验证码:%@",responseObject);
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             self.code_str = res.data[@"verityCode"];
             NSLog(@"code_str:%@",self.code_str);

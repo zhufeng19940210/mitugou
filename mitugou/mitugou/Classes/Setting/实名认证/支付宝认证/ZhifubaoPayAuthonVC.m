@@ -147,31 +147,27 @@
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Ali_Url_Find parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
+            [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             NSDictionary *authInfo = res.data[@"authInfo"];
-            NSLog(@"authInfo:%@",authInfo);
             NSString *first   = authInfo[@"payimg1"];
-            NSLog(@"first:%@",first);
-            if ([[authInfo allKeys] containsObject:@"payimg1"]) {
-                [SVProgressHUD showSuccessWithStatus:@"获取成功"];
-                //有值的情况
-                NSString *first   = authInfo[@"payimg1"];
-                NSString *second  = authInfo[@"payimg2"];
-                NSString *third   = authInfo[@"payimg3"];
-                NSString *four    = authInfo[@"payimg4"];
-                weakSelf.add_img1.hidden = YES;
-                weakSelf.add_img2.hidden = YES;
-                weakSelf.add_img3.hidden = YES;
-                weakSelf.add_img4.hidden = YES;
-                [weakSelf.first_img sd_setImageWithURL:[NSURL URLWithString:first]];
-                [weakSelf.second_img sd_setImageWithURL:[NSURL URLWithString:second]];
-                [weakSelf.third_img sd_setImageWithURL:[NSURL URLWithString:third]];
-                [weakSelf.four_img sd_setImageWithURL:[NSURL URLWithString:four]];
-            }else{
-                [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
-                return;
+            NSString *second  = authInfo[@"payimg2"];
+            NSString *third   = authInfo[@"payimg3"];
+            NSString *four    = authInfo[@"payimg4"];
+            weakSelf.add_img1.hidden = YES;
+            weakSelf.add_img2.hidden = YES;
+            weakSelf.add_img3.hidden = YES;
+            weakSelf.add_img4.hidden = YES;
+            [weakSelf.first_img sd_setImageWithURL:[NSURL URLWithString:first]];
+            [weakSelf.second_img sd_setImageWithURL:[NSURL URLWithString:second]];
+            [weakSelf.third_img sd_setImageWithURL:[NSURL URLWithString:third]];
+            [weakSelf.four_img sd_setImageWithURL:[NSURL URLWithString:four]];
             }
-        }else{
+        if (res.code == 2) {
+            [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
+            return;
+        }
+        else{
             [SVProgressHUD showErrorWithStatus:@"获取失败"];
             return;
         }
@@ -232,7 +228,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code ==1) {
             [SVProgressHUD showSuccessWithStatus:@"上传成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

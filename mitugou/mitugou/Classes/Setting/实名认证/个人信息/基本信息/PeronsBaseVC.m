@@ -29,21 +29,21 @@
         [SVProgressHUD dismiss];
         NSLog(@"responseObject:%@",responseObject);
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             NSDictionary *infodata = res.data[@"infodata"];
             self.name_tf.text =  infodata[@"username"];
             self.sex_tf.text  =  infodata[@"sex"];
             self.card_tf.text =  infodata[@"idcard"];
         }
-        if ([res.code isEqualToString:@"2"]) {
+        else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
-        }
-        else{
+        }else{
             [SVProgressHUD showErrorWithStatus:@"获取失败"];
             return;
         }
+        
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
@@ -86,10 +86,10 @@
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Base_Url_update parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code==1) {
             [SVProgressHUD showSuccessWithStatus:@"上传成功"];
             [self.navigationController popViewControllerAnimated:YES];
-        }else if ([res.code isEqualToString:@"0"]){
+        }else if (res.code == 0){
             [SVProgressHUD showErrorWithStatus:@"token失败"];
             return;
         }else{

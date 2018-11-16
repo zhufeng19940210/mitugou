@@ -20,22 +20,6 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mitugou/Classes/Order/View/AddreeListCell.m"
-            timestampString = "563882284.138744"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-setAddressModel:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -51,12 +35,28 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mitugou/Classes/Setting/&#x5b9e;&#x540d;&#x8ba4;&#x8bc1;/&#x652f;&#x4ed8;&#x5b9d;&#x8ba4;&#x8bc1;/ZhifubaoPayAuthonVC.m"
-            timestampString = "563882284.139172"
+            filePath = "mitugou/Classes/Setting/&#x5b9e;&#x540d;&#x8ba4;&#x8bc1;/&#x8fd0;&#x8425;&#x5546;&#x8ba4;&#x8bc1;/YunYinShangAuthonVC.m"
+            timestampString = "564033050.911402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-seutpData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mitugou/Classes/Setting/&#x5b9e;&#x540d;&#x8ba4;&#x8bc1;/&#x94f6;&#x884c;&#x5361;&#x8bc6;&#x522b;/CardAuthonVC.m"
+            timestampString = "564033039.5068491"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "-setupData"
             landmarkType = "7">
          </BreakpointContent>

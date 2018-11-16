@@ -59,7 +59,7 @@
         NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             self.add_img1.hidden = YES;
             self.add_title1.hidden = YES;
@@ -74,7 +74,7 @@
             [weakSelf.down_img sd_setImageWithURL:[NSURL URLWithString:backImage] placeholderImage:[UIImage imageNamed:@""]];
             [weakSelf.handle_img sd_setImageWithURL:[NSURL URLWithString:handImage] placeholderImage:[UIImage imageNamed:@""]];
         }
-        if ([res.code isEqualToString:@"2"]) {
+        if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }
@@ -212,7 +212,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"上传成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

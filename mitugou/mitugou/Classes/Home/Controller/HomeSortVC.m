@@ -52,7 +52,7 @@
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Product_All parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code==1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             NSMutableArray *commodirysArray = [NSMutableArray array];
         }else{

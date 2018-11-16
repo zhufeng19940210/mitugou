@@ -36,6 +36,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     self.navigationItem.title = @"管理收货地址";
     self.view.backgroundColor = RGB(240, 240, 240);
     [self setupData];
@@ -52,8 +53,7 @@
         NSLog(@"responseObejct:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
-            [SVProgressHUD showSuccessWithStatus:@"获取成功"];
+        if (res.code == 1) {
             [self.addreeArray removeAllObjects];
             self.addreeArray = [AddreeModel mj_objectArrayWithKeyValuesArray:res.data[@"address"]];
             [self.tableview reloadData];
@@ -108,13 +108,13 @@
     cell.acitonBlock = ^(AddressOpertaionType type) {
         if (type == AddressOpertaionTypeDefault) {
             //设置成默认地址
-            [self setupDefaultAddresWithModel:nil];
+            [self setupDefaultAddresWithModel:model];
         }else if (type == AddressOpertaionTypeDelete){
             //删除地址
-            [self setupDeleteAddressWithModel:nil];
+            [self setupDeleteAddressWithModel:model];
         }else if (type == AddressOpertaionTypeEdit){
             //编辑地址
-            [self setupEditAddressWithModel:nil];
+            [self setupEditAddressWithModel:model];
         }
     };
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -136,15 +136,17 @@
         [self showHint:@"该地址已经是默认地址" yOffset:-200];
         return;
     }else{
+        NSLog(@"addressmode.aid:%ld",(long)addrssmodel.aid);
         [SVProgressHUD show];
         NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
         NSMutableDictionary *param = [NSMutableDictionary dictionary];
         param[@"token"] = token;
-        param[@"aid"]   = [NSString stringWithFormat:@"%lu",addrssmodel.aid];
+        param[@"aid"]   = [NSString stringWithFormat:@"%ld",(long)addrssmodel.aid];
         [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Address_Default parameters:param success:^(id  _Nonnull responseObject) {
+            NSLog(@"default:%@",responseObject);
             [SVProgressHUD dismiss];
             ResponeModel *res  = [ResponeModel mj_objectWithKeyValues:responseObject];
-            if ([res.code isEqualToString:@"1"]) {
+            if (res.code  == 1) {
                 [SVProgressHUD showSuccessWithStatus:@"设置成功"];
                 [self refresh];
             }else{
@@ -175,22 +177,23 @@
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
 /**
  删除用户资料
  @param addrssmodel 删除用户资料
  */
 -(void)deletAddressWithModel:(AddreeModel *)addrssmodel
 {
+    NSLog(@"addrssmodel.aid:%ld",(long)addrssmodel.aid);
     [SVProgressHUD show];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
     param[@"aid"]   = [NSString stringWithFormat:@"%ld",(long)addrssmodel.aid];
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Address_Del parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"删除的responseobject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
-        if ([res.code isEqualToString:@"1"]) {
+        if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"删除成功"];
             [self refresh];
         }else{
