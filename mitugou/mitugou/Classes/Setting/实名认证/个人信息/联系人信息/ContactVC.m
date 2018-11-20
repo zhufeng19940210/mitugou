@@ -36,7 +36,7 @@
                 self.name_tf.text = name;
                 self.phone_tf.text = phone;
                 self.society_tf.text = relation;
-        }if (res.code==2) {
+        }else if (res.code==2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }else{

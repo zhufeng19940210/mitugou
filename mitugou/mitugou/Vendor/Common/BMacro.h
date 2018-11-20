@@ -50,6 +50,7 @@
 #define RGBA(A,B,C,D) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:D]
 
 //全局的颜色
+#define ZF_Left_Color  HEXCOLOR(0xDEB576)
 #define MainThemeColor HEXCOLOR(0x0099D7)
 #define ZF_Global_Color HEXCOLOR(0x65C4C7)
 #define Gold1Color HEXCOLOR(0x905f3a)

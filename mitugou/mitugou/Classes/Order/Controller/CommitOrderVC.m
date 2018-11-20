@@ -34,13 +34,30 @@
 //请求数据
 -(void)setupData
 {
-    NSLog(@"请求默认数据");
+    [SVProgressHUD show];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
+    WEAKSELF
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Address_FindAll parameters:param success:^(id  _Nonnull responseObject) {
-        
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [weakSelf.addressArray removeAllObjects];
+            weakSelf.addressArray = [AddreeModel mj_objectArrayWithKeyValuesArray:res.data[@"address"]];
+            for (int i = 0; i < weakSelf.addressArray.count;i++) {
+                AddreeModel *model = weakSelf.addressArray[i];
+                if (model.isDefault == 1) {
+                    //是默认的
+                    weakSelf.addressmodel = model;
+                    break;
+                }
+                [weakSelf.tableview reloadData];
+            }
+        }else{
+        }
     } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
         return;
     }];
@@ -97,6 +114,8 @@
     UITableViewCell *commitCell = nil;
     if (indexPath.section == 0) {
         AddSelectCell *addressCell = [tableView dequeueReusableCellWithIdentifier:@"AddSelectCell"];
+        addressCell.nameandphone_lab.text = [NSString stringWithFormat:@"%@ %@",self.addressmodel.receName,self.addressmodel.phone];
+        addressCell.detail_lab.text = [NSString stringWithFormat:@"%@",self.addressmodel.detailAddr];
         commitCell = addressCell;
     }else if (indexPath.section == 1){
         ProductDetailCell *detailCell = [tableView dequeueReusableCellWithIdentifier:@"ProductDetailCell"];
@@ -116,8 +135,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
         AddressListVC *addresslistvc = [[AddressListVC alloc]init];
+        WEAKSELF
         addresslistvc.addressBlock = ^(AddreeModel *model) {
-            NSLog(@"model:%@",model);
+            weakSelf.addressmodel = model;
+            [weakSelf.tableview reloadData];
         };
         [self.navigationController pushViewController:addresslistvc animated:YES];
     }
@@ -137,6 +158,111 @@
  */
 - (IBAction)acitonCommitVC:(UIButton *)sender
 {
-    NSLog(@"支付宝");
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"请选择支付方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    //取消按钮
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    //支付宝支付
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"支付宝支付" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+        //TODO
+        [self PayWithAlipayBtn];
+    }];
+    //微信支付方式
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"微信支付" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        //TODO
+        [self PayWithWechatBtn];
+    }];
+    [sheet addAction:sure];
+    [sheet addAction:cancle];
+    [sheet addAction:delete];
+    [self presentViewController:sheet animated:YES completion:^{
+    }];
+}
+/**
+  支付宝支付方式
+ */
+-(void)PayWithAlipayBtn
+{
+    NSLog(@"支付宝支付");
+    [SVProgressHUD dismiss];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    [[NetWorkTool shareInstacne]postWithURLString:Pay_Alipay parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            // NOTE: 调用支付结果开始支付
+            [[AlipaySDK defaultService] payOrder:@"" fromScheme:@"" callback:^(NSDictionary *resultDic) {
+                NSLog(@"reslut = %@",resultDic);
+                
+            }];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"请求失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
+}
+/**
+ 微信支付方式
+ */
+-(void)PayWithWechatBtn
+{
+    NSLog(@"微信支付");
+    [SVProgressHUD dismiss];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:Pay_Wechat parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [weakSelf weixinPayBtn];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"请求失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
+}
+-(void)weixinPayBtn
+{
+//    PayReq *request = [[PayReq alloc] init];
+//    /** 商家向财付通申请的商家id */
+//    request.partnerId = model.partnerid;
+//    /** 预支付订单 */
+//    request.prepayId= model.prepayid;
+//    /** 商家根据财付通文档填写的数据和签名 */
+//    request.package = model.package;
+//    /** 随机串，防重发 */
+//    request.nonceStr= model.noncestr;
+//    /** 时间戳，防重发 */
+//    request.timeStamp= model.timestamp;
+//    /** 商家根据微信开放平台文档对数据做的签名 */
+//    request.sign= model.sign;
+//    /*! @brief 发送请求到微信，等待微信返回onResp
+//     *
+//     * 函数调用后，会切换到微信的界面。第三方应用程序等待微信返回onResp。微信在异步处理完成后一定会调用onResp。支持以下类型
+//     * SendAuthReq、SendMessageToWXReq、PayReq等。
+//     * @param req 具体的发送请求，在调用函数后，请自己释放。
+//     * @return 成功返回YES，失败返回NO。
+//     */
+//     */
+//    [WXApi sendReq: request];
+}
+//缴费完成后的结果回调
+-(void)thePayresults:(BOOL)isSucces
+{
+    if (isSucces == YES) {
+        [ZJCustomHud showWithSuccess:@"付款成功！"];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 @end

@@ -14,4 +14,8 @@ typedef NS_ENUM(NSInteger,HomeProduct) {
 };
 @interface HomeProductCell : UICollectionViewCell
 @property (nonatomic,copy) void(^actionCallback)(HomeProduct type);
+@property (weak, nonatomic) IBOutlet UIButton *hot_img;
+@property (weak, nonatomic) IBOutlet UIButton *hot_up_img;
+@property (weak, nonatomic) IBOutlet UIButton *hot_down_img;
+
 @end

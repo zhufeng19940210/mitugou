@@ -18,7 +18,7 @@ static ZFCustomView *Hud = nil;
     ZFCustomView * custom = [[ZFCustomView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [[UIApplication sharedApplication].keyWindow addSubview:custom];
     //添加提示框
-    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-65, [UIScreen mainScreen].bounds.size.height/2-20, 130, 40)];
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-65, [UIScreen mainScreen].bounds.size.height/2-20, 180, 40)];
     label.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
     label.text = text;
     label.textAlignment = NSTextAlignmentCenter;

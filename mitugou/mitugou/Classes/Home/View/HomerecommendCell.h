@@ -6,4 +6,7 @@
 #import "SGAdvertScrollView.h"
 @interface HomerecommendCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet SGAdvertScrollView *adscrollview;
+@property (weak, nonatomic) IBOutlet UIImageView *home_img1;
+@property (weak, nonatomic) IBOutlet UIImageView *home_img2;
+@property (weak, nonatomic) IBOutlet UIImageView *home_img3;
 @end

@@ -103,7 +103,7 @@
                 [weakSelf.up_img sd_setImageWithURL:[NSURL URLWithString:downimage] placeholderImage:nil];
                 [weakSelf.down_img sd_setImageWithURL:[NSURL URLWithString:upimage] placeholderImage:nil];
         }
-        if (res.code == 2) {
+       else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }

@@ -5,4 +5,5 @@
 #import "BaseVC.h"
 @interface HomeEngineVC : BaseVC
 @property (nonatomic,assign)int type;
+@property (nonatomic,assign)int tid;///1.手机 2.机车 3配件
 @end

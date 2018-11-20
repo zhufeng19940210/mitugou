@@ -90,6 +90,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="349" height="251"/>
+            <connections>
+                <outlet property="hot_down_img" destination="0HR-mh-LNV" id="GCr-Vt-f8g"/>
+                <outlet property="hot_img" destination="91M-tg-uDg" id="Da9-2k-G1n"/>
+                <outlet property="hot_up_img" destination="DOB-q3-U99" id="xpm-uq-iYV"/>
+            </connections>
             <point key="canvasLocation" x="18.5" y="23"/>
         </collectionViewCell>
     </objects>

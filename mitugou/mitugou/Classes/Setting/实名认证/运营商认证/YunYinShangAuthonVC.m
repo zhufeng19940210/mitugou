@@ -41,8 +41,7 @@
                 weakSelf.serverpwd_tf.text  = serverpwd;
                 weakSelf.card_tf.text       = card;
                 weakSelf.name_lab.text      = name;
-        }
-        if (res.code == 2) {
+        }else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }

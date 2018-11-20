@@ -35,8 +35,7 @@
                 self.work_tyep_tf.text = job;
                 self.monthlyincome_tf.text = income;
                 self.total_age_tf.text = working;
-        }
-        if (res.code == 2) {
+        }else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }

@@ -162,8 +162,8 @@
             [weakSelf.second_img sd_setImageWithURL:[NSURL URLWithString:second]];
             [weakSelf.third_img sd_setImageWithURL:[NSURL URLWithString:third]];
             [weakSelf.four_img sd_setImageWithURL:[NSURL URLWithString:four]];
-            }
-        if (res.code == 2) {
+        }
+        else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }
@@ -175,7 +175,6 @@
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
     }];
-    
 }
 /**
  RightButton

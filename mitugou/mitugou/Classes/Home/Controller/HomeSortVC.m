@@ -49,12 +49,21 @@
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
-    [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Product_All parameters:param success:^(id  _Nonnull responseObject) {
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:Product_All parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responsetobject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code==1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
-            NSMutableArray *commodirysArray = [NSMutableArray array];
+            [weakSelf.jicheArray removeAllObjects];
+            [weakSelf.peijianArray removeAllObjects];
+            [weakSelf.phoneArray removeAllObjects];
+            weakSelf.phoneArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][0][@"commodirys"]];
+            weakSelf.jicheArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][1][@"commodirys"]];
+            weakSelf.peijianArray  = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][2][@"commodirys"]];
+            NSLog(@"phoneArray.count:%lu,jicheArraycount:%d,peijianArray.count:%d",(unsigned long)self.phoneArray.count,self.jicheArray.count,self.peijianArray.count);
+            [weakSelf.collectionView reloadData];
         }else{
             [SVProgressHUD showErrorWithStatus:@"获取失败"];
             return;
@@ -85,14 +94,11 @@
     if (section == 0 || section == 2 || section == 4) {
         return 1;
     }else if (section == 1){
-        return 4;
-        //return self.jicheArray.count;
+        return self.jicheArray.count;
     }else if (section == 3){
-        return  4;
-        //return self.peijianArray.count;
+        return self.peijianArray.count;
     }else if (section == 5){
-        return 4;
-        //return self.phoneArray.count;
+        return self.phoneArray.count;
     }else{
         return 0;
     }
@@ -105,42 +111,46 @@
         typeCell.type_lab.text = @"机车专区";
         typeCell.actionCallback = ^(UIButton *button) {
             HomeEngineVC *enginvc = [[HomeEngineVC alloc]init];
-            enginvc.type = 0;
+            enginvc.type = 2;
             [self.navigationController pushViewController:enginvc animated:YES];
         };
         sortCell = typeCell;
     }else if (indexPath.section == 1){
         //机车类别
         ApplicationproductCell *jichenCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
-        jichenCell.icon_img.image = [UIImage imageNamed:@"app_default.png"];
+        ProductModel *model = self.jicheArray[indexPath.row];
+        jichenCell.productModel = model;
         sortCell = jichenCell;
     }else if (indexPath.section == 2){
         ProductTypeCell *typeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductTypeCell" forIndexPath:indexPath];
         typeCell.type_lab.text = @"配件专区";
         typeCell.actionCallback = ^(UIButton *button) {
             HomeEngineVC *peijianvc = [[HomeEngineVC alloc]init];
-            peijianvc.type = 1;
+            peijianvc.type = 3;
             [self.navigationController pushViewController:peijianvc animated:YES];
         };
         sortCell = typeCell;
     }else if(indexPath.section == 3){
         //配件类型
         ApplicationproductCell *peijianCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
-        peijianCell.icon_img.image = [UIImage imageNamed:@"app_peijian.png"];
+        NSLog(@"self.peijianArray.count:%lu",(unsigned long)self.peijianArray.count);
+        ProductModel *model = self.peijianArray[indexPath.row];
+        peijianCell.productModel = model;
         sortCell = peijianCell;
     }else if (indexPath.section == 4){
         ProductTypeCell *typeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductTypeCell" forIndexPath:indexPath];
         typeCell.type_lab.text = @"手机专区";
         typeCell.actionCallback = ^(UIButton *button) {
             HomeEngineVC *phonevc = [[HomeEngineVC alloc]init];
-            phonevc.type = 2;
+            phonevc.type = 1;
             [self.navigationController pushViewController:phonevc animated:YES];
         };
         sortCell = typeCell;
     }else if (indexPath.section == 5){
         //手机类型
         ApplicationproductCell *phoneCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
-        phoneCell.icon_img.image = [UIImage imageNamed:@"app_phone.png"];
+        ProductModel *model = self.phoneArray[indexPath.row];
+        phoneCell.productModel = model;
         sortCell = phoneCell;
     }
     return sortCell;
@@ -156,7 +166,17 @@
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    ProductModel *product = [ProductModel new];
+    if (indexPath.section == 1) {
+        product = self.jicheArray[indexPath.row];
+    }else if (indexPath.section == 3){
+        product = self.peijianArray[indexPath.row];
+    }else if (indexPath.section == 5){
+        product = self.phoneArray[indexPath.row];
+    }
+    NSLog(@"product.id:%@",product.cid);
     HomeProductDetailVC *productdetailvc = [[HomeProductDetailVC alloc]init];
+    productdetailvc.productID = product.cid;
     [self.navigationController pushViewController:productdetailvc animated:YES];
 }
 @end

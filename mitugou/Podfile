@@ -30,4 +30,6 @@ target 'mitugou' do
   pod 'Masonry'
   #导入图片选择器
   pod 'TZImagePickerController'
-end
+  #导入新的三方的东西
+  pod 'SDAutoLayout'
+end 

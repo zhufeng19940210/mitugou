@@ -11,4 +11,5 @@
 {
     _cycleScrollView.imageURLStringsGroup = ulrArray;
 }
+
 @end

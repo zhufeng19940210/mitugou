@@ -25,10 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-Cm-Mcb">
-                        <rect key="frame" x="319" y="-1" width="104" height="43"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="104" id="DkO-ek-qyv"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="-1" width="423" height="43"/>
                         <connections>
                             <action selector="actionMoreBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="SW0-lw-Gf9"/>
                         </connections>
@@ -48,8 +45,12 @@
                 <constraint firstItem="vUH-gn-s87" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="BUc-Fd-Tf5"/>
                 <constraint firstAttribute="trailing" secondItem="UgN-Cm-Mcb" secondAttribute="trailing" id="FgJ-aL-3Vd"/>
                 <constraint firstAttribute="trailing" secondItem="vUH-gn-s87" secondAttribute="trailing" constant="13" id="J24-4L-b8V"/>
+                <constraint firstItem="UgN-Cm-Mcb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-1" id="V23-Lg-A2R"/>
+                <constraint firstItem="UgN-Cm-Mcb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bbO-qa-R2j"/>
                 <constraint firstItem="sjF-Oh-xmg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="jgF-X2-ePK"/>
                 <constraint firstItem="sjF-Oh-xmg" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="sPX-PO-dWu"/>
+                <constraint firstAttribute="trailing" secondItem="UgN-Cm-Mcb" secondAttribute="trailing" id="yAC-rv-Ne7"/>
+                <constraint firstAttribute="bottom" secondItem="UgN-Cm-Mcb" secondAttribute="bottom" constant="1" id="yfz-Wl-FKx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="423" height="43"/>

@@ -7,7 +7,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *up_img;
 @property (weak, nonatomic) IBOutlet UIImageView *down_img;
 @property (weak, nonatomic) IBOutlet UIImageView *handle_img;
-
 @property (weak, nonatomic) IBOutlet UIImageView *add_img1;
 @property (weak, nonatomic) IBOutlet UILabel *add_title1;
 @property (weak, nonatomic) IBOutlet UIImageView *add_img2;
@@ -59,6 +58,7 @@
         NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        NSLog(@"res.code:%ld",(long)res.code);
         if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             self.add_img1.hidden = YES;
@@ -73,8 +73,7 @@
             [weakSelf.up_img sd_setImageWithURL:[NSURL URLWithString:justimage] placeholderImage:[UIImage imageNamed:@""]];
             [weakSelf.down_img sd_setImageWithURL:[NSURL URLWithString:backImage] placeholderImage:[UIImage imageNamed:@""]];
             [weakSelf.handle_img sd_setImageWithURL:[NSURL URLWithString:handImage] placeholderImage:[UIImage imageNamed:@""]];
-        }
-        if (res.code == 2) {
+        }else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }

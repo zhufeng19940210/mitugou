@@ -92,14 +92,14 @@ AFHTTPSessionManager *session = nil;
     switch (type) {
         case HttpRequestTypeGet:
         {
-            [ZFCustomView showWithStatus:@""];
+           // [ZFCustomView showWithStatus:@""];
             [session GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [ZFCustomView dismiss];
+               // [ZFCustomView dismiss];
                 if (success) {
                     success(responseObject);
                 }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [ZFCustomView dismiss];
+               // [ZFCustomView dismiss];
                 if (error) {
                     failure(error);
                 }
@@ -107,7 +107,8 @@ AFHTTPSessionManager *session = nil;
         }
             break;
         case HttpRequestTypePost:
-        {   [ZFCustomView showWithStatus:@""];
+        {
+            //[ZFCustomView showWithStatus:@""];
             [session POST:url parameters:@{@"json":jsonStr} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //                NSDictionary *dic1 = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
 //                NSString *Str = [JsonTool dictionaryToJson:dic1];

@@ -39,7 +39,7 @@
                 self.xueli_tf.text   = education;
                 self.marrige_tf.text = marriage;
         }
-        if (res.code == 2) {
+        else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }

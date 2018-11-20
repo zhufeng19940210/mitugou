@@ -131,6 +131,9 @@
             <size key="customSize" width="392" height="136"/>
             <connections>
                 <outlet property="adscrollview" destination="K8G-ei-sPc" id="5IM-tv-odf"/>
+                <outlet property="home_img1" destination="KfY-fn-N6b" id="DLW-e5-eVv"/>
+                <outlet property="home_img2" destination="RAe-9l-qgV" id="zKj-c1-IeS"/>
+                <outlet property="home_img3" destination="CPz-CP-zCj" id="xUS-dh-DGI"/>
             </connections>
             <point key="canvasLocation" x="29" y="74"/>
         </collectionViewCell>

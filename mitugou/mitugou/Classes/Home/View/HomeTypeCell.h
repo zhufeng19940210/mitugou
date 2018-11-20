@@ -9,4 +9,6 @@ typedef NS_ENUM(NSInteger,HomeType) {
 };
 @interface HomeTypeCell : UICollectionViewCell
 @property (nonatomic,copy) void(^actionCallback)(HomeType type);
+@property (weak, nonatomic) IBOutlet UIButton *left_btn;
+@property (weak, nonatomic) IBOutlet UIButton *right_btn;
 @end

@@ -137,7 +137,10 @@
 
 - (void)onLeftBtnAction:(UIButton *)button
 {
-    [self backViewController];
+    if (self.navigationController.viewControllers.count > 1)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)onRightBtnAction:(UIButton *)button

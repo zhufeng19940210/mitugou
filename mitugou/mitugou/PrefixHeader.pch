@@ -32,4 +32,8 @@
 #import "UIScrollView+EmptyDataSet.h"
 #import <TZImagePickerController.h>
 #import "ZJScrollPageView.h"
+#import <SDAutoLayout.h>
+#import <AlipaySDK/AlipaySDK.h>
+#import "WXApi.h"
+#import "BaseModel.h"
 #endif /* PrefixHeader_pch */

@@ -2,11 +2,8 @@
 //  LiquoriceDoctorProject
 //  Created by HenryCheng on 15/12/4.
 //  Copyright © 2015年 iMac. All rights reserved.
-
 #import "UIButton+countDown.h"
-
 @implementation UIButton (countDown)
-
 - (void)startWithTime:(NSInteger)timeLine title:(NSString *)title countDownTitle:(NSString *)subTitle mainColor:(UIColor *)mColor countColor:(UIColor *)color {
     //倒计时时间
     __block NSInteger timeOut = timeLine;

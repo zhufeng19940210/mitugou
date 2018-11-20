@@ -124,6 +124,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    AddreeModel *addressmodel = self.addreeArray[indexPath.section];
+    self.addressBlock(addressmodel);
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 /**
  设置成默认的地址
