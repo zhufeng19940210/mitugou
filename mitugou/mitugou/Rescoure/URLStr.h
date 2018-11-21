@@ -86,5 +86,4 @@
 ///微信支付
 #define Pay_Wechat [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
 
-
 #endif /* URLStr_h */

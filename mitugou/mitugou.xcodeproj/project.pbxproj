@@ -201,6 +201,10 @@
 		F0F6C79D219A6A78009F91A5 /* LZPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */; };
 		F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6C79C219A6A77009F91A5 /* LZPickerView.m */; };
 		F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */; };
+		F0FBC88321A53B9200B8ADE9 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88221A53B9200B8ADE9 /* MessageModel.m */; };
+		F0FBC88621A53CE100B8ADE9 /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88521A53CE100B8ADE9 /* CouponModel.m */; };
+		F0FBC88921A5401300B8ADE9 /* LoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88821A5401300B8ADE9 /* LoanModel.m */; };
+		F0FBC88C21A5415700B8ADE9 /* RepayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88B21A5415700B8ADE9 /* RepayModel.m */; };
 		F0FC0DCF219C24B60013D765 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC0DCC219C24B50013D765 /* GuideVC.m */; };
 		F0FC0DD0219C24B60013D765 /* GuideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FC0DCE219C24B60013D765 /* GuideVC.xib */; };
 		F0FD35EC21966BCC00F6C93B /* SingleAuthonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FD35EA21966BCC00F6C93B /* SingleAuthonCell.m */; };
@@ -557,6 +561,14 @@
 		F0F6C79C219A6A77009F91A5 /* LZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerView.m; sourceTree = "<group>"; };
 		F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
 		F0F6D4B7219E75C80004FCB3 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
+		F0FBC88121A53B9200B8ADE9 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		F0FBC88221A53B9200B8ADE9 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		F0FBC88421A53CE100B8ADE9 /* CouponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
+		F0FBC88521A53CE100B8ADE9 /* CouponModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CouponModel.m; sourceTree = "<group>"; };
+		F0FBC88721A5401300B8ADE9 /* LoanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanModel.h; sourceTree = "<group>"; };
+		F0FBC88821A5401300B8ADE9 /* LoanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanModel.m; sourceTree = "<group>"; };
+		F0FBC88A21A5415700B8ADE9 /* RepayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepayModel.h; sourceTree = "<group>"; };
+		F0FBC88B21A5415700B8ADE9 /* RepayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepayModel.m; sourceTree = "<group>"; };
 		F0FC0DCC219C24B50013D765 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
 		F0FC0DCD219C24B50013D765 /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		F0FC0DCE219C24B60013D765 /* GuideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideVC.xib; sourceTree = "<group>"; };
@@ -938,6 +950,8 @@
 		F0E1ABE42193CA8200A9C17F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0FBC88421A53CE100B8ADE9 /* CouponModel.h */,
+				F0FBC88521A53CE100B8ADE9 /* CouponModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1196,6 +1210,8 @@
 				F0D8EE2D21A42D6F00CEB35A /* ProductSubModel.m */,
 				F0D8EE2F21A42EAF00CEB35A /* HomedestailModel.h */,
 				F0D8EE3021A42EAF00CEB35A /* HomedestailModel.m */,
+				F0FBC88121A53B9200B8ADE9 /* MessageModel.h */,
+				F0FBC88221A53B9200B8ADE9 /* MessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1322,6 +1338,10 @@
 		F0F0E478218D53D000B4ABCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0FBC88721A5401300B8ADE9 /* LoanModel.h */,
+				F0FBC88821A5401300B8ADE9 /* LoanModel.m */,
+				F0FBC88A21A5415700B8ADE9 /* RepayModel.h */,
+				F0FBC88B21A5415700B8ADE9 /* RepayModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2059,6 +2079,7 @@
 				F0E1AC302193EBCB00A9C17F /* ProductTypeCell.m in Sources */,
 				F0FD36082196872E00F6C93B /* PersonCardVC.m in Sources */,
 				F009C1C221A2AC1900EE828E /* ProductDetailModel.m in Sources */,
+				F0FBC88621A53CE100B8ADE9 /* CouponModel.m in Sources */,
 				F0D8EE2521A3D79700CEB35A /* HomeBaaner.m in Sources */,
 				F009C1CB21A2BA9F00EE828E /* DetailImageModel.m in Sources */,
 				F0E1AC212193D9DC00A9C17F /* SettingAuthonVC.m in Sources */,
@@ -2129,12 +2150,14 @@
 				F0B50A06218FE76D0027BB61 /* BindVC.m in Sources */,
 				F0F0E705218D987F00B4ABCE /* ZJCustomHud.m in Sources */,
 				F0E1ABD42193C49F00A9C17F /* HomeMessageCell.m in Sources */,
+				F0FBC88C21A5415700B8ADE9 /* RepayModel.m in Sources */,
 				F0FF5AC821952F600050AD96 /* AddreeModel.m in Sources */,
 				F0F0E6DA218D987E00B4ABCE /* ZJTitleView.m in Sources */,
 				F0E1AC022193CFD600A9C17F /* SettingLogoutCell.m in Sources */,
 				F0F0E724218D991900B4ABCE /* JsonTool.m in Sources */,
 				F0F0E6E0218D987E00B4ABCE /* ZJScrollPageView.m in Sources */,
 				F0EEFA4221928CDC006D1650 /* HomeAdCell.m in Sources */,
+				F0FBC88321A53B9200B8ADE9 /* MessageModel.m in Sources */,
 				F0F0E6CA218D987E00B4ABCE /* IQTextView.m in Sources */,
 				F0F0E6D7218D987E00B4ABCE /* IQUIViewController+Additions.m in Sources */,
 				F0E1AC5821942F0F00A9C17F /* CardAuthonVC.m in Sources */,
@@ -2159,6 +2182,7 @@
 				F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */,
 				F0EEFA642192C101006D1650 /* HomeSortVC.m in Sources */,
 				F00E07AA218D2A5A0079D952 /* main.m in Sources */,
+				F0FBC88921A5401300B8ADE9 /* LoanModel.m in Sources */,
 				F0E1AC7021943C6400A9C17F /* CommitOrderVC.m in Sources */,
 				F0F0E6DB218D987E00B4ABCE /* UIViewController+ZJScrollPageController.m in Sources */,
 				F00E079C218D2A570079D952 /* AppDelegate.m in Sources */,

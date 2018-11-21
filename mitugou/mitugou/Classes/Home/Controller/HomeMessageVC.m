@@ -4,6 +4,7 @@
 //  Copyright © 2018 zhufeng. All rights reserved.
 #import "HomeMessageVC.h"
 #import "HomeMessageCell.h"
+#import "MessageModel.h"
 @interface HomeMessageVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic,strong)NSMutableArray *messageArray;
@@ -32,14 +33,53 @@
  */
 -(void)actionMessageNewData
 {
-    
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [weakSelf.messageArray removeAllObjects];
+            weakSelf.messageArray = [MessageModel mj_keyValuesArrayWithObjectArray:res.data[@"message"]];
+            [weakSelf.tableview reloadData];
+            [weakSelf.tableview.mj_header endRefreshing];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        [weakSelf.tableview.mj_header endRefreshing];
+        return;
+    }];
 }
 /**
  加载更多
  */
 -(void)actionMessageMoreData
 {
-    
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            NSMutableArray *array = [NSMutableArray array];
+            weakSelf.messageArray = [MessageModel mj_keyValuesArrayWithObjectArray:res.data[@"message"]];
+            [weakSelf.messageArray addObjectsFromArray:array];
+            [weakSelf.tableview reloadData];
+            [weakSelf.tableview.mj_footer endRefreshing];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        [weakSelf.tableview.mj_footer endRefreshing];
+        return;
+    }];
 }
 -(void)setupTableView
 {

@@ -4,6 +4,7 @@
 //  Copyright © 2018 zhufeng. All rights reserved.
 #import "HomeSearchVC.h"
 #import "ApplicationproductCell.h"
+#import "ProductModel.h"
 @interface HomeSearchVC ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)UITextField *search_tf;
@@ -22,7 +23,28 @@
     [super viewDidLoad];
     [self setupConfigNavitionBar];
     [self setupCollectionView];
+    [self seutpRefresh];
 }
+-(void)seutpRefresh
+{
+    [self setViewRefreshColletionView:self.collectionView withHeaderAction:@selector(actionSearchNewData) andFooterAction:@selector(actionSearchMOeData) target:self];
+}
+
+/**
+ 加载最新的数据
+ */
+-(void)actionSearchNewData
+{
+    
+}
+/**
+ 加载更多数据
+ */
+-(void)actionSearchMOeData
+{
+    
+}
+
 -(void)setupCollectionView
 {
     self.collectionView.delegate = self;
@@ -131,6 +153,24 @@
         return;
     }
     ///开始去搜索公司
+    [SVProgressHUD show];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    param[@"token"] = token;
+    param[@"keyword"] = searchStr;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            //请求成功
+        }
+        [weakSelf.collectionView.mj_header endRefreshing];
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

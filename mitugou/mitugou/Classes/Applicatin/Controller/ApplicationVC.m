@@ -10,6 +10,7 @@
 @interface ApplicationVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionview;
 @property (nonatomic,strong)NSMutableArray *applicationArray;
+@property (nonatomic,strong)NSDictionary *responseDic;
 @end
 @implementation ApplicationVC
 -(NSMutableArray *)applicationArray
@@ -23,14 +24,38 @@
     [super viewDidLoad];
     self.navigationItem.title = @"额度";
     //请求数据
-    [self setupData];
+    [self actionApplicatinNewData];
     //初始化collectionview
     [self setupCollectionView];
+    //集成下拉刷新
+    [self setViewRefreshColletionView:self.collectionview withHeaderAction:@selector(actionApplicatinNewData) andFooterAction:nil target:self];
 }
 #pragma mark --请求数据
--(void)setupData
+-(void)actionApplicatinNewData
 {
-    
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [SVProgressHUD showSuccessWithStatus:@"获取成功"];
+            [weakSelf.collectionview reloadData];
+            [weakSelf.collectionview.mj_header endRefreshing];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"获取成功"];
+            [weakSelf.collectionview.mj_header endRefreshing];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        [weakSelf.collectionview.mj_header endRefreshing];
+        return;
+    }];
 }
 //初始化collectionview
 -(void)setupCollectionView

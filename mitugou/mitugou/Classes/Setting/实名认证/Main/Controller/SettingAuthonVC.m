@@ -12,6 +12,7 @@
 @interface SettingAuthonVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic,strong)NSMutableArray *titleArray;
+@property (nonatomic,strong)NSDictionary *responseDict;
 @end
 @implementation SettingAuthonVC
 -(NSMutableArray *)titleArray
@@ -28,9 +29,31 @@
     [self setupData];
     [self setupTableView];
 }
+/**
+ 这里有个状态的东西
+ */
 -(void)setupData
 {
-    
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            weakSelf.responseDict = res.data[@"status"];
+            [weakSelf.tableview reloadData];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"获取失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showInfoWithStatus:FailRequestTip];
+        return;
+    }];
 }
 -(void)setupTableView
 {
