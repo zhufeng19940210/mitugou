@@ -135,6 +135,7 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     WEAKSELF
     [[NetWorkTool shareInstacne]postWithURLString:Home_Banner parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"轮播:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
@@ -261,12 +262,14 @@
     if (indexPath.section == 0) {
         HomeAdCell *adcell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeAdCell" forIndexPath:indexPath];
         adcell.ulrArray = self.imageArray;
+        adcell.cycleScrollView.backgroundColor = RGB(240, 240, 240);
+        adcell.cycleScrollView.placeholderImage = [UIImage imageNamed:@"app_placeholder3.png"];
         homeCell = adcell;
     }
     if (indexPath.section == 1) {
         HomeTypeCell *typeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeTypeCell" forIndexPath:indexPath];
-        [typeCell.left_btn sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_AreaLeft]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
-        [typeCell.right_btn sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_AreaRight]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
+        [typeCell.left_btn sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_AreaLeft]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder3.png"]];
+        [typeCell.right_btn sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_AreaRight]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder3.png"]];
         typeCell.actionCallback = ^(HomeType type) {
             if (type == HomeTypeCar) {
                 //机车专区
@@ -284,9 +287,9 @@
     }
     if (indexPath.section == 2) {
         HomerecommendCell *recommandCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomerecommendCell" forIndexPath:indexPath];
-        [recommandCell.home_img1 sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_Recommend1]] placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
-        [recommandCell.home_img2 sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_Recommend2]] placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
-        [recommandCell.home_img3 sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_Recommend3]] placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
+        [recommandCell.home_img1 sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_Recommend1]] placeholderImage:[UIImage imageNamed:@"app_placeholder3"]];
+        [recommandCell.home_img2 sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_Recommend2]] placeholderImage:[UIImage imageNamed:@"app_placeholder3"]];
+        [recommandCell.home_img3 sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_Recommend3]] placeholderImage:[UIImage imageNamed:@"app_placeholder3"]];
         recommandCell.adscrollview.titles = self.titleArray;
         recommandCell.adscrollview.titleColor = [UIColor redColor];
         recommandCell.adscrollview.textAlignment = NSTextAlignmentLeft;
@@ -295,8 +298,8 @@
     if (indexPath.section == 3) {
         HomeProductCell *prductCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeProductCell" forIndexPath:indexPath];
         [prductCell.hot_img sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_HotLeft]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
-        [prductCell.hot_up_img sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_HotRightUp]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
-        [prductCell.hot_down_img sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_HotRightDown]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
+        [prductCell.hot_up_img sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_HotRightUp]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder3"]];
+        [prductCell.hot_down_img sd_setImageWithURL:[NSURL URLWithString:self.dataParam[User_HotRightDown]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"app_placeholder3"]];
         prductCell.actionCallback = ^(HomeProduct type) {
             if (type == HomeProductHot) {
                 //手机热卖
@@ -306,12 +309,12 @@
             }else if (type == HomeProductCar){
                 //机车
                 HomeEngineVC *enginevc = [[HomeEngineVC alloc]init];
-                enginevc.type = 1;
+                enginevc.type = 2;
                 [self.navigationController pushViewController:enginevc animated:YES];
             }else if (type == HomeProductPeijian){
                 //机车配件
                 HomeEngineVC *peijianvc = [[HomeEngineVC alloc]init];
-                peijianvc.type = 2;
+                peijianvc.type = 3;
                 [self.navigationController pushViewController:peijianvc animated:YES];
             }
         };
@@ -321,7 +324,6 @@
         HomeForyouCell *foryouCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeForyouCell" forIndexPath:indexPath];
         homeCell = foryouCell;
     }
-    
     if (indexPath.section ==5) {
         HomeOtherCell *otherCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeOtherCell" forIndexPath:indexPath];
         if (indexPath.row == 0) {

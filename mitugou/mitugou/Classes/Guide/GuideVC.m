@@ -83,6 +83,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     long int page = lroundf(scrollView.contentOffset.x / scrollView.frame.size.width);
     NSLog(@"page:%ld",page);
+    self.pagecontrol.currentPage = page;
 }
 - (void)setupWelceomPageView {
     self.pagecontrol.numberOfPages = 2;

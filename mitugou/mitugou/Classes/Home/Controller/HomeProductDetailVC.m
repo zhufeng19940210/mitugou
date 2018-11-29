@@ -14,6 +14,7 @@
 #import "BannerModel.h"
 #import "ProductSubModel.h"
 #import "HomedestailModel.h"
+#import "ZFDetailModel.h"
 @interface HomeProductDetailVC ()<SDCycleScrollViewDelegate,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic, strong) UIView *headView;
@@ -30,6 +31,7 @@
 @property (nonatomic, strong)NSMutableArray *periodsBtnArr;
 @property (nonatomic, strong)NSMutableArray *colorBtnArr;
 @property (nonatomic,strong) ProductBottomView *bottomView; //底部view
+@property (nonatomic,copy)NSString *prefiex; //图片的前缀
 
 @end
 @implementation HomeProductDetailVC
@@ -145,7 +147,35 @@
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
-            weakSelf.productSubModel = res.data[@"commodiry"];
+            weakSelf.productSubModel =[ProductSubModel mj_objectWithKeyValues:res.data[@"commodiry"]];
+            weakSelf.prefiex = res.data[@"httpPrefix"];
+            NSLog(@"weakSelf.prefiex:%@",weakSelf.prefiex);
+            NSLog(@"destails.count:%lu",(unsigned long)weakSelf.productSubModel.details.count);
+            //轮播图片
+            if (weakSelf.productSubModel.details.count > 0) {
+                [weakSelf.netImages removeAllObjects];
+                for (int i = 0 ; i<weakSelf.productSubModel.details.count; i++) {
+                    ZFDetailModel *model = weakSelf.productSubModel.details[i];
+                    NSLog(@"model.imga:%@",model.image);
+                    [weakSelf.netImages addObject:[NSString stringWithFormat:@"%@%@",weakSelf.prefiex,model.image]];
+                }
+            }
+             //这个是有颜色
+            if (![weakSelf.productSubModel.color isEqualToString:@""]) {
+                [weakSelf.colorArr removeAllObjects];
+                NSString *color = weakSelf.productSubModel.color;
+                NSArray *colorArr = [color componentsSeparatedByString:@";"];
+                for (NSString *corl in colorArr) {
+                    ColorModel *model = [[ColorModel alloc]init];
+                    model.color = corl;
+                    model.isSelect = NO;
+                    [weakSelf.colorArr addObject:model];
+                    
+                    ColorModel *amodel = weakSelf.colorArr[0];
+                    amodel.isSelect = YES;
+                    weakSelf.colorStr = amodel.color;
+                }
+            }
             [weakSelf.tableView reloadData];
         }else{
             [SVProgressHUD showErrorWithStatus:@"获取失败"];
@@ -231,7 +261,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 2) {
-        return self.decImageUrl.count;
+        return self.productSubModel.details.count;
     }else{
         return 0;
     }
@@ -241,7 +271,6 @@
     if (section == 0) {
         return  IPHONE_HEIGHT/2+120;
     }
-    
     /*else if (section == 1)
     {
         if (self.periodsArr.count == 0) {
@@ -285,13 +314,12 @@
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    DetailImageModel *model = self.decImageUrl[indexPath.row];
-    if (model.field2.length) {
-        NSArray *arr = [model.field2 componentsSeparatedByString:@"_"];
-        CGFloat W = [arr[0] doubleValue];
-        CGFloat H = [arr[1] doubleValue];
-        
+{   
+    ZFDetailModel *model = self.productSubModel.details[indexPath.row];
+    //NSLog(@"mode.height:%@,widht:%@",model.height,model.width);
+    CGFloat H = [model.height floatValue];
+    CGFloat W = [model.width floatValue];
+    if (H > 0 && W > 0) {
         CGFloat atH = IPHONE_WIDTH*H/W;
         return atH;
     }else{
@@ -310,7 +338,7 @@
         //名称
         UILabel *nameLab = [[UILabel alloc]init];
         nameLab.font = [UIFont systemFontOfSize:16];
-        nameLab.text = self.productSubModel.cname;
+        //nameLab.text = self.productSubModel.cname;
         nameLab.textColor = [UIColor blackColor];
         [nameLab setSingleLineAutoResizeWithMaxWidth:IPHONE_WIDTH];
         [view addSubview:nameLab];
@@ -319,7 +347,7 @@
         desLab.font = [UIFont systemFontOfSize:13];
         desLab.textColor = [UIColor darkGrayColor];
         desLab.numberOfLines= 2;
-        desLab.text = self.productSubModel.description;
+        desLab.text = self.productSubModel.desc;
         [view addSubview:desLab];
         //价格
         UILabel *priceLab = [UILabel new];
@@ -444,7 +472,7 @@
                 [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 self.colorStr = model.color;
             }else{
-                btn.backgroundColor = RGB(24, 240, 240);
+                btn.backgroundColor = RGB(240, 240, 240);
                 [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
             }
             [btn addTarget:self action:@selector(selectColor:) forControlEvents:UIControlEventTouchUpInside];
@@ -504,10 +532,12 @@
         .leftSpaceToView(cell.contentView, 0)
         .rightSpaceToView(cell.contentView, 0)
         .bottomSpaceToView(cell.contentView, 0);
-        
-        DetailImageModel *model = self.decImageUrl[indexPath.row];
-        [imag sd_setImageWithURL:[NSURL URLWithString:model.picUrl] placeholderImage:[UIImage imageNamed:@""]];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if (self.netImages.count>0) {
+            ZFDetailModel *model = self.productSubModel.details[indexPath.row];
+            NSString *imagUrl = [NSString stringWithFormat:@"%@%@",self.prefiex,model.image];
+            [imag sd_setImageWithURL:[NSURL URLWithString:imagUrl] placeholderImage:[UIImage imageNamed:@"app_placeholder3.png"]];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
     }
     return cell;
 }
@@ -515,7 +545,6 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 /**
  选择分期的功能
  @param btn 选择分期的功能
@@ -557,5 +586,4 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 @end

@@ -10,6 +10,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSMutableArray *contentArray;
 @property (nonatomic,assign)int page;
+@property (nonatomic,copy)NSString *PrefixStr;   //前缀url
 @end
 @implementation HomeEngineVC
 -(NSMutableArray *)contentArray
@@ -52,6 +53,7 @@
         if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             [weakSelf.contentArray removeAllObjects];
+            weakSelf.PrefixStr = res.data[@"httpPrefix"];
             weakSelf.contentArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"commodirys"]];
             [weakSelf.collectionView reloadData];
             [weakSelf.collectionView.mj_header endRefreshing];
@@ -128,6 +130,7 @@
 {
     ApplicationproductCell *engineCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
     ProductModel *model = self.contentArray[indexPath.row];
+    engineCell.prePrefix  = self.PrefixStr;
     engineCell.productModel = model;
     return engineCell;
 }

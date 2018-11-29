@@ -201,7 +201,6 @@
 		F0F6C79D219A6A78009F91A5 /* LZPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */; };
 		F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6C79C219A6A77009F91A5 /* LZPickerView.m */; };
 		F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */; };
-		F0F9801D21AEA84500F4EB1D /* ZFDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */; };
 		F0FBC88321A53B9200B8ADE9 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88221A53B9200B8ADE9 /* MessageModel.m */; };
 		F0FBC88621A53CE100B8ADE9 /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88521A53CE100B8ADE9 /* CouponModel.m */; };
 		F0FBC88921A5401300B8ADE9 /* LoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88821A5401300B8ADE9 /* LoanModel.m */; };
@@ -562,8 +561,6 @@
 		F0F6C79C219A6A77009F91A5 /* LZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerView.m; sourceTree = "<group>"; };
 		F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
 		F0F6D4B7219E75C80004FCB3 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
-		F0F9801B21AEA84500F4EB1D /* ZFDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFDetailModel.h; sourceTree = "<group>"; };
-		F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFDetailModel.m; sourceTree = "<group>"; };
 		F0FBC88121A53B9200B8ADE9 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		F0FBC88221A53B9200B8ADE9 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		F0FBC88421A53CE100B8ADE9 /* CouponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
@@ -1215,8 +1212,6 @@
 				F0D8EE3021A42EAF00CEB35A /* HomedestailModel.m */,
 				F0FBC88121A53B9200B8ADE9 /* MessageModel.h */,
 				F0FBC88221A53B9200B8ADE9 /* MessageModel.m */,
-				F0F9801B21AEA84500F4EB1D /* ZFDetailModel.h */,
-				F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2087,7 +2082,6 @@
 				F0FBC88621A53CE100B8ADE9 /* CouponModel.m in Sources */,
 				F0D8EE2521A3D79700CEB35A /* HomeBaaner.m in Sources */,
 				F009C1CB21A2BA9F00EE828E /* DetailImageModel.m in Sources */,
-				F0F9801D21AEA84500F4EB1D /* ZFDetailModel.m in Sources */,
 				F0E1AC212193D9DC00A9C17F /* SettingAuthonVC.m in Sources */,
 				F0F0E6E5218D987E00B4ABCE /* UIScrollView+EmptyDataSet.m in Sources */,
 				F0EEFA6E2192C288006D1650 /* HomeSearchVC.m in Sources */,

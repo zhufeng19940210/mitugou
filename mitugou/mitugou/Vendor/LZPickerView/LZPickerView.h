@@ -1,18 +1,12 @@
-//
 //  LZPickerView.h
 //  PickerVIew
-//
 //  Created by 栗子 on 2018/3/9.
 //  Copyright © 2018年 http://www.cnblogs.com/Lrx-lizi/.     https://github.com/lrxlizi/. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
-
 typedef NS_ENUM(NSInteger,LZPickerViewType){
     LZPickerViewTypeSexAndHeight,//性别身高类型
     LZPickerViewTypeWeigth,//体重
 };
-
 @interface LZPickerView : UIView
 @property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;

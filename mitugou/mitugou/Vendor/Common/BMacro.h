@@ -8,8 +8,12 @@
 #define WEAKSELF __weak typeof(self) weakSelf = self;
 //平台用到的AppID和AppSecret
 //qq平台
-#define MOBSSDKQQAppID  @"100371282"
-#define MOBSSDKQQAppKey @"aed9b0303e3ed1e27bae87c33761161d"
+//1107909169
+//SibeP2KnIGjk9ueS
+#define MOBSSDKQQAppID  @"1107909169"
+#define MOBSSDKQQAppKey @"SibeP2KnIGjk9ueS"
+//#define MOBSSDKQQAppID  @"100371282"
+//#define MOBSSDKQQAppKey @"aed9b0303e3ed1e27bae87c33761161d"
 //weibo平台
 #define MOBSSDKSinaWeiBoAppKey    @"568898243"
 #define MOBSSDKSinaWeiBoAppSecret @"38a4f8204cc784f81f9f0daaf31e02e3"

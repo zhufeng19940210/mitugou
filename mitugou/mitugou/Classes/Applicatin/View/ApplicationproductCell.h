@@ -7,4 +7,5 @@
 #import "ProductModel.h"
 @interface ApplicationproductCell : UICollectionViewCell
 @property (nonatomic,strong)ProductModel *productModel;
+@property (nonatomic,copy) NSString *prePrefix;
 @end

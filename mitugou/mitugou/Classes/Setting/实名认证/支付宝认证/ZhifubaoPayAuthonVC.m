@@ -40,7 +40,6 @@
     [self seutpUI];
     [self setupData];
 }
-
 -(void)seutpUI
 {
     self.zf_first_img  = nil;
@@ -145,8 +144,10 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Ali_Url_Find parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        NSLog(@"res.code:%ld",(long)res.code);
         if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
             NSDictionary *authInfo = res.data[@"authInfo"];
@@ -162,8 +163,7 @@
             [weakSelf.second_img sd_setImageWithURL:[NSURL URLWithString:second]];
             [weakSelf.third_img sd_setImageWithURL:[NSURL URLWithString:third]];
             [weakSelf.four_img sd_setImageWithURL:[NSURL URLWithString:four]];
-        }
-        else if (res.code == 2) {
+        }else if (res.code == 2) {
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;
         }
