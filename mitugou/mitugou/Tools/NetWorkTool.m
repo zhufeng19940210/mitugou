@@ -49,6 +49,7 @@ AFHTTPSessionManager *session = nil;
         }
     }];
 }
+
 /**
  *  发送post请求
  *

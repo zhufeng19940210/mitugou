@@ -63,6 +63,11 @@
         [platformsRegister setupWeChatWithAppId:MOBSSDKWeChatAppID appSecret:MOBSSDKWeChatAppSecret];
         [platformsRegister setupSinaWeiboWithAppkey:MOBSSDKSinaWeiBoAppKey appSecret:MOBSSDKWeChatAppSecret redirectUrl:MOBSSDKSinaWeiBoDirecUrl];
     }];
+    //立木征信的东西
+    //1.注册立木征信的东西
+    [LMZXSDK registerLMZXSDK];
+    //2.开启日志的打印
+    [[LMZXSDK shared] unlockLog];
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
 

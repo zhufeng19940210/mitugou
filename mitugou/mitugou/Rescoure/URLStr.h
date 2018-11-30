@@ -5,6 +5,15 @@
 #ifndef URLStr_h
 #define URLStr_h
 #define BaseUrl @"http://47.93.238.67:9999/htshop"
+/*===================认证的资料================*/
+#define User_Authon1       @"user_authon1"
+#define User_Authon2       @"user_authon2"
+#define User_Authon3       @"user_authon3"
+#define User_Authon4       @"user_authon4"
+#define User_Authon5       @"user_authon5"
+#define User_Authon6       @"user_authon6"
+#define User_Authon7       @"user_authon7"
+#define User_Total         @"user_total_authon"
 /*==========================需要的字段=======================*/
 #define User_AreaLeft       @"areaLeft"
 #define User_AreaRight      @"areaRight"
@@ -21,6 +30,15 @@
 #define User_Register_URL [BaseUrl stringByAppendingString:@"/userAuthentication/register"]
 ///获取验证码
 #define User_Get_Code [BaseUrl stringByAppendingString:@"/userAuthentication/Veritycode"]
+///修改密码
+#define User_Change_Pwd [BaseUrl stringByAppendingString:@"/userAuthentication/changePwd"]
+///修改头像
+#define User_Change_Icon [BaseUrl stringByAppendingString:@"/userAuthentication/changePhoto"]
+///忘记密码获取code
+#define User_Forget_Code [BaseUrl stringByAppendingString:@"/userAuthentication/verifyPwd"]
+///忘记密码
+#define User_Forget_Url [BaseUrl stringByAppendingString:@"/userAuthentication/forgetPwd"]
+
 /*========================用户的基本信息=====================*/
 ///修改用户基本信息
 #define Userinfo_Base_Url_update [BaseUrl stringByAppendingString:@"/userInfoForm/modifybaseinfo"]
@@ -85,5 +103,13 @@
 #define Pay_Alipay [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
 ///微信支付
 #define Pay_Wechat [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
+/*================================立木征信URL===============================*/
+///立木征信
+#define LIMU_SDK_URL [BaseUrl stringByAppendingString:@"/limutoken/setToken"]
+/*=================================商品订单=====================================*/
+///提交订单
+#define Commit_Order [BaseUrl stringByAppendingString:@"/order/addOrder"]
+///查询订单
+#define Order_Status [BaseUrl stringByAppendingString:@"/order/allOrder"]
 
 #endif /* URLStr_h */

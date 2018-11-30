@@ -4,7 +4,6 @@
 //  Copyright © 2018 zhufeng. All rights reserved.
 #import "UpdatePwdVC.h"
 @interface UpdatePwdVC ()
-@property (weak, nonatomic) IBOutlet UITextField *old_pwd_tf;
 @property (weak, nonatomic) IBOutlet UITextField *pwd_tf;
 @end
 @implementation UpdatePwdVC
@@ -18,17 +17,29 @@
  */
 - (IBAction)actionCommitBtn:(UIButton *)sender
 {
-    NSString *old_pwd = self.old_pwd_tf.text;
+    [self.pwd_tf resignFirstResponder];
     NSString *pwd     = self.pwd_tf.text;
-    if (old_pwd.length == 0 || [old_pwd isEqualToString:@""]) {
-        [self showHint:@"旧密码不能为空" yOffset:-200];
-        return;
-    }
     if (pwd.length == 0 || [pwd isEqualToString:@""]) {
         [self showHint:@"新密码不能为空" yOffset:-200];
         return;
     }
-    //TODO这里去发送请求
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"]         = token;
+    param[@"password"]      =  pwd;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:User_Change_Pwd parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseobject:%@",responseObject);
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 
 @end

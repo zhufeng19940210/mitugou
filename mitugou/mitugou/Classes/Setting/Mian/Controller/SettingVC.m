@@ -14,12 +14,16 @@
 #import "SettingRepaymentVC.h"
 #import "HomeMessageVC.h"
 #import "ShareView.h"
+#import "SettingCreditVC.h"
+#import "UserModel.h"
+#import <SDWebImage/UIButton+WebCache.h>
 @interface SettingVC ()<UICollectionViewDelegate,UICollectionViewDataSource,TZImagePickerControllerDelegate,ShareViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSMutableArray *imageArray;
 @property (nonatomic,strong)NSMutableArray *titleArray;
 @property (nonatomic,strong)ShareView *shareView;
 @property (nonatomic,strong)NSMutableArray *photoeArray;
+@property (nonatomic,strong)UserModel *usermodel;
 @end
 
 @implementation SettingVC
@@ -49,6 +53,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self refresh];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
@@ -62,7 +67,6 @@
     [super viewDidLoad];
     [self setupNavigationBar];
     [self setupShareView];
-    [self setupData];
     [self setupCollectionView];
 }
 -(void)setupShareView{
@@ -70,10 +74,15 @@
     self.shareView  = shareview;
     self.shareView.delegate = self;
 }
--(void)setupData
+/**
+ 刷新界面
+ */
+-(void)refresh
 {
-    
+     self.usermodel = [UserModel getInfo];
+    [self.collectionView reloadData];
 }
+
 -(void)setupNavigationBar
 {
     [self setRightButton:[UIImage imageNamed:@"setting_msg"]];
@@ -106,6 +115,9 @@
     UICollectionViewCell *settingCell = nil;
     if (indexPath.section == 0) {
         SettingHeaderCell *headerCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SettingHeaderCell" forIndexPath:indexPath];
+        headerCell.name_lab.text = [NSString stringWithFormat:@"%@",self.usermodel.phone];
+        //这个是显示的东西
+        [headerCell.icon_btn sd_setImageWithURL:[NSURL URLWithString:self.usermodel.photo] placeholderImage:[UIImage imageNamed:@"setting_icon.png"]];
         headerCell.actionBlock = ^(SettingHeaderType type) {
             if (type ==  SettingHeaderTypeIcon) {
                 //头像
@@ -139,7 +151,7 @@
  */
 -(void)changeIconMethod
 {
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:3 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
     [imagePickerVc setAllowPreview:NO];
     [imagePickerVc setAllowPickingVideo:NO];
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
@@ -153,31 +165,46 @@
  @param selectImage 上传单张图片
  */
 -(void)uploadpath:(UIImage *)selectImage{
-    __weak typeof(self) weakSelf = self;
+    WEAKSELF
+    [SVProgressHUD show];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"token"] = @"88888888";
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    param[@"token"] = token;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html",nil];
-    [manager POST:@"http://47.93.238.67:9999/htshop/borrowAuthentication/modifyalipayAuth" parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        for (int i = 0; i <self.photoeArray.count; i ++) {
-            NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
-            formatter.dateFormat=@"yyyyMMddHHmmss";
-            NSString *str=[formatter stringFromDate:[NSDate date]];
-            NSString *fileName=[NSString stringWithFormat:@"%@.jpg",str];
-            NSLog(@"selectimageurl:%@",fileName);
-            NSData *imageData = UIImageJPEGRepresentation(selectImage, 0.5);
-            NSLog(@"iMAGEdata:%@",imageData);
-            [formData appendPartWithFileData:imageData name:@"dd" fileName:fileName mimeType:@"image/jpg"];
-        }
+    [manager POST:@"http://47.93.238.67:9999/htshop/userAuthentication/changePhoto" parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+        formatter.dateFormat=@"yyyyMMddHHmmss";
+        NSString *str=[formatter stringFromDate:[NSDate date]];
+        NSString *fileName=[NSString stringWithFormat:@"%@.jpg",str];
+        NSLog(@"selectimageurl:%@",fileName);
+        NSData *imageData = UIImageJPEGRepresentation(selectImage, 0.5);
+        NSLog(@"iMAGEdata:%@",imageData);
+        [formData appendPartWithFileData:imageData name:@"photo" fileName:fileName mimeType:@"image/jpg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [SVProgressHUD dismiss];
         NSLog(@"success:%@",responseObject);
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            NSString *avtorpath = res.data[@"photo"];
+            [SVProgressHUD showSuccessWithStatus:@"上传成功"];
+            UserModel *model = [UserModel getInfo];
+            model.photo = avtorpath;
+            [UserModel save:model];
+            [weakSelf refresh];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"上传失败"];
+            return;
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
         [SVProgressHUD showInfoWithStatus:@"服务器失败"];
         return;
     }];
 }
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {

@@ -5,4 +5,7 @@
 #import <UIKit/UIKit.h>
 @interface SingleAuthonCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title_lab;
+@property (weak, nonatomic) IBOutlet UILabel *status_lab;
+
+
 @end

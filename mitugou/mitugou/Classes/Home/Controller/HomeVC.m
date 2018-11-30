@@ -17,12 +17,14 @@
 #import "HomeSysInfo.h"
 #import "HomeBaaner.h"
 #import <SDWebImage/UIButton+WebCache.h>
+#import "SettingTestLimuEducationVC.h"
 @interface HomeVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSMutableArray *imageArray;
 @property (nonatomic,strong)NSMutableArray *titleArray;
 @property (nonatomic,strong)NSDictionary   *dataParam;
 @property (nonatomic,strong)HomeNavTopView *topView;
+@property (weak, nonatomic) IBOutlet UIImageView *home_img;
 @end
 @implementation HomeVC
 -(NSMutableArray *)titleArray
@@ -65,8 +67,8 @@
 }
 - (void)configNavigationBar
 {
-    [self setLeftButton:[UIImage imageNamed:@"home_sort_gary"]];
-    [self setRightButton:[UIImage imageNamed:@"home_message_gary"]];
+    [self setLeftButton:[UIImage imageNamed:@"home_sort_white"]];
+    [self setRightButton:[UIImage imageNamed:@"home_message_white"]];
     UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
     searchButton.frame = CGRectMake(0, 0, IPHONE_WIDTH*0.7, 34);
     searchButton.backgroundColor = RGB(240, 240, 240);
@@ -262,7 +264,7 @@
     if (indexPath.section == 0) {
         HomeAdCell *adcell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeAdCell" forIndexPath:indexPath];
         adcell.ulrArray = self.imageArray;
-        adcell.cycleScrollView.backgroundColor = RGB(240, 240, 240);
+        adcell.cycleScrollView.backgroundColor = RGB(208, 208, 208);
         adcell.cycleScrollView.placeholderImage = [UIImage imageNamed:@"app_placeholder3.png"];
         homeCell = adcell;
     }

@@ -62,7 +62,7 @@
             weakSelf.phoneArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][0][@"commodirys"]];
             weakSelf.jicheArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][1][@"commodirys"]];
             weakSelf.peijianArray  = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][2][@"commodirys"]];
-            NSLog(@"phoneArray.count:%lu,jicheArraycount:%d,peijianArray.count:%d",(unsigned long)self.phoneArray.count,self.jicheArray.count,self.peijianArray.count);
+            NSLog(@"phoneArray.count:%lu,jicheArraycount:%lu,peijianArray.count:%lu",(unsigned long)self.phoneArray.count,(unsigned long)self.jicheArray.count,(unsigned long)self.peijianArray.count);
             [weakSelf.collectionView reloadData];
         }else{
             [SVProgressHUD showErrorWithStatus:@"获取失败"];

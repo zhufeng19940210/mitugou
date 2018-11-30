@@ -57,6 +57,10 @@
         [self showHint:@"验证码不能为空" yOffset:-200];
         return;
     }
+    if (![code isEqualToString:self.code_str]) {
+        [self showHint:@"验证码有误" yOffset:-200];
+        return;
+    }
     if ([pwd isEqualToString:@""] || pwd.length == 0) {
         [self showHint:@"密码不能为空" yOffset:-200];
         return;

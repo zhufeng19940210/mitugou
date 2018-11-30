@@ -71,10 +71,10 @@
         [self showHint:@"身份证号码不能为空" yOffset:-200];
         return;
     }
-//    if (![LCUtil isValidIDNumber:card]) {
-//        [self showHint:@"身份证号码有误" yOffset:-200];
-//        return;
-//    }
+    if (![LCUtil isValidIDNumber:card]) {
+        [self showHint:@"身份证号码有误" yOffset:-200];
+        return;
+    }
     //开始去发送请求
     [SVProgressHUD show];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
@@ -87,8 +87,11 @@
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code==1) {
+            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:User_Authon1];
+            [[NSUserDefaults standardUserDefaults]synchronize];
             [SVProgressHUD showSuccessWithStatus:@"上传成功"];
             [self.navigationController popViewControllerAnimated:YES];
+           
         }else if (res.code == 0){
             [SVProgressHUD showErrorWithStatus:@"token失败"];
             return;

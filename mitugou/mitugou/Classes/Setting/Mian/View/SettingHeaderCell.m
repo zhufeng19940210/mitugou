@@ -6,15 +6,21 @@
 @implementation SettingHeaderCell
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.icon_btn.layer.cornerRadius = 40.0f;
+    self.icon_btn.layer.masksToBounds = YES;
+    self.icon_btn.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(IconTap:)];
+    [self.icon_btn addGestureRecognizer:tapGesture];
 }
 /**
  headerIconBtn
  @param sender headerIconBtn
  */
-- (IBAction)actionHeaderBtn:(UIButton *)sender
-{
+-(void)IconTap:(UITapGestureRecognizer *)gesture
+{   int tag = (int)gesture.view.tag;
     if (self.actionBlock) {
-        self.actionBlock((SettingHeaderType)sender.tag);
+        self.actionBlock((SettingHeaderType)tag);
     }
 }
+
 @end

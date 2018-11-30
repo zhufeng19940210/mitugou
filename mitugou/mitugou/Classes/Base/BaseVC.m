@@ -13,16 +13,17 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
     {   self.edgesForExtendedLayout = UIRectEdgeNone;
         NSDictionary * attributes = @{
-                                      NSForegroundColorAttributeName:[UIColor blackColor],
-                                      NSFontAttributeName:[UIFont boldSystemFontOfSize:17]
+                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                      NSFontAttributeName:[UIFont boldSystemFontOfSize:16]
                                       };
         [self.navigationController.navigationBar setTitleTextAttributes:attributes];
+        self.navigationController.navigationBar.barTintColor = MainThemeColor;
         // 设置状态栏覆盖
         [self.navigationController.navigationBar setTranslucent:NO];
         // shadowline
-//        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-//        self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-        //self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+        self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
         [self setNeedsStatusBarAppearanceUpdate];
     }
     [self setBackwardButton];
@@ -39,8 +40,8 @@
 - (void)setBackwardButton{
     NSArray *viewControllers = [self.navigationController viewControllers];
     if (viewControllers.count > 1) {
-        UIImage *image =[UIImage imageNamed:@"return_black"];
-        UIImage *selectImage = [UIImage imageNamed:@"return_white"];
+        UIImage *image =[UIImage imageNamed:@"return_white"];
+        UIImage *selectImage = [UIImage imageNamed:@"return_black"];
         UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 40)];
         [leftBtn setImage:image forState:UIControlStateNormal];
         [leftBtn setImage:selectImage forState:UIControlStateHighlighted];

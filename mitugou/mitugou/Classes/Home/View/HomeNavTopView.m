@@ -74,8 +74,8 @@ CGFloat const DCMargin = 10;
     _dcObserve = [[NSNotificationCenter defaultCenter]addObserverForName:SHOWTOPTOOLVIEW object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         weakSelf.backgroundColor = [UIColor whiteColor];
         weakSelf.topSearchView.backgroundColor = RGB(240, 240, 240);
-        [weakSelf.leftBarItem  setImage:[UIImage imageNamed:@"home_sort_gary"] forState:UIControlStateNormal];
-        [weakSelf.rightBarItem setImage:[UIImage imageNamed:@"home_message_gary"] forState:UIControlStateNormal];
+        [weakSelf.leftBarItem  setImage:[UIImage imageNamed:@"home_sort_white"] forState:UIControlStateNormal];
+        [weakSelf.rightBarItem setImage:[UIImage imageNamed:@"home_message_white"] forState:UIControlStateNormal];
     }];
     ///隐藏的功能
     _dcObserve = [[NSNotificationCenter defaultCenter]addObserverForName:HIDETOPTOOLVIEW object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {

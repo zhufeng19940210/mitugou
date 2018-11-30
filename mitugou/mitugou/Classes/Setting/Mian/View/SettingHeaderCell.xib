@@ -22,19 +22,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-Qf-7CV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                     </imageView>
-                    <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbr-SC-jTf">
-                        <rect key="frame" x="10" y="60" width="80" height="80"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="Mt1-nF-tab"/>
-                            <constraint firstAttribute="height" constant="80" id="UFU-J7-nFh"/>
-                        </constraints>
-                        <state key="normal" image="setting_icon"/>
-                        <connections>
-                            <action selector="actionHeaderBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="uDf-zn-0ch"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张灵玉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exj-Vq-CdQ">
-                        <rect key="frame" x="100" y="90" width="52" height="21"/>
+                        <rect key="frame" x="100" y="89.5" width="52" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -84,32 +73,39 @@
                             <action selector="actionHeaderBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6s1-Ay-hVP"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" tag="1000" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7I-NN-q4x">
+                        <rect key="frame" x="10" y="60" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="Onx-Tp-zFe"/>
+                            <constraint firstAttribute="width" constant="80" id="etP-3x-uwx"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="le6-P5-wE2" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1Ym-qQ-03u"/>
                 <constraint firstAttribute="bottom" secondItem="le6-P5-wE2" secondAttribute="bottom" constant="4" id="7QH-sG-R9R"/>
-                <constraint firstItem="Exj-Vq-CdQ" firstAttribute="centerY" secondItem="Zbr-SC-jTf" secondAttribute="centerY" id="AUa-PV-5La"/>
                 <constraint firstAttribute="bottom" secondItem="o2d-og-FwS" secondAttribute="bottom" id="FQb-Mc-QGZ"/>
                 <constraint firstItem="Kqh-Qf-7CV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HZR-85-YH6"/>
                 <constraint firstItem="o2d-og-FwS" firstAttribute="width" secondItem="Q4Q-Bu-HbG" secondAttribute="width" id="I1R-Ao-vKK"/>
+                <constraint firstItem="X7I-NN-q4x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Kzz-md-yda"/>
                 <constraint firstAttribute="trailing" secondItem="dWv-Na-fSu" secondAttribute="trailing" constant="15" id="MtA-CO-6bT"/>
                 <constraint firstItem="dWv-Na-fSu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="Qpv-ZH-hCN"/>
                 <constraint firstAttribute="trailing" secondItem="o2d-og-FwS" secondAttribute="trailing" id="S2Q-9D-M1e"/>
                 <constraint firstAttribute="trailing" secondItem="Kqh-Qf-7CV" secondAttribute="trailing" id="SMK-1I-3b8"/>
                 <constraint firstItem="Kqh-Qf-7CV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tgg-XK-Tja"/>
+                <constraint firstItem="Exj-Vq-CdQ" firstAttribute="leading" secondItem="X7I-NN-q4x" secondAttribute="trailing" constant="10" id="Vb6-TL-fxN"/>
                 <constraint firstAttribute="bottom" secondItem="Q4Q-Bu-HbG" secondAttribute="bottom" id="Vpk-87-t33"/>
                 <constraint firstAttribute="bottom" secondItem="Kqh-Qf-7CV" secondAttribute="bottom" id="X1Z-AM-pwk"/>
                 <constraint firstItem="Q4Q-Bu-HbG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YbZ-cF-Mdr"/>
                 <constraint firstItem="o2d-og-FwS" firstAttribute="height" secondItem="Q4Q-Bu-HbG" secondAttribute="height" id="hx5-rH-4yb"/>
                 <constraint firstItem="o2d-og-FwS" firstAttribute="leading" secondItem="Q4Q-Bu-HbG" secondAttribute="trailing" id="iz9-6f-Rna"/>
-                <constraint firstItem="Exj-Vq-CdQ" firstAttribute="leading" secondItem="Zbr-SC-jTf" secondAttribute="trailing" constant="10" id="lHP-S5-XDR"/>
-                <constraint firstItem="Zbr-SC-jTf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="yOy-Rz-Bha"/>
-                <constraint firstItem="Zbr-SC-jTf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="z47-GT-Vvd"/>
+                <constraint firstItem="X7I-NN-q4x" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="mt8-ik-OIB"/>
+                <constraint firstItem="Exj-Vq-CdQ" firstAttribute="centerY" secondItem="X7I-NN-q4x" secondAttribute="centerY" id="rWg-CW-qUC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <connections>
-                <outlet property="icon_btn" destination="Zbr-SC-jTf" id="W72-w0-tWJ"/>
+                <outlet property="icon_btn" destination="X7I-NN-q4x" id="6KN-u8-M2M"/>
                 <outlet property="name_lab" destination="Exj-Vq-CdQ" id="FZx-UH-cnn"/>
             </connections>
             <point key="canvasLocation" x="25" y="52"/>
@@ -117,7 +113,6 @@
     </objects>
     <resources>
         <image name="setting_bg" width="375" height="195"/>
-        <image name="setting_icon" width="88" height="88"/>
         <image name="setting_msg" width="33" height="38"/>
     </resources>
 </document>

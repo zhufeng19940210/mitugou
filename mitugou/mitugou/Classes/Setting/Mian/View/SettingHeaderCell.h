@@ -10,7 +10,7 @@ typedef NS_ENUM(NSInteger,SettingHeaderType) {
     SettingHeaderTypeHuan   = 4000,//还款Btn
 };
 @interface SettingHeaderCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIButton *icon_btn;
+@property (weak, nonatomic) IBOutlet UIImageView *icon_btn;
 @property (weak, nonatomic) IBOutlet UILabel *name_lab;
 @property (nonatomic,copy)void(^actionBlock)(SettingHeaderType type);
 @end

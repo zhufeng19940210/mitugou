@@ -201,7 +201,17 @@
 		F0F6C79D219A6A78009F91A5 /* LZPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */; };
 		F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6C79C219A6A77009F91A5 /* LZPickerView.m */; };
 		F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */; };
+		F0F7856A21AFC8EE00F0251F /* LMZXSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F7856621AFC8EE00F0251F /* LMZXSDK.a */; };
+		F0F7856B21AFC8EE00F0251F /* lmzxResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0F7856821AFC8EE00F0251F /* lmzxResource.bundle */; };
+		F0F7856E21AFC90700F0251F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F7856D21AFC90700F0251F /* CoreLocation.framework */; };
+		F0F7857021AFC91000F0251F /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F7856F21AFC91000F0251F /* LocalAuthentication.framework */; };
+		F0F7857521AFCC1200F0251F /* SettingTestLimuEducationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F7857321AFCC1200F0251F /* SettingTestLimuEducationVC.m */; };
+		F0F7857621AFCC1200F0251F /* SettingTestLimuEducationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F7857421AFCC1200F0251F /* SettingTestLimuEducationVC.xib */; };
 		F0F9801D21AEA84500F4EB1D /* ZFDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */; };
+		F0F99FB621B1052000210786 /* SettingCreditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F99FB421B1052000210786 /* SettingCreditVC.m */; };
+		F0F99FB721B1052000210786 /* SettingCreditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F99FB521B1052000210786 /* SettingCreditVC.xib */; };
+		F0F99FBB21B1071600210786 /* SettingCreaitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F99FB921B1071600210786 /* SettingCreaitCell.m */; };
+		F0F99FBC21B1071600210786 /* SettingCreaitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F99FBA21B1071600210786 /* SettingCreaitCell.xib */; };
 		F0FBC88321A53B9200B8ADE9 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88221A53B9200B8ADE9 /* MessageModel.m */; };
 		F0FBC88621A53CE100B8ADE9 /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88521A53CE100B8ADE9 /* CouponModel.m */; };
 		F0FBC88921A5401300B8ADE9 /* LoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88821A5401300B8ADE9 /* LoanModel.m */; };
@@ -562,8 +572,22 @@
 		F0F6C79C219A6A77009F91A5 /* LZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerView.m; sourceTree = "<group>"; };
 		F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
 		F0F6D4B7219E75C80004FCB3 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
+		F0F7856621AFC8EE00F0251F /* LMZXSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = LMZXSDK.a; sourceTree = "<group>"; };
+		F0F7856721AFC8EE00F0251F /* LMZXSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMZXSDK.h; sourceTree = "<group>"; };
+		F0F7856821AFC8EE00F0251F /* lmzxResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = lmzxResource.bundle; sourceTree = "<group>"; };
+		F0F7856D21AFC90700F0251F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F0F7856F21AFC91000F0251F /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		F0F7857221AFCC1200F0251F /* SettingTestLimuEducationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingTestLimuEducationVC.h; sourceTree = "<group>"; };
+		F0F7857321AFCC1200F0251F /* SettingTestLimuEducationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingTestLimuEducationVC.m; sourceTree = "<group>"; };
+		F0F7857421AFCC1200F0251F /* SettingTestLimuEducationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTestLimuEducationVC.xib; sourceTree = "<group>"; };
 		F0F9801B21AEA84500F4EB1D /* ZFDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFDetailModel.h; sourceTree = "<group>"; };
 		F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFDetailModel.m; sourceTree = "<group>"; };
+		F0F99FB321B1052000210786 /* SettingCreditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCreditVC.h; sourceTree = "<group>"; };
+		F0F99FB421B1052000210786 /* SettingCreditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCreditVC.m; sourceTree = "<group>"; };
+		F0F99FB521B1052000210786 /* SettingCreditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCreditVC.xib; sourceTree = "<group>"; };
+		F0F99FB821B1071600210786 /* SettingCreaitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCreaitCell.h; sourceTree = "<group>"; };
+		F0F99FB921B1071600210786 /* SettingCreaitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCreaitCell.m; sourceTree = "<group>"; };
+		F0F99FBA21B1071600210786 /* SettingCreaitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCreaitCell.xib; sourceTree = "<group>"; };
 		F0FBC88121A53B9200B8ADE9 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		F0FBC88221A53B9200B8ADE9 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		F0FBC88421A53CE100B8ADE9 /* CouponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
@@ -624,7 +648,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F7857021AFC91000F0251F /* LocalAuthentication.framework in Frameworks */,
+				F0F7856E21AFC90700F0251F /* CoreLocation.framework in Frameworks */,
 				F0B50AEF218FF17C0027BB61 /* libc++.tbd in Frameworks */,
+				F0F7856A21AFC8EE00F0251F /* LMZXSDK.a in Frameworks */,
 				F0B50AED218FF1720027BB61 /* libz.tbd in Frameworks */,
 				F0FD36182196A94500F6C93B /* AlipaySDK.framework in Frameworks */,
 				F0B50AEB218FF16C0027BB61 /* libsqlite3.0.tbd in Frameworks */,
@@ -652,6 +679,8 @@
 		705C454D5A90F147A665C100 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0F7856F21AFC91000F0251F /* LocalAuthentication.framework */,
+				F0F7856D21AFC90700F0251F /* CoreLocation.framework */,
 				F0B50AEE218FF17B0027BB61 /* libc++.tbd */,
 				F0B50AEC218FF1720027BB61 /* libz.tbd */,
 				F0B50AEA218FF16C0027BB61 /* libsqlite3.0.tbd */,
@@ -1307,6 +1336,8 @@
 		F0F0E475218D53D000B4ABCE /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				F0F99FAE21B1031000210786 /* 征信 */,
+				F0F7857121AFCBE900F0251F /* 测试 */,
 				F0E1ABEA2193CABC00A9C17F /* Mian */,
 				F0E1ABE62193CA9700A9C17F /* 设置 */,
 				F0E1ABE22193CA6E00A9C17F /* 优惠券 */,
@@ -1404,6 +1435,7 @@
 		F0F0E47E218D53D000B4ABCE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F0F7856521AFC8EE00F0251F /* LMZXSDK */,
 				F0F6D4B5219E75C80004FCB3 /* SGAdvertScrollView */,
 				F0F6C799219A6A77009F91A5 /* LZPickerView */,
 				F0B50AB6218FF15D0027BB61 /* SDK */,
@@ -1740,6 +1772,72 @@
 			path = SGAdvertScrollView;
 			sourceTree = "<group>";
 		};
+		F0F7856521AFC8EE00F0251F /* LMZXSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7856621AFC8EE00F0251F /* LMZXSDK.a */,
+				F0F7856721AFC8EE00F0251F /* LMZXSDK.h */,
+				F0F7856821AFC8EE00F0251F /* lmzxResource.bundle */,
+			);
+			name = LMZXSDK;
+			path = ../../../../LmzxSdk_ios_V1.3.4/LMZXSDK;
+			sourceTree = "<group>";
+		};
+		F0F7857121AFCBE900F0251F /* 测试 */ = {
+			isa = PBXGroup;
+			children = (
+				F0F7857221AFCC1200F0251F /* SettingTestLimuEducationVC.h */,
+				F0F7857321AFCC1200F0251F /* SettingTestLimuEducationVC.m */,
+				F0F7857421AFCC1200F0251F /* SettingTestLimuEducationVC.xib */,
+			);
+			path = "测试";
+			sourceTree = "<group>";
+		};
+		F0F99FAE21B1031000210786 /* 征信 */ = {
+			isa = PBXGroup;
+			children = (
+				F0F99FB221B1034200210786 /* Other */,
+				F0F99FB121B1033D00210786 /* Model */,
+				F0F99FB021B1033700210786 /* View */,
+				F0F99FAF21B1032A00210786 /* Controller */,
+			);
+			path = "征信";
+			sourceTree = "<group>";
+		};
+		F0F99FAF21B1032A00210786 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0F99FB321B1052000210786 /* SettingCreditVC.h */,
+				F0F99FB421B1052000210786 /* SettingCreditVC.m */,
+				F0F99FB521B1052000210786 /* SettingCreditVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0F99FB021B1033700210786 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0F99FB821B1071600210786 /* SettingCreaitCell.h */,
+				F0F99FB921B1071600210786 /* SettingCreaitCell.m */,
+				F0F99FBA21B1071600210786 /* SettingCreaitCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0F99FB121B1033D00210786 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0F99FB221B1034200210786 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		F0FD35E621966B8C00F6C93B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1945,6 +2043,7 @@
 				F0E1AC5921942F0F00A9C17F /* CardAuthonVC.xib in Resources */,
 				F0B50A08218FE76D0027BB61 /* ResigterVC.xib in Resources */,
 				F0B50A03218FE76D0027BB61 /* BindVC.xib in Resources */,
+				F0F99FB721B1052000210786 /* SettingCreditVC.xib in Resources */,
 				F0E1AC312193EBCB00A9C17F /* ProductTypeCell.xib in Resources */,
 				F0E1AC7621943CA500A9C17F /* AddressListVC.xib in Resources */,
 				F0B50ADF218FF15E0027BB61 /* ShareSDKUI.bundle in Resources */,
@@ -1961,6 +2060,7 @@
 				F0E1AC5E21942F6700A9C17F /* FaceAuthonVC.xib in Resources */,
 				F0E1AC6321942F9C00A9C17F /* SingleAuthonVC.xib in Resources */,
 				F0FF5AC5219526970050AD96 /* AddreeListCell.xib in Resources */,
+				F0F99FBC21B1071600210786 /* SettingCreaitCell.xib in Resources */,
 				F0E1AC182193D92D00A9C17F /* SettingFriendVC.xib in Resources */,
 				F0E1AC222193D9DC00A9C17F /* SettingAuthonVC.xib in Resources */,
 				F0F0E703218D987E00B4ABCE /* 成功图片@2x.png in Resources */,
@@ -1988,6 +2088,8 @@
 				F0F0E704218D987F00B4ABCE /* car5@2x.png in Resources */,
 				F0E1ABF42193CBDA00A9C17F /* SettingCouponCell.xib in Resources */,
 				F0EEFA5C2192A7D9006D1650 /* HomeForyouCell.xib in Resources */,
+				F0F7856B21AFC8EE00F0251F /* lmzxResource.bundle in Resources */,
+				F0F7857621AFCC1200F0251F /* SettingTestLimuEducationVC.xib in Resources */,
 				F0B50A07218FE76D0027BB61 /* ForgetPwdVC.xib in Resources */,
 				F0E1ABFE2193CFBB00A9C17F /* SettingUserinfoCell.xib in Resources */,
 				F0F0E702218D987E00B4ABCE /* car2@2x.png in Resources */,
@@ -2108,6 +2210,7 @@
 				F0FD35F92196865100F6C93B /* ContactVC.m in Sources */,
 				F0FF5AE02195A28F0050AD96 /* OrderContentCell.m in Sources */,
 				F0F0E6E3218D987E00B4ABCE /* UIButton+POImagePosition.m in Sources */,
+				F0F99FBB21B1071600210786 /* SettingCreaitCell.m in Sources */,
 				F0FC0DCF219C24B60013D765 /* GuideVC.m in Sources */,
 				F009C1C821A2AD2200EE828E /* ColorModel.m in Sources */,
 				F0F0E6D4218D987E00B4ABCE /* IQUITextFieldView+Additions.m in Sources */,
@@ -2122,6 +2225,7 @@
 				F0E1ABEE2193CB2F00A9C17F /* SettingCouponVC.m in Sources */,
 				F0E1AC5321942ED300A9C17F /* YunYinShangAuthonVC.m in Sources */,
 				F0E1AC66219436AD00A9C17F /* OrderListVC.m in Sources */,
+				F0F7857521AFCC1200F0251F /* SettingTestLimuEducationVC.m in Sources */,
 				F0EEFA892192D447006D1650 /* HomeEngineVC.m in Sources */,
 				F0D8EE2B21A40F7D00CEB35A /* ProductModel.m in Sources */,
 				F0F0E6D8218D987E00B4ABCE /* IQKeyboardReturnKeyHandler.m in Sources */,
@@ -2186,6 +2290,7 @@
 				F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */,
 				F0F0E6DE218D987E00B4ABCE /* ZJSegmentStyle.m in Sources */,
 				F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */,
+				F0F99FB621B1052000210786 /* SettingCreditVC.m in Sources */,
 				F0EEFA642192C101006D1650 /* HomeSortVC.m in Sources */,
 				F00E07AA218D2A5A0079D952 /* main.m in Sources */,
 				F0FBC88921A5401300B8ADE9 /* LoanModel.m in Sources */,
@@ -2368,6 +2473,7 @@
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/mitugou/Vendor/JsmsSDK",
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformSDK/WeChatSDKFull",
+					"$(PROJECT_DIR)/mitugou/Vendor/LMZXSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanpangzi.mitugou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2410,6 +2516,7 @@
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/mitugou/Vendor/JsmsSDK",
 					"$(PROJECT_DIR)/mitugou/Vendor/SDK/ShareSDK/Support/PlatformSDK/WeChatSDKFull",
+					"$(PROJECT_DIR)/mitugou/Vendor/LMZXSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanpangzi.mitugou;
 				PRODUCT_NAME = "$(TARGET_NAME)";

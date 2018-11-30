@@ -98,7 +98,7 @@
             app.window.rootViewController = tabbar;
             [app.window makeKeyAndVisible];
         }else{
-            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+            [SVProgressHUD showErrorWithStatus:res.message];
             return;
         }
     } failure:^(NSError * _Nonnull error) {

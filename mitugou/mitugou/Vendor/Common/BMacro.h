@@ -6,6 +6,16 @@
 #define BMacro_h
 //弱引用
 #define WEAKSELF __weak typeof(self) weakSelf = self;
+/**************立木征信垃圾***********/
+#define  UID            @"11"
+#define  CALLBACKURL    @"http://192.168.117.239:8080/credit_callback.php"
+#define  LIMU_SeverUrl @"https://t.limuzhengxin.cn"
+//#define LIMU_SeverUrl @"https://api.limuzhengxin.com/"
+/// 请设置成在立木官网注册的参数信息
+#define  APIKEY         @"0496145008501381"
+#define  APISECRET      @"NorGLbc72zTgmE99HfACL82wbNeAhUQs"
+#define RGB2 (r,g,b)      [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define RGB_navBar      RGB(48, 113, 242)
 //平台用到的AppID和AppSecret
 //qq平台
 //1107909169
@@ -55,7 +65,7 @@
 
 //全局的颜色
 #define ZF_Left_Color  HEXCOLOR(0xDEB576)
-#define MainThemeColor HEXCOLOR(0x0099D7)
+#define MainThemeColor HEXCOLOR(0x505050)
 #define ZF_Global_Color HEXCOLOR(0x65C4C7)
 #define Gold1Color HEXCOLOR(0x905f3a)
 #define Gold2Color HEXCOLOR(0xc4a486)
