@@ -16,19 +16,19 @@
     [self setRightButton:[UIImage imageNamed:@"电话"]];
     OrderDetailVC  *vc1 = [[OrderDetailVC alloc]init];
     vc1.title = @"全部";
-    vc1.status = @"all";
+    vc1.status = @"null";
     OrderDetailVC  *vc2 = [[OrderDetailVC alloc]init];
     vc2.title = @"待付款";
-    vc2.status = @"pending_payment";
+    vc2.status = @"0";
     OrderDetailVC  *vc3 = [[OrderDetailVC alloc]init];
     vc3.title = @"待发货";
-    vc3.status = @"pending_delivery";
+    vc3.status = @"1";
     OrderDetailVC  *vc4 = [[OrderDetailVC alloc]init];
     vc4.title = @"待收货";
-    vc4.status = @"pending_receipt";
+    vc4.status = @"2";
     OrderDetailVC  *vc5 = [[OrderDetailVC alloc]init];
     vc5.title = @"已完成";
-    vc5.status = @"pending_review";
+    vc5.status = @"3";
     
     [self addChildViewController:vc1];
     [self addChildViewController:vc2];

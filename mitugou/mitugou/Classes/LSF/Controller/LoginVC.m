@@ -120,55 +120,55 @@
  三方登录
  @param sender 三方登录
  */
-- (IBAction)actionWeChatBtn:(UIButton *)sender
-{
-    int tag = (int)sender.tag;
-    int platform;
-    NSString *platformType = nil;
-    if (tag == 0) {
-        //微信登录
-        platform = SSDKPlatformTypeWechat;
-        platformType = @"wx";
-    }else{
-        //qq登录
-        platform = SSDKPlatformTypeQQ;
-        platformType = @"qq";
-    }
-     [self ThirdAuthorMethodWithPlatform:platform WithType:platformType];
-}
-/**
- 三方登录的方法
- */
--(void)ThirdAuthorMethodWithPlatform:(int)platform WithType:(NSString *)platformType
-{
-    [SVProgressHUD showWithStatus:@"请求中"];
-    [ShareSDK authorize:platform settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
-        [SVProgressHUD dismiss];
-        switch (state) {
-            case SSDKResponseStateSuccess:
-            {
-                NSLog(@"授权成功");
-                NSLog(@"userid:%@",user.uid);
-                NSLog(@"usericon:%@",user.icon);
-                NSLog(@"username:%@",user.nickname);
-                BindVC *bindvc = [[BindVC alloc]init];
-                [self.navigationController pushViewController:bindvc animated:YES];
-            }
-                break;
-            case SSDKResponseStateFail:
-            {
-                NSLog(@"授权失败");
-            }
-                 break;
-            case SSDKResponseStateCancel:
-            {
-                NSLog(@"授权取消了");
-            }
-                break;
-            default:
-                break;
-        }
-    }];
-}
+//- (IBAction)actionWeChatBtn:(UIButton *)sender
+//{
+//    int tag = (int)sender.tag;
+//    int platform;
+//    NSString *platformType = nil;
+//    if (tag == 0) {
+//        //微信登录
+//        platform = SSDKPlatformTypeWechat;
+//        platformType = @"wx";
+//    }else{
+//        //qq登录
+//        platform = SSDKPlatformTypeQQ;
+//        platformType = @"qq";
+//    }
+//     [self ThirdAuthorMethodWithPlatform:platform WithType:platformType];
+//}
+///**
+// 三方登录的方法
+// */
+//-(void)ThirdAuthorMethodWithPlatform:(int)platform WithType:(NSString *)platformType
+//{
+//    [SVProgressHUD showWithStatus:@"请求中"];
+//    [ShareSDK authorize:platform settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
+//        [SVProgressHUD dismiss];
+//        switch (state) {
+//            case SSDKResponseStateSuccess:
+//            {
+//                NSLog(@"授权成功");
+//                NSLog(@"userid:%@",user.uid);
+//                NSLog(@"usericon:%@",user.icon);
+//                NSLog(@"username:%@",user.nickname);
+//                BindVC *bindvc = [[BindVC alloc]init];
+//                [self.navigationController pushViewController:bindvc animated:YES];
+//            }
+//                break;
+//            case SSDKResponseStateFail:
+//            {
+//                NSLog(@"授权失败");
+//            }
+//                 break;
+//            case SSDKResponseStateCancel:
+//            {
+//                NSLog(@"授权取消了");
+//            }
+//                break;
+//            default:
+//                break;
+//        }
+//    }];
+//}
 
 @end

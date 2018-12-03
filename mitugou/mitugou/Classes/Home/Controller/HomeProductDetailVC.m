@@ -177,6 +177,7 @@
                 }
             }
             [weakSelf.tableView reloadData];
+            [weakSelf.tableView.mj_header endRefreshing];
         }else{
             [SVProgressHUD showErrorWithStatus:@"获取失败"];
             return;
@@ -184,6 +185,7 @@
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        [weakSelf.tableView.mj_header endRefreshing];
         return;
     }];
 }
@@ -200,6 +202,7 @@
         CommitOrderVC *commitordervc = [[CommitOrderVC alloc]init];
         commitordervc.detailModel = weakSelf.productSubModel;
         commitordervc.selectColor = weakSelf.colorStr;
+        commitordervc.prefix      = weakSelf.prefiex;
         [weakSelf.navigationController pushViewController:commitordervc animated:YES];
     };
     self.bottomView.rightBlock = ^(UIButton *btn) {
@@ -244,10 +247,8 @@
 #pragma mark - 轮播图的代理方法
 /** 点击图片回调 */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    
     //NSLog(@"%ld",index);
 }
-
 /** 图片滚动回调 */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index{
     //NSLog(@"%ld",index);
@@ -323,7 +324,7 @@
         CGFloat atH = IPHONE_WIDTH*H/W;
         return atH;
     }else{
-        return 300;
+        return 130;
     }
 }
 

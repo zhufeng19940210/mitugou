@@ -67,7 +67,7 @@
         [weakSelf.collectionView.mj_header endRefreshing];
         return;
     }];
-}
+}   
 /**
  请求更多数据
  */

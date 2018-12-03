@@ -10,4 +10,5 @@
 @property (nonatomic,strong)ProductSubModel *detailModel;
 //@property (nonatomic,strong)PeriodsModel *periodsModl;
 @property (nonatomic,copy)NSString *selectColor;
+@property (nonatomic,copy)NSString *prefix; //图片前缀
 @end

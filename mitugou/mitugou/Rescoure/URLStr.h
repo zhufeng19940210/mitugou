@@ -5,7 +5,7 @@
 #ifndef URLStr_h
 #define URLStr_h
 #define BaseUrl @"http://47.93.238.67:9999/htshop"
-/*===================认证的资料================*/
+/*=======================认证的资料================*/
 #define User_Authon1       @"user_authon1"
 #define User_Authon2       @"user_authon2"
 #define User_Authon3       @"user_authon3"
@@ -14,7 +14,7 @@
 #define User_Authon6       @"user_authon6"
 #define User_Authon7       @"user_authon7"
 #define User_Total         @"user_total_authon"
-/*==========================需要的字段=======================*/
+/*========================需要的字段=======================*/
 #define User_AreaLeft       @"areaLeft"
 #define User_AreaRight      @"areaRight"
 #define User_HotLeft        @"hotLeft"
@@ -38,7 +38,10 @@
 #define User_Forget_Code [BaseUrl stringByAppendingString:@"/userAuthentication/verifyPwd"]
 ///忘记密码
 #define User_Forget_Url [BaseUrl stringByAppendingString:@"/userAuthentication/forgetPwd"]
-
+///查询是否支付宝定金
+#define User_Deposit_Url [BaseUrl stringByAppendingString:@"/userAuthentication/deposit"]
+///查询是否通过认证
+#define User_Application_Urk [BaseUrl stringByAppendingString:@"/userAuthentication/application"]
 /*========================用户的基本信息=====================*/
 ///修改用户基本信息
 #define Userinfo_Base_Url_update [BaseUrl stringByAppendingString:@"/userInfoForm/modifybaseinfo"]
@@ -106,10 +109,18 @@
 /*================================立木征信URL===============================*/
 ///立木征信
 #define LIMU_SDK_URL [BaseUrl stringByAppendingString:@"/limutoken/setToken"]
+
 /*=================================商品订单=====================================*/
 ///提交订单
 #define Commit_Order [BaseUrl stringByAppendingString:@"/order/addOrder"]
 ///查询订单
 #define Order_Status [BaseUrl stringByAppendingString:@"/order/allOrder"]
+///查看物流
+#define Order_Logistic_Url [BaseUrl stringByAppendingString:@"/order/logistic"]
+///评价
+#define Order_Evaluation_Url [BaseUrl stringByAppendingString:@"/order/evaluation"]
+///确定收货
+#define Order_confirm_Url [BaseUrl stringByAppendingString:@"/order/confirm"]
+
 
 #endif /* URLStr_h */

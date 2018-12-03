@@ -79,29 +79,69 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhy-lJ-KeI">
-                                <rect key="frame" x="280" y="10" width="62" height="30"/>
+                                <rect key="frame" x="261" y="10" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Qoz-RA-Z8W"/>
-                                    <constraint firstAttribute="width" constant="62" id="zSD-ud-eEO"/>
+                                    <constraint firstAttribute="width" constant="80" id="zSD-ud-eEO"/>
                                 </constraints>
-                                <state key="normal" title="提醒发货"/>
+                                <state key="normal" title="提醒发货">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionTixifahuoBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HQS-fn-iYo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQB-fV-6nF">
-                                <rect key="frame" x="198" y="10" width="62" height="30"/>
+                                <rect key="frame" x="161" y="10" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="DDm-db-dl5"/>
+                                    <constraint firstAttribute="width" constant="80" id="DDm-db-dl5"/>
                                     <constraint firstAttribute="height" constant="30" id="UVO-kd-Dgc"/>
                                 </constraints>
-                                <state key="normal" title="查看物流"/>
+                                <state key="normal" title="查看物流">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionChakanwuliluBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ysK-V7-jeK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8A-vi-fvg">
+                                <rect key="frame" x="261" y="10" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cFp-o6-Crg"/>
+                                    <constraint firstAttribute="width" constant="80" id="tQ8-Ta-r9j"/>
+                                </constraints>
+                                <state key="normal" title="评价">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE8-xy-iRo">
+                                <rect key="frame" x="261" y="10" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Dph-7v-KtI"/>
+                                    <constraint firstAttribute="height" constant="30" id="TQp-in-aQL"/>
+                                </constraints>
+                                <state key="normal" title="确认收货">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="acitonPinjiaBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mTi-Vu-Wka"/>
+                                    <action selector="actionConfirmBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="M4G-ow-gpn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="EE8-xy-iRo" firstAttribute="centerY" secondItem="oQB-fV-6nF" secondAttribute="centerY" id="3Ey-8j-Ssc"/>
+                            <constraint firstItem="T8A-vi-fvg" firstAttribute="centerY" secondItem="oQB-fV-6nF" secondAttribute="centerY" id="3MM-vf-QPD"/>
                             <constraint firstAttribute="trailing" secondItem="hbE-eC-QGb" secondAttribute="trailing" id="4mu-9C-sB2"/>
                             <constraint firstItem="hbE-eC-QGb" firstAttribute="top" secondItem="bur-Uy-nvp" secondAttribute="top" id="Cay-jY-ReW"/>
+                            <constraint firstAttribute="trailing" secondItem="T8A-vi-fvg" secondAttribute="trailing" constant="15" id="GFE-iv-67h"/>
                             <constraint firstItem="Bhy-lJ-KeI" firstAttribute="centerY" secondItem="bur-Uy-nvp" secondAttribute="centerY" id="O8T-VL-eKN"/>
                             <constraint firstItem="hbE-eC-QGb" firstAttribute="leading" secondItem="bur-Uy-nvp" secondAttribute="leading" id="WZE-Rx-89j"/>
-                            <constraint firstAttribute="trailing" secondItem="Bhy-lJ-KeI" secondAttribute="trailing" constant="14" id="gVQ-Sc-BCX"/>
+                            <constraint firstAttribute="trailing" secondItem="EE8-xy-iRo" secondAttribute="trailing" constant="15" id="gIe-zG-ScG"/>
+                            <constraint firstAttribute="trailing" secondItem="Bhy-lJ-KeI" secondAttribute="trailing" constant="15" id="gVQ-Sc-BCX"/>
                             <constraint firstAttribute="height" constant="50" id="pVd-kO-wCs"/>
                             <constraint firstItem="Bhy-lJ-KeI" firstAttribute="leading" secondItem="oQB-fV-6nF" secondAttribute="trailing" constant="20" id="s1F-SI-Ny6"/>
                             <constraint firstItem="oQB-fV-6nF" firstAttribute="centerY" secondItem="bur-Uy-nvp" secondAttribute="centerY" id="tmZ-qS-mPW"/>
@@ -188,7 +228,21 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="43" y="101"/>
+            <connections>
+                <outlet property="chakanwuliu_btn" destination="oQB-fV-6nF" id="13n-cY-uzD"/>
+                <outlet property="confirm_btn" destination="EE8-xy-iRo" id="FI6-5w-rtE"/>
+                <outlet property="order_number" destination="Qp0-zS-ZHj" id="KGd-wd-bLR"/>
+                <outlet property="order_status" destination="vvo-SZ-Ni5" id="TTE-pd-uPb"/>
+                <outlet property="pinjia_btn" destination="T8A-vi-fvg" id="pbq-b1-Leo"/>
+                <outlet property="produc_img" destination="4F7-X8-KQ4" id="KwL-hv-P64"/>
+                <outlet property="product_des" destination="r5v-Kb-5we" id="JCs-fN-7bu"/>
+                <outlet property="product_lab" destination="4F7-X8-KQ4" id="r4k-e4-9hp"/>
+                <outlet property="product_total_lab" destination="SlL-ca-Azm" id="j9x-gM-hUb"/>
+                <outlet property="single_price_lab" destination="uAY-WQ-UzL" id="dFy-Wz-bhC"/>
+                <outlet property="tixingfahuo_btn" destination="Bhy-lJ-KeI" id="tJn-Nf-yTn"/>
+                <outlet property="total_price_lab" destination="YaP-nz-8Bg" id="5a7-NF-fce"/>
+            </connections>
+            <point key="canvasLocation" x="-19" y="-164"/>
         </tableViewCell>
     </objects>
     <resources>

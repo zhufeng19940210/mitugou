@@ -75,7 +75,7 @@
 
 -(void)setupConfigNavitionBar
 {
-    [self setRightButtonText:@"搜索" withColor:[UIColor blackColor]];
+    [self setRightButtonText:@"搜索" withColor:[UIColor whiteColor]];
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, IPHONE_WIDTH*0.8, 34)];
     textField.layer.masksToBounds = YES;
     textField.layer.cornerRadius = 16.0f;

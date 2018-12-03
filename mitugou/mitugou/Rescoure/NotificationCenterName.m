@@ -10,4 +10,6 @@ NSString *const SHOWTOPTOOLVIEW = @"SHOWTOPTOOLVIEW";
 NSString *const HIDETOPTOOLVIEW = @"HIDETOPTOOLVIEW";
 /** 修改成功通知 */
 NSString *const UPDATESUCCESS = @"UPDATESUCCESS";
+/** 评价成功通知*/
+NSString *const PINJIASUCCESS = @"PINJIASUCCESS";
 @end

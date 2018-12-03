@@ -10,6 +10,7 @@
 #import "DistributionTypeCell.h"
 #import "AddressListVC.h"
 #import "AddreeModel.h"
+#import "UserModel.h"
 @interface CommitOrderVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *total_lab;
@@ -40,6 +41,7 @@
     param[@"token"] = token;
     WEAKSELF
     [[NetWorkTool shareInstacne]postWithURLString:Userinfo_Address_FindAll parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
@@ -47,13 +49,14 @@
             weakSelf.addressArray = [AddreeModel mj_objectArrayWithKeyValuesArray:res.data[@"address"]];
             for (int i = 0; i < weakSelf.addressArray.count;i++) {
                 AddreeModel *model = weakSelf.addressArray[i];
+                NSLog(@"model.isDefault:%ld",(long)model.isDefault);
                 if (model.isDefault == 1) {
                     //是默认的
                     weakSelf.addressmodel = model;
                     break;
                 }
-                [weakSelf.tableview reloadData];
             }
+            [weakSelf.tableview reloadData];
         }else{
         }
     } failure:^(NSError * _Nonnull error) {
@@ -119,6 +122,14 @@
         commitCell = addressCell;
     }else if (indexPath.section == 1){
         ProductDetailCell *detailCell = [tableView dequeueReusableCellWithIdentifier:@"ProductDetailCell"];
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@",self.prefix,self.detailModel.photo];
+        [detailCell.product_img sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
+        detailCell.name_lab.text = [NSString stringWithFormat:@"%@",self.detailModel.cname];
+        detailCell.detail_lab.text = [NSString stringWithFormat:@"%@",self.detailModel.desc];
+        detailCell.price_lab.text = [NSString stringWithFormat:@"￥%.2f",[self.detailModel.price doubleValue]];
+        detailCell.color_lab.text = [NSString stringWithFormat:@"%@",self.selectColor];
+        detailCell.total_lab.text = [NSString stringWithFormat:@"小计:￥%.2f",[self.detailModel.price doubleValue]];
+        detailCell.count_lab.text = @"共计1件商品";
         commitCell = detailCell;
     }else if (indexPath.section == 2){
         StagingTypeCell *staginCell = [tableView dequeueReusableCellWithIdentifier:@"StagingTypeCell"];
@@ -158,6 +169,43 @@
  */
 - (IBAction)acitonCommitVC:(UIButton *)sender
 {
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    UserModel *usermodel = [UserModel getInfo];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    param[@"uid"]   = usermodel.uid;
+    param[@"cid"]   = self.detailModel.cid;
+    param[@"cname"] = self.detailModel.cname;
+    param[@"ctype"] = self.detailModel.ctype;
+    param[@"photo"] = self.detailModel.photo;
+    param[@"price"] = self.detailModel.price;
+    param[@"color"] = self.selectColor;
+    param[@"rname"] = self.addressmodel.receName;
+    param[@"phone"] = self.addressmodel.phone;
+    param[@"address"] = self.addressmodel.detailAddr;
+    NSLog(@"param:%@",param);
+    [[NetWorkTool shareInstacne]postWithURLString:Commit_Order parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code) {
+            [SVProgressHUD showSuccessWithStatus:@"提交订单成功"];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"提交订单失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        NSLog(@"error:%@",error);
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
+}
+/**
+ 支付方式
+ */
+-(void)PayMethod
+{
     UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"请选择支付方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     //取消按钮
     UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
@@ -192,15 +240,16 @@
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             // NOTE: 调用支付结果开始支付
-            [[AlipaySDK defaultService] payOrder:@"" fromScheme:@"" callback:^(NSDictionary *resultDic) {
-                NSLog(@"reslut = %@",resultDic);
+            ///[[AlipaySDK defaultService] payOrder:@"" fromScheme:@"" callback:^(NSDictionary *resultDic) {
+             //   NSLog(@"reslut = %@",resultDic);
                 
-            }];
+           // }];
         }else{
             [SVProgressHUD showErrorWithStatus:@"请求失败"];
             return;
         }
     } failure:^(NSError * _Nonnull error) {
+        NSLog(@"error:%@",error);
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
         return;

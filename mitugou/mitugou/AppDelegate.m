@@ -58,11 +58,11 @@
     //显示时间
     [SVProgressHUD setMinimumDismissTimeInterval:1.0];//显示的时间
     ///三方登录的东西
-    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
-        [platformsRegister setupQQWithAppId:MOBSSDKQQAppID appkey:MOBSSDKQQAppKey];
-        [platformsRegister setupWeChatWithAppId:MOBSSDKWeChatAppID appSecret:MOBSSDKWeChatAppSecret];
-        [platformsRegister setupSinaWeiboWithAppkey:MOBSSDKSinaWeiBoAppKey appSecret:MOBSSDKWeChatAppSecret redirectUrl:MOBSSDKSinaWeiBoDirecUrl];
-    }];
+//    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
+//        [platformsRegister setupQQWithAppId:MOBSSDKQQAppID appkey:MOBSSDKQQAppKey];
+//        [platformsRegister setupWeChatWithAppId:MOBSSDKWeChatAppID appSecret:MOBSSDKWeChatAppSecret];
+//        [platformsRegister setupSinaWeiboWithAppkey:MOBSSDKSinaWeiBoAppKey appSecret:MOBSSDKWeChatAppSecret redirectUrl:MOBSSDKSinaWeiBoDirecUrl];
+//    }];
     //立木征信的东西
     //1.注册立木征信的东西
     [LMZXSDK registerLMZXSDK];
