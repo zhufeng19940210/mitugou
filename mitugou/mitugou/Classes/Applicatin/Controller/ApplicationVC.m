@@ -43,13 +43,13 @@
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
-            [weakSelf.collectionview reloadData];
-            [weakSelf.collectionview.mj_header endRefreshing];
         }else{
             [SVProgressHUD showErrorWithStatus:@"获取成功"];
             [weakSelf.collectionview.mj_header endRefreshing];
             return;
         }
+        [weakSelf.collectionview reloadData];
+        [weakSelf.collectionview.mj_header endRefreshing];
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];

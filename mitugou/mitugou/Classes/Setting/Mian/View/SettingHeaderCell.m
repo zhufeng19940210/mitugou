@@ -22,5 +22,16 @@
         self.actionBlock((SettingHeaderType)tag);
     }
 }
+/**
+ 其他的button
+ @param sender 其他的button
+ */
+- (IBAction)actionHeaderBtn:(UIButton *)sender
+{
+    if (self.actionBlock) {
+        self.actionBlock((SettingHeaderType)sender.tag);
+    }
+}
+
 
 @end

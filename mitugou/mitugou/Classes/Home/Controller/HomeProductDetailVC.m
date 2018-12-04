@@ -15,6 +15,7 @@
 #import "ProductSubModel.h"
 #import "HomedestailModel.h"
 #import "ZFDetailModel.h"
+#import "PayView.h"
 @interface HomeProductDetailVC ()<SDCycleScrollViewDelegate,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic, strong) UIView *headView;
@@ -25,13 +26,14 @@
 @property (nonatomic, strong) PeriodsModel *selectModel;
 @property (nonatomic, strong)ProductSubModel *productSubModel; ///商品详情
 @property (nonatomic)    CGFloat rowH ;
-@property  (nonatomic) BOOL status;
+@property (nonatomic) BOOL status;
 @property (nonatomic,copy) NSString *colorStr;
 @property (nonatomic,strong) NSMutableArray *colorArr;
 @property (nonatomic, strong)NSMutableArray *periodsBtnArr;
 @property (nonatomic, strong)NSMutableArray *colorBtnArr;
 @property (nonatomic,strong) ProductBottomView *bottomView; //底部view
 @property (nonatomic,copy)NSString *prefiex; //图片的前缀
+@property (nonatomic,strong)PayView *payview;
 
 @end
 @implementation HomeProductDetailVC
@@ -119,6 +121,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"商品详情";
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"PayView" owner:nil options:nil];
+    self.payview  = views[0];
     [self actionProductNewData];
     [self setupUI];
     [self setupRefresh];
@@ -214,7 +218,7 @@
     [self.view addSubview:self.tableView];
 }
 /**
- 认证
+ 1.认证是否有过交过定金，如果交过在去认证的东西
  */
 -(void)stagingWithAnthonBtn
 {
@@ -223,19 +227,25 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
     WEAKSELF
-    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+    [[NetWorkTool shareInstacne]postWithURLString:User_Deposit_Url parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
+            ///没有支付定金
+            [weakSelf.payview show];
+            weakSelf.payview.paymethodblock = ^(int payTag) {
+                NSLog(@"payTag:%d",payTag);
+            };
+        }else if (res.code == 2){
+            //没有认证过
+            SettingAuthonVC *authonvc = [[SettingAuthonVC alloc]init];
+            [weakSelf.navigationController pushViewController:authonvc animated:YES];
+        }else if(res.code == 3){
             //成功了直接跳转
             CommitOrderVC *commitordervc = [[CommitOrderVC alloc]init];
             commitordervc.detailModel = weakSelf.productSubModel;
             commitordervc.selectColor = weakSelf.colorStr;
             [weakSelf.navigationController pushViewController:commitordervc animated:YES];
-        }else{
-            //没有认证过
-            SettingAuthonVC *authonvc = [[SettingAuthonVC alloc]init];
-            [weakSelf.navigationController pushViewController:authonvc animated:YES];
         }
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
@@ -253,7 +263,6 @@
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index{
     //NSLog(@"%ld",index);
 }
-
 #pragma mark - uitableviewdelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

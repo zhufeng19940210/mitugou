@@ -121,6 +121,9 @@
 #define Order_Evaluation_Url [BaseUrl stringByAppendingString:@"/order/evaluation"]
 ///确定收货
 #define Order_confirm_Url [BaseUrl stringByAppendingString:@"/order/confirm"]
-
+///活体检测上传
+#define User_Huoti_Update [BaseUrl stringByAppendingString:@"/borrowAuthentication/setdiscern"]
+///查看活体检测
+#define User_Huoti_Chakan [BaseUrl stringByAppendingString:@"/borrowAuthentication/getdiscern"]
 
 #endif /* URLStr_h */

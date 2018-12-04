@@ -4,15 +4,9 @@
 //
 //  Created by 栗子 on 2018/3/9.
 //  Copyright © 2018年 http://www.cnblogs.com/Lrx-lizi/.     https://github.com/lrxlizi/. All rights reserved.
-//
-
-
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
-
-
 #import "LZPickerView.h"
-
 @interface LZPickerView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (nonatomic, assign)NSInteger       number;//几列
@@ -36,7 +30,6 @@
     self.leftArr = [NSMutableArray array];
     self.rightArr = [NSMutableArray array];
 }
-
 /**
  类型
  */
@@ -47,9 +40,7 @@
         self.number = 2;
     }
 }
-
 #pragma mark UIPickerViewDelegate && UIPickerViewDataSource
-
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return self.number;
 }
@@ -278,7 +269,6 @@
         }
     }
 }
-
 /**
  标题
  */
@@ -286,6 +276,4 @@
     _titleText = titleText;
     self.titleLB.text = titleText;
 }
-
-
 @end

@@ -16,7 +16,7 @@
     [self setRightButton:[UIImage imageNamed:@"电话"]];
     OrderDetailVC  *vc1 = [[OrderDetailVC alloc]init];
     vc1.title = @"全部";
-    vc1.status = @"null";
+    vc1.status = @"";
     OrderDetailVC  *vc2 = [[OrderDetailVC alloc]init];
     vc2.title = @"待付款";
     vc2.status = @"0";

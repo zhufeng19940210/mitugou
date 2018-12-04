@@ -9,6 +9,7 @@
 #import "CardAuthonVC.h"
 #import "YunYinShangAuthonVC.h"
 #import "ZhifubaoPayAuthonVC.h"
+#import "SettingLiveBodyVC.h"
 @interface SettingAuthonVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic,strong)NSMutableArray *titleArray;
@@ -30,7 +31,7 @@
     self.navigationItem.title = @"实名认证";
     self.view.backgroundColor = RGB(240, 240, 240);
     [self initLIMUSDK];
-    [self setupData];
+    //[self setupData];
     [self setupTableView];
 }
 /**
@@ -129,9 +130,9 @@
         SingleAuthonVC *uservc = [[SingleAuthonVC alloc]init];
         [self.navigationController pushViewController:uservc animated:YES];
     }else if(indexPath.section == 1){
-        //人脸识别
-        FaceAuthonVC *facevc = [[FaceAuthonVC alloc]init];
-        [self.navigationController pushViewController:facevc animated:YES];
+        //活体检测
+        SettingLiveBodyVC *livebobyvc = [[SettingLiveBodyVC alloc]init];
+        [self.navigationController pushViewController:livebobyvc animated:YES];
     }else if(indexPath.section == 2){
         //运营商认证
         _sdkFunction  = LMZXSDKFunctionMobileCarrie;
@@ -149,7 +150,6 @@
         [self pushToLimuSDKMethod];
     }
 }
-
 #pragma mark -- 提交数据
 /**
  运营商的的方法

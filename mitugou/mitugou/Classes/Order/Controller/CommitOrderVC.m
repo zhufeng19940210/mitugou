@@ -128,7 +128,7 @@
         detailCell.detail_lab.text = [NSString stringWithFormat:@"%@",self.detailModel.desc];
         detailCell.price_lab.text = [NSString stringWithFormat:@"￥%.2f",[self.detailModel.price doubleValue]];
         detailCell.color_lab.text = [NSString stringWithFormat:@"%@",self.selectColor];
-        detailCell.total_lab.text = [NSString stringWithFormat:@"小计:￥%.2f",[self.detailModel.price doubleValue]];
+        detailCell.total_lab.text = [NSString stringWithFormat:@"￥%.2f",[self.detailModel.price doubleValue]];
         detailCell.count_lab.text = @"共计1件商品";
         commitCell = detailCell;
     }else if (indexPath.section == 2){
@@ -169,6 +169,37 @@
  */
 - (IBAction)acitonCommitVC:(UIButton *)sender
 {
+    [self PayMethod];
+    
+}
+/**
+ 支付方式
+ */
+-(void)PayMethod
+{
+    [self commitOrder];
+//    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"请选择支付方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//    //取消按钮
+//    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//    //支付宝支付
+//    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"支付宝支付" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+//        //TODO
+//        [self PayWithAlipayBtn];
+//    }];
+//    //微信支付方式
+//    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"微信支付" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//        //TODO
+//        [self PayWithWechatBtn];
+//    }];
+//    [sheet addAction:sure];
+//    [sheet addAction:cancle];
+//    [sheet addAction:delete];
+//    [self presentViewController:sheet animated:YES completion:^{
+//    }];
+}
+
+-(void)commitOrder
+{
     [SVProgressHUD show];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
     UserModel *usermodel = [UserModel getInfo];
@@ -202,35 +233,12 @@
     }];
 }
 /**
- 支付方式
- */
--(void)PayMethod
-{
-    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"请选择支付方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    //取消按钮
-    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    //支付宝支付
-    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"支付宝支付" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
-        //TODO
-        [self PayWithAlipayBtn];
-    }];
-    //微信支付方式
-    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"微信支付" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        //TODO
-        [self PayWithWechatBtn];
-    }];
-    [sheet addAction:sure];
-    [sheet addAction:cancle];
-    [sheet addAction:delete];
-    [self presentViewController:sheet animated:YES completion:^{
-    }];
-}
-/**
   支付宝支付方式
  */
 -(void)PayWithAlipayBtn
 {
     NSLog(@"支付宝支付");
+    
     [SVProgressHUD dismiss];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
@@ -240,10 +248,9 @@
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             // NOTE: 调用支付结果开始支付
-            ///[[AlipaySDK defaultService] payOrder:@"" fromScheme:@"" callback:^(NSDictionary *resultDic) {
-             //   NSLog(@"reslut = %@",resultDic);
-                
-           // }];
+            [[AlipaySDK defaultService] payOrder:@"" fromScheme:@"" callback:^(NSDictionary *resultDic) {
+                NSLog(@"reslut = %@",resultDic);
+            }];
         }else{
             [SVProgressHUD showErrorWithStatus:@"请求失败"];
             return;
@@ -302,7 +309,6 @@
 //     * SendAuthReq、SendMessageToWXReq、PayReq等。
 //     * @param req 具体的发送请求，在调用函数后，请自己释放。
 //     * @return 成功返回YES，失败返回NO。
-//     */
 //     */
 //    [WXApi sendReq: request];
 }

@@ -58,14 +58,15 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
     param[@"state"] = self.status;
-    param[@"pagesize"] = [NSString stringWithFormat:@"%d",self.page];
+    //param[@"pagesize"] = [NSString stringWithFormat:@"%d",self.page];
     WEAKSELF
     [[NetWorkTool shareInstacne]postWithURLString:Order_Status parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
         NSLog(@"responseobject:%@",responseObject);
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             [weakSelf.orderlistArray removeAllObjects];
-            weakSelf.orderlistArray = [OrderStatusModel mj_objectArrayWithKeyValuesArray:res.data[@""]];
+            weakSelf.orderlistArray = [OrderStatusModel mj_objectArrayWithKeyValuesArray:res.data[@"orders"]];
         }else{
             [SVProgressHUD showErrorWithStatus:res.message];
             return;
@@ -119,6 +120,7 @@
     self.tableview.backgroundColor = [UIColor clearColor];
     [self.tableview registerNib:[UINib nibWithNibName:@"OrderContentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"OrderContentCell"];
 }
+
 #pragma mark -- uitableviewdelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
