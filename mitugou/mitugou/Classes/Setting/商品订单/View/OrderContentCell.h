@@ -6,12 +6,9 @@
 #import "OrderStatusModel.h"
 typedef void(^TixingfahuoBlock)(NSString *tagStr,OrderStatusModel *orderModel);
 typedef void(^ChakanwuliuBlcok)(NSString *tagStr,OrderStatusModel *orderModel);
-typedef void(^PinjiagBlock)(NSString *tagStr,OrderStatusModel *orderModel);
-typedef void(^ConfimBlcok)(NSString *tagStr,OrderStatusModel *orderModel );
 @interface OrderContentCell : UITableViewCell
 @property (nonatomic,strong)OrderStatusModel *orderModel;
 @property (nonatomic,copy)TixingfahuoBlock tixingfahuoblock;
 @property (nonatomic,copy)ChakanwuliuBlcok chakanwuliublock;
-@property (nonatomic,copy)PinjiagBlock     pinjiablock;
-@property (nonatomic,copy)ConfimBlcok      confimblock;
+
 @end

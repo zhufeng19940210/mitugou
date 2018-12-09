@@ -29,7 +29,6 @@
     OrderDetailVC  *vc5 = [[OrderDetailVC alloc]init];
     vc5.title = @"已完成";
     vc5.status = @"3";
-    
     [self addChildViewController:vc1];
     [self addChildViewController:vc2];
     [self addChildViewController:vc3];

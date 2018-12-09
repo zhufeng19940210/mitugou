@@ -28,7 +28,6 @@
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pinjiaSuccessAction:) name:PINJIASUCCESS object:nil];
     }return self;
 }
-
 /**
  评价成功的通知
  @param noti 评价成功的通知
@@ -42,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = RGB(240, 240, 240);
-    self.page = 1;
+    self.page = 0;
     [self actionOrderNewData];
     [self setupTableView];
     [self setViewRefreshTableView:self.tableview withHeaderAction:@selector(actionOrderNewData) andFooterAction:@selector(actionOrderMoreData) target:self];
@@ -52,13 +51,13 @@
  */
 -(void)actionOrderNewData
 {
-    self.page = 1;
+    self.page = 0;
     [SVProgressHUD show];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
     param[@"state"] = self.status;
-    //param[@"pagesize"] = [NSString stringWithFormat:@"%d",self.page];
+    param[@"page"] = [NSString stringWithFormat:@"%d",self.page];
     WEAKSELF
     [[NetWorkTool shareInstacne]postWithURLString:Order_Status parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
@@ -91,14 +90,15 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
     param[@"state"] = self.status;
-    param[@"pagesize"] = [NSString stringWithFormat:@"%d",self.page];
+    param[@"page"] = [NSString stringWithFormat:@"%d",self.page];
     WEAKSELF
     [[NetWorkTool shareInstacne]postWithURLString:Order_Status parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
         NSLog(@"responseobject:%@",responseObject);
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             NSMutableArray *array = [NSMutableArray array];
-            array = [OrderStatusModel mj_objectArrayWithKeyValuesArray:res.data[@""]];
+            array = [OrderStatusModel mj_objectArrayWithKeyValuesArray:res.data[@"orders"]];
             [weakSelf.orderlistArray addObjectsFromArray:array];
         }else{
             [SVProgressHUD showErrorWithStatus:res.message];
@@ -142,25 +142,44 @@
     cell.tixingfahuoblock = ^(NSString *tagStr, OrderStatusModel *orderModel) {
         //提醒发货
         NSLog(@"提醒发货");
-        [SVProgressHUD showSuccessWithStatus:@"尽快发货"];
+        if ([tagStr isEqualToString:@"提醒发货"]) {
+            [SVProgressHUD showSuccessWithStatus:@"尽快发货"];
+        }else if ([tagStr isEqualToString:@"确认收货"]){
+            NSLog(@"确认收货");
+            NSLog(@"orderModel:%@",orderModel);
+            [SVProgressHUD show];
+            NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+            NSMutableDictionary *param = [NSMutableDictionary dictionary];
+            param[@"token"] = token;
+            param[@"cstate"] = @"3";
+            param[@"oid"]   = orderModel.oid;
+            WEAKSELF
+            [[NetWorkTool shareInstacne]postWithURLString:User_Order_Update parameters:param success:^(id  _Nonnull responseObject) {
+                NSLog(@"responseObject:%@",responseObject);
+                [SVProgressHUD dismiss];
+                ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+                if (res.code ==1) {
+                    [SVProgressHUD showSuccessWithStatus:@"确认收货成功"];
+                    [weakSelf RefreshWithView];
+                }else{
+                    [SVProgressHUD showErrorWithStatus:@"修改失败"];
+                    return;
+                }
+            } failure:^(NSError * _Nonnull error) {
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showErrorWithStatus:FailRequestTip];
+                return;
+            }];
+        }
     };
     cell.chakanwuliublock = ^(NSString *tagStr, OrderStatusModel *orderModel) {
         //查看物流
         NSLog(@"查看物流");
-        LogisticsVC *logisticvc = [[LogisticsVC alloc]init];
-        logisticvc.statusmodel = orderModel;
-        [self.navigationController pushViewController:logisticvc animated:YES];
-    };
-    cell.pinjiablock = ^(NSString *tagStr, OrderStatusModel *orderModel) {
-        //评价
-        NSLog(@"评价");
-        OrderPinjiaVC *pinjiavc = [[OrderPinjiaVC alloc]init];
-        pinjiavc.statusmodel = orderModel;
-        [self.navigationController pushViewController:pinjiavc animated:YES];
-    };
-    cell.confimblock = ^(NSString *tagStr, OrderStatusModel *orderModel) {
-        //确认收货
-        NSLog(@"确认收货");
+        if ([tagStr isEqualToString:@"查看物流"]) {
+            LogisticsVC *logisticvc = [[LogisticsVC alloc]init];
+            logisticvc.statusmodel = orderModel;
+            [self.navigationController pushViewController:logisticvc animated:YES];
+        }
     };
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -172,10 +191,39 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
+//刷新界面
+-(void)RefreshWithView
+{
+    self.page = 0;
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    param[@"state"] = self.status;
+    param[@"page"] = [NSString stringWithFormat:@"%d",self.page];
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:Order_Status parameters:param success:^(id  _Nonnull responseObject) {
+        [SVProgressHUD dismiss];
+        NSLog(@"responseobject:%@",responseObject);
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [weakSelf.orderlistArray removeAllObjects];
+            weakSelf.orderlistArray = [OrderStatusModel mj_objectArrayWithKeyValuesArray:res.data[@"orders"]];
+        }else{
+            [SVProgressHUD showErrorWithStatus:res.message];
+            return;
+        }
+        [weakSelf.tableview reloadData];
+        [weakSelf.tableview.mj_header endRefreshing];
+    } failure:^(NSError * _Nonnull error) {
+        [weakSelf.tableview.mj_header endRefreshing];
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
+}
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:PINJIASUCCESS object:nil];
 }
-
 @end

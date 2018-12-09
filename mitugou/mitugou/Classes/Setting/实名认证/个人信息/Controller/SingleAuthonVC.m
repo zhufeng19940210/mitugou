@@ -11,6 +11,7 @@
 #import "PeronsBaseVC.h" //基本信息
 #import "CardAuthonVC.h" //银行卡信息
 #import "ZhifubaoPayAuthonVC.h" ///支付宝信用
+#import "CardAuthonVC2.h"
 @interface SingleAuthonVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic,strong)NSMutableArray *titleArray;
@@ -103,8 +104,10 @@
         [self.navigationController pushViewController:contactvc animated:YES];
     }else if (indexPath.row == 5){
         //银行卡信息
-        CardAuthonVC *cardauthovc = [[CardAuthonVC alloc]init];
+        CardAuthonVC2 *cardauthovc = [[CardAuthonVC2 alloc]init];
         [self.navigationController pushViewController:cardauthovc animated:YES];
+        //CardAuthonVC *cardauthovc = [[CardAuthonVC alloc]init];
+        //[self.navigationController pushViewController:cardauthovc animated:YES];
     }else if (indexPath.row){
         //支付宝信用
         ZhifubaoPayAuthonVC *zhifubaovc = [[ZhifubaoPayAuthonVC alloc]init];

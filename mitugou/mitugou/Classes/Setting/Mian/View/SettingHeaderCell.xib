@@ -28,7 +28,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="3000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Q-Bu-HbG">
+                    <button hidden="YES" opaque="NO" tag="3000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Q-Bu-HbG">
                         <rect key="frame" x="0.0" y="161" width="160" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="I3c-wG-gFI"/>
@@ -41,7 +41,7 @@
                             <action selector="actionHeaderBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tX5-LM-FjI"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="4000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-og-FwS">
+                    <button hidden="YES" opaque="NO" tag="4000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-og-FwS">
                         <rect key="frame" x="160" y="161" width="160" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="ebI-37-96s"/>

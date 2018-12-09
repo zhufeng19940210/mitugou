@@ -16,17 +16,28 @@
 #import "HomeEngineVC.h"
 #import "HomeSysInfo.h"
 #import "HomeBaaner.h"
+#import "HomeRecommandModel.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import "SettingTestLimuEducationVC.h"
+#import "HomeProductDetailVC.h"
 @interface HomeVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)NSMutableArray *imageArray;
 @property (nonatomic,strong)NSMutableArray *titleArray;
 @property (nonatomic,strong)NSDictionary   *dataParam;
+@property (nonatomic,strong)NSMutableArray *recommandArray;
 @property (nonatomic,strong)HomeNavTopView *topView;
 @property (weak, nonatomic) IBOutlet UIImageView *home_img;
 @end
 @implementation HomeVC
+
+-(NSMutableArray *)recommandArray
+{
+    if (!_recommandArray) {
+        _recommandArray = [NSMutableArray array];
+    }
+    return _recommandArray;
+}
 -(NSMutableArray *)titleArray
 {
     if (!_titleArray) {
@@ -127,6 +138,7 @@
     [self setupAdverData];
     [self setupHomeIndex];
     [self setupHomeSysInfo];
+    [self setupHomeRecommand];
 }
 /**
  请求轮播图片
@@ -213,6 +225,30 @@
         return;
     }];
 }
+//为你推荐
+-(void)setupHomeRecommand
+{
+    [SVProgressHUD show];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:Home_Recommnad parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseobject:%@",responseObject);
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [weakSelf.recommandArray removeAllObjects];
+            weakSelf.recommandArray = [HomeRecommandModel mj_objectArrayWithKeyValuesArray:res.data[@"commodirys"]];
+            [weakSelf.collectionView reloadData];
+            [weakSelf.collectionView.mj_header endRefreshing];
+        }else{
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        [weakSelf.collectionView.mj_header endRefreshing];
+        return;
+    }];
+}
 //初始化导航栏
 -(void)setupHomeNav
 {
@@ -256,7 +292,7 @@
     if (section == 0 || section == 1 || section == 2 || section == 3 || section == 4) {
         return 1;
     }else{
-        return 2;
+        return self.recommandArray.count;
     }
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -328,24 +364,19 @@
     }
     if (indexPath.section ==5) {
         HomeOtherCell *otherCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeOtherCell" forIndexPath:indexPath];
-        if (indexPath.row == 0) {
-            otherCell.content_img.image = [UIImage imageNamed:@"home_other2"];
-        }else{
-            otherCell.content_img.image = [UIImage imageNamed:@"home_other"];
-        }
+        HomeRecommandModel *model = self.recommandArray[indexPath.row];
+        [otherCell.content_img sd_setImageWithURL:[NSURL URLWithString:model.photo] placeholderImage:[UIImage imageNamed:@"app_placeholder3.png"]];
         homeCell = otherCell;
     }
     return homeCell;
 }
-
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 5) {
-        if (indexPath.row == 0) {
-            //手机热卖
-        }else{
-            //脐橙热卖
-        }
+        HomeRecommandModel *model = self.recommandArray[indexPath.row];
+        HomeProductDetailVC *detailvc = [[HomeProductDetailVC alloc]init];
+        detailvc.productID = model.cid;
+        [self.navigationController pushViewController:detailvc animated:YES];
     }
 }
 #pragma mark - item宽高

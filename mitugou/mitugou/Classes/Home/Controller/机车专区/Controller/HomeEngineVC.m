@@ -131,6 +131,7 @@
     ApplicationproductCell *engineCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
     ProductModel *model = self.contentArray[indexPath.row];
     engineCell.prePrefix  = self.PrefixStr;
+    engineCell.isPrefix = YES;
     engineCell.productModel = model;
     return engineCell;
 }

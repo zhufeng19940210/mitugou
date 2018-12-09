@@ -75,6 +75,10 @@
 #define Userinfo_PersonalAuth_Url_Update [BaseUrl stringByAppendingString:@"/borrowAuthentication/modifypersonalAuth"]
 ///查找运营商信息
 #define Userinfo_PersonalAuth_Url_Find [BaseUrl stringByAppendingString:@"/borrowAuthentication/findpersonal"]
+///查看银行卡信息
+#define Userinfo_Card_Find [BaseUrl stringByAppendingString:@"/borrowAuthentication/getbankbaseinfo"]
+///上传银行卡信息
+#define Userinfo_Card_Upload [BaseUrl stringByAppendingString:@"/borrowAuthentication/setbankbaseinfo"]
 /*================================地址信息===============================*/
 ///查找全部的地址
 #define Userinfo_Address_FindAll [BaseUrl stringByAppendingString:@"/address/findbyAll"]
@@ -101,22 +105,27 @@
 #define Home_SystemInfo [BaseUrl stringByAppendingString:@"/other/getsystemInfo"]
 ///轮播图片
 #define Home_Banner   [BaseUrl stringByAppendingString:@"/other/getsowingMap"]
+///为你推荐
+#define Home_Recommnad  [BaseUrl stringByAppendingString:@"/commodiry/bycount2"]
+///搜索
+#define Home_Search  [BaseUrl stringByAppendingString:@"/commodiry/keyword"]
+/*===============================额度额度================================*/
+#define Appication_Url  [BaseUrl stringByAppendingString:@"/commodiry/byamount4"]
 /*================================支付方式===============================*/
 ///支付宝支付方法
 #define Pay_Alipay [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
 ///微信支付
 #define Pay_Wechat [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
-/*================================立木征信URL===============================*/
+/*===========================立木征信URL============================*/
 ///立木征信
 #define LIMU_SDK_URL [BaseUrl stringByAppendingString:@"/limutoken/setToken"]
-
-/*=================================商品订单=====================================*/
+/*==========================商品订单================================*/
 ///提交订单
 #define Commit_Order [BaseUrl stringByAppendingString:@"/order/addOrder"]
 ///查询订单
 #define Order_Status [BaseUrl stringByAppendingString:@"/order/allOrder"]
 ///查看物流
-#define Order_Logistic_Url [BaseUrl stringByAppendingString:@"/order/logistic"]
+//#define Order_Logistic_Url [BaseUrl stringByAppendingString:@"/order/logistic"]
 ///评价
 #define Order_Evaluation_Url [BaseUrl stringByAppendingString:@"/order/evaluation"]
 ///确定收货
@@ -125,5 +134,19 @@
 #define User_Huoti_Update [BaseUrl stringByAppendingString:@"/borrowAuthentication/setdiscern"]
 ///查看活体检测
 #define User_Huoti_Chakan [BaseUrl stringByAppendingString:@"/borrowAuthentication/getdiscern"]
-
+///修改状态
+#define User_Order_Update [BaseUrl stringByAppendingString:@"/order/changeOrderstate"]
+/*===========================消息列表===================================*/
+///删除单条信息
+#define Home_Message_Del [BaseUrl stringByAppendingString:@"/infomation/delinfo"]
+///获取全部的信息
+#define Home_Message_All [BaseUrl stringByAppendingString:@"/infomation/allinfo"]
+///获取单条详情
+#define Home_Message_Detail [BaseUrl stringByAppendingString:@"/infomation/getinfo"]
+///已读信息
+#define Home_Message_Read [BaseUrl stringByAppendingString:@"/infomation/read"]
+///清空信息
+#define Home_Message_Clear [BaseUrl stringByAppendingString:@"/infomation/clearinfo"]
+///查询快递
+#define Express_Url [BaseUrl stringByAppendingString:@"/express/findexp"]
 #endif /* URLStr_h */

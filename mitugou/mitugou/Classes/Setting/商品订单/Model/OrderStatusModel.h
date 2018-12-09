@@ -4,6 +4,7 @@
 //  Copyright © 2018 zhufeng. All rights reserved.
 #import "BaseModel.h"
 @interface OrderStatusModel : BaseModel
+@property (nonatomic,copy)NSString *address;
 @property (nonatomic,copy)NSString *cid;
 @property (nonatomic,copy)NSString *cname;
 @property (nonatomic,copy)NSString *color;
@@ -21,5 +22,4 @@
 @property (nonatomic,copy)NSString *rate;
 @property (nonatomic,copy)NSString *rname;
 @property (nonatomic,copy)NSString *uid;
-@property (nonatomic,copy)NSString *vid;
 @end

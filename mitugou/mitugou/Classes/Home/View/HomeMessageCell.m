@@ -3,6 +3,9 @@
 //  Created by zhufeng on 2018/11/8.
 //  Copyright © 2018 zhufeng. All rights reserved.
 #import "HomeMessageCell.h"
+@interface HomeMessageCell()
+@end
+
 @implementation HomeMessageCell
 - (void)awakeFromNib {
     [super awakeFromNib];

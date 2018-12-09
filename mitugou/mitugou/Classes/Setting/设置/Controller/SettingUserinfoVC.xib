@@ -29,11 +29,12 @@
                     </constraints>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEp-Ma-MGU">
-                    <rect key="frame" x="20" y="260" width="335" height="50"/>
+                    <rect key="frame" x="20" y="260" width="335" height="45"/>
+                    <color key="backgroundColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="pyR-dx-VtK"/>
+                        <constraint firstAttribute="height" constant="45" id="pyR-dx-VtK"/>
                     </constraints>
-                    <state key="normal" title="退出登录" backgroundImage="bg">
+                    <state key="normal" title="退出登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -54,7 +55,4 @@
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="bg" width="336" height="54"/>
-    </resources>
 </document>

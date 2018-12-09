@@ -35,7 +35,7 @@
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
-            [weakSelf.huoti_img sd_setImageWithURL:[NSURL URLWithString:res.data[@"discern"]] placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
+            [weakSelf.huoti_img sd_setImageWithURL:[NSURL URLWithString:res.data[@"discern"]] placeholderImage:[UIImage imageNamed:@"btn_id_people.png"]];
         }else if (res.code == 2){
             [SVProgressHUD showSuccessWithStatus:@"暂无数据"];
             return;

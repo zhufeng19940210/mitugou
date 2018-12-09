@@ -8,4 +8,5 @@
 @interface ApplicationproductCell : UICollectionViewCell
 @property (nonatomic,strong)ProductModel *productModel;
 @property (nonatomic,copy) NSString *prePrefix;
+@property (nonatomic,assign)BOOL isPrefix;
 @end

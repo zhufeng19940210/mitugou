@@ -63,10 +63,9 @@
         _order_status.text = @"已完成";
         _tixingfahuo_btn.hidden = NO;
         _chakanwuliu_btn.hidden = YES;
-        [_tixingfahuo_btn setTitle:@"评价" forState:UIControlStateNormal];
+        [_tixingfahuo_btn setTitle:@"已完成" forState:UIControlStateNormal];
     }
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }

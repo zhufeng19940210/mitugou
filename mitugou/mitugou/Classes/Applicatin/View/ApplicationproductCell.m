@@ -15,8 +15,12 @@
 -(void)setProductModel:(ProductModel *)productModel
 {
     _productModel = productModel;
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",self.prePrefix,productModel.photo];
-    NSLog(@"url:%@",urlStr);
+    NSString *urlStr = nil;
+    if (self.isPrefix == YES) {
+        urlStr = [NSString stringWithFormat:@"%@%@",self.prePrefix,productModel.photo];
+    }else{
+        urlStr = productModel.photo;
+    }
     [_icon_img sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:[UIImage imageNamed:@"app_placeholder.png"]];
     _title_lab.text = [NSString stringWithFormat:@"%@",productModel.cname];
     _price_lab.text = [NSString stringWithFormat:@"￥%.2f",[productModel.price doubleValue]];

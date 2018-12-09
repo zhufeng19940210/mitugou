@@ -5,11 +5,13 @@
 #import "HomeSearchVC.h"
 #import "ApplicationproductCell.h"
 #import "ProductModel.h"
+#import "HomeProductDetailVC.h"
 @interface HomeSearchVC ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong)UITextField *search_tf;
 @property (nonatomic,assign)BOOL isSearch; //是否搜索
 @property (nonatomic,strong)NSMutableArray *searchArray;
+@property (nonatomic,assign)int page;
 @end
 @implementation HomeSearchVC
 -(NSMutableArray *)searchArray
@@ -21,28 +23,15 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = RGB(240, 240, 240);
+    self.page = 0;
     [self setupConfigNavitionBar];
     [self setupCollectionView];
     [self seutpRefresh];
 }
 -(void)seutpRefresh
 {
-    [self setViewRefreshColletionView:self.collectionView withHeaderAction:@selector(actionSearchNewData) andFooterAction:@selector(actionSearchMOeData) target:self];
-}
-
-/**
- 加载最新的数据
- */
--(void)actionSearchNewData
-{
-    
-}
-/**
- 加载更多数据
- */
--(void)actionSearchMOeData
-{
-    
+    [self setViewRefreshColletionView:self.collectionView withHeaderAction:@selector(actionSearchNewData) andFooterAction:@selector(actionSearchMoreData) target:self];
 }
 
 -(void)setupCollectionView
@@ -60,17 +49,31 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.self.searchArray.count;
+    NSLog(@"count:%lu",(unsigned long)self.searchArray.count);
+    return self.searchArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ApplicationproductCell *searchCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
+    ProductModel *model =  self.searchArray[indexPath.row];
+    NSLog(@"model.phont:%@",model.photo);
+    searchCell.isPrefix = NO;
+    searchCell.productModel = model;
     return searchCell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    ProductModel *model = self.searchArray[indexPath.row];
+    HomeProductDetailVC *detailvc = [[HomeProductDetailVC alloc]init];
+    detailvc.productID = model.cid;
+    [self.navigationController pushViewController:detailvc animated:YES];
+}
+
+#pragma mark - item宽高
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(IPHONE_WIDTH/2-5,220);
 }
 
 -(void)setupConfigNavitionBar
@@ -101,7 +104,7 @@
     textField.returnKeyType = UIReturnKeySearch;
     textField.enablesReturnKeyAutomatically = YES; //这里设置为无文字就灰色不可点
     ///成为第一个响应者
-    //[textField becomeFirstResponder];
+    [textField becomeFirstResponder];
     //监听的一个事件
     [textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     self.search_tf = textField;
@@ -118,6 +121,7 @@
     self.search_tf.rightView.hidden = YES;
     self.search_tf.text = @"";
     [self.searchArray removeAllObjects];
+    [self.collectionView reloadData];
 }
 /**
  值的变化功能
@@ -136,16 +140,21 @@
         }
     }
 }
+#pragma mark -- uitextfielddelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self actionSearchNewData];
+    return YES;
+}
 /**
  点击搜索的功能
  @param button 搜索功能
  */
 - (void)onRightBtnAction:(UIButton *)button
 {
-    [self searchMethod];
+    [self actionSearchNewData];
 }
 //搜索的功能
--(void)searchMethod
+-(void)actionSearchNewData
 {
     NSString *searchStr = self.search_tf.text;
     if (searchStr.length == 0 || [searchStr isEqualToString:@""]) {
@@ -153,22 +162,58 @@
         return;
     }
     ///开始去搜索公司
+    self.page = 0;
     [SVProgressHUD show];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
-    param[@"token"] = token;
+    param[@"page"] = [NSString stringWithFormat:@"%d",self.page];
     param[@"keyword"] = searchStr;
     WEAKSELF
-    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+    [[NetWorkTool shareInstacne]postWithURLString:Home_Search parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             //请求成功
+            [weakSelf.searchArray removeAllObjects];
+            weakSelf.searchArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"commodirys"]];
         }
+        [weakSelf.collectionView reloadData];
         [weakSelf.collectionView.mj_header endRefreshing];
     } failure:^(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        [weakSelf.collectionView.mj_header endRefreshing];
+        return;
+    }];
+}
+/**
+加载更多数据
+ */
+-(void)actionSearchMoreData
+{
+    NSString *searchStr = self.search_tf.text;
+    self.page ++;
+    [SVProgressHUD show];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"page"] = [NSString stringWithFormat:@"%d",self.page];
+    param[@"keyword"] = searchStr;
+    WEAKSELF
+    [[NetWorkTool shareInstacne]postWithURLString:Home_Search parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            //请求成功
+            NSMutableArray *array = [NSMutableArray array];
+            array = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"commodirys"]];
+            [weakSelf.searchArray addObjectsFromArray:array];
+        }
+        [weakSelf.collectionView reloadData];
+        [weakSelf.collectionView.mj_footer endRefreshing];
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        [weakSelf.collectionView.mj_footer endRefreshing];
         return;
     }];
 }

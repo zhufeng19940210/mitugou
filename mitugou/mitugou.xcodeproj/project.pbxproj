@@ -14,11 +14,21 @@
 		F009C1C821A2AD2200EE828E /* ColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F009C1C721A2AD2200EE828E /* ColorModel.m */; };
 		F009C1CB21A2BA9F00EE828E /* DetailImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F009C1CA21A2BA9F00EE828E /* DetailImageModel.m */; };
 		F009C1CE21A2BFCB00EE828E /* BannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F009C1CD21A2BFCB00EE828E /* BannerModel.m */; };
+		F00CF85321B7AD9A00121892 /* CardAuthonVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = F00CF85121B7AD9A00121892 /* CardAuthonVC2.m */; };
+		F00CF85421B7AD9A00121892 /* CardAuthonVC2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00CF85221B7AD9A00121892 /* CardAuthonVC2.xib */; };
 		F00E079C218D2A570079D952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F00E079B218D2A570079D952 /* AppDelegate.m */; };
 		F00E07A2218D2A570079D952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00E07A0218D2A570079D952 /* Main.storyboard */; };
 		F00E07A4218D2A5A0079D952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00E07A3218D2A5A0079D952 /* Assets.xcassets */; };
 		F00E07A7218D2A5A0079D952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00E07A5218D2A5A0079D952 /* LaunchScreen.storyboard */; };
 		F00E07AA218D2A5A0079D952 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F00E07A9218D2A5A0079D952 /* main.m */; };
+		F02FF22221B8FE9A0051F3C0 /* CentralBankCreditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF22021B8FE990051F3C0 /* CentralBankCreditVC.m */; };
+		F02FF22321B8FE9A0051F3C0 /* CentralBankCreditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FF22121B8FE990051F3C0 /* CentralBankCreditVC.xib */; };
+		F02FF22A21B9189B0051F3C0 /* TaobaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF22821B9189B0051F3C0 /* TaobaoVC.m */; };
+		F02FF22B21B9189B0051F3C0 /* TaobaoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FF22921B9189B0051F3C0 /* TaobaoVC.xib */; };
+		F02FF23421B929CB0051F3C0 /* PostCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF22F21B929CB0051F3C0 /* PostCodeVC.m */; };
+		F02FF23521B929CB0051F3C0 /* OperatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF23021B929CB0051F3C0 /* OperatorVC.m */; };
+		F02FF23621B929CB0051F3C0 /* PostCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FF23121B929CB0051F3C0 /* PostCodeVC.xib */; };
+		F02FF23721B929CB0051F3C0 /* OperatorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FF23321B929CB0051F3C0 /* OperatorVC.xib */; };
 		F0AA245121B516ED0083766C /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AA245021B516ED0083766C /* UIButton+Block.m */; };
 		F0AA245421B51CE50083766C /* PayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AA245321B51CE50083766C /* PayView.m */; };
 		F0AA245621B51D100083766C /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AA245521B51D100083766C /* PayView.xib */; };
@@ -225,6 +235,7 @@
 		F0F6C79D219A6A78009F91A5 /* LZPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F6C79B219A6A77009F91A5 /* LZPickerView.xib */; };
 		F0F6C79E219A6A78009F91A5 /* LZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6C79C219A6A77009F91A5 /* LZPickerView.m */; };
 		F0F6D4B8219E75C90004FCB3 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */; };
+		F0F7524B21B763EE008FB3BA /* HomeMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F7524A21B763EE008FB3BA /* HomeMessageModel.m */; };
 		F0F7856A21AFC8EE00F0251F /* LMZXSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F7856621AFC8EE00F0251F /* LMZXSDK.a */; };
 		F0F7856B21AFC8EE00F0251F /* lmzxResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0F7856821AFC8EE00F0251F /* lmzxResource.bundle */; };
 		F0F7856E21AFC90700F0251F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F7856D21AFC90700F0251F /* CoreLocation.framework */; };
@@ -236,7 +247,8 @@
 		F0F99FB721B1052000210786 /* SettingCreditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F99FB521B1052000210786 /* SettingCreditVC.xib */; };
 		F0F99FBB21B1071600210786 /* SettingCreaitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F99FB921B1071600210786 /* SettingCreaitCell.m */; };
 		F0F99FBC21B1071600210786 /* SettingCreaitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F99FBA21B1071600210786 /* SettingCreaitCell.xib */; };
-		F0FBC88321A53B9200B8ADE9 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88221A53B9200B8ADE9 /* MessageModel.m */; };
+		F0F9C0B821B6644B00DEDBC3 /* HomeRecommandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F9C0B721B6644B00DEDBC3 /* HomeRecommandModel.m */; };
+		F0F9C0BB21B6667F00DEDBC3 /* ApplicationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F9C0BA21B6667F00DEDBC3 /* ApplicationModel.m */; };
 		F0FBC88621A53CE100B8ADE9 /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88521A53CE100B8ADE9 /* CouponModel.m */; };
 		F0FBC88921A5401300B8ADE9 /* LoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88821A5401300B8ADE9 /* LoanModel.m */; };
 		F0FBC88C21A5415700B8ADE9 /* RepayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC88B21A5415700B8ADE9 /* RepayModel.m */; };
@@ -286,6 +298,9 @@
 		F009C1CA21A2BA9F00EE828E /* DetailImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailImageModel.m; sourceTree = "<group>"; };
 		F009C1CC21A2BFCB00EE828E /* BannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerModel.h; sourceTree = "<group>"; };
 		F009C1CD21A2BFCB00EE828E /* BannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerModel.m; sourceTree = "<group>"; };
+		F00CF85021B7AD9A00121892 /* CardAuthonVC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardAuthonVC2.h; sourceTree = "<group>"; };
+		F00CF85121B7AD9A00121892 /* CardAuthonVC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardAuthonVC2.m; sourceTree = "<group>"; };
+		F00CF85221B7AD9A00121892 /* CardAuthonVC2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAuthonVC2.xib; sourceTree = "<group>"; };
 		F00E0797218D2A570079D952 /* mitugou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitugou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00E079A218D2A570079D952 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F00E079B218D2A570079D952 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -294,6 +309,18 @@
 		F00E07A6218D2A5A0079D952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F00E07A8218D2A5A0079D952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F00E07A9218D2A5A0079D952 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F02FF21F21B8FE990051F3C0 /* CentralBankCreditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CentralBankCreditVC.h; sourceTree = "<group>"; };
+		F02FF22021B8FE990051F3C0 /* CentralBankCreditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CentralBankCreditVC.m; sourceTree = "<group>"; };
+		F02FF22121B8FE990051F3C0 /* CentralBankCreditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CentralBankCreditVC.xib; sourceTree = "<group>"; };
+		F02FF22721B9189B0051F3C0 /* TaobaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaobaoVC.h; sourceTree = "<group>"; };
+		F02FF22821B9189B0051F3C0 /* TaobaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaobaoVC.m; sourceTree = "<group>"; };
+		F02FF22921B9189B0051F3C0 /* TaobaoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaobaoVC.xib; sourceTree = "<group>"; };
+		F02FF22E21B929CB0051F3C0 /* PostCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCodeVC.h; sourceTree = "<group>"; };
+		F02FF22F21B929CB0051F3C0 /* PostCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCodeVC.m; sourceTree = "<group>"; };
+		F02FF23021B929CB0051F3C0 /* OperatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorVC.m; sourceTree = "<group>"; };
+		F02FF23121B929CB0051F3C0 /* PostCodeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCodeVC.xib; sourceTree = "<group>"; };
+		F02FF23221B929CB0051F3C0 /* OperatorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorVC.h; sourceTree = "<group>"; };
+		F02FF23321B929CB0051F3C0 /* OperatorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperatorVC.xib; sourceTree = "<group>"; };
 		F0AA244F21B516ED0083766C /* UIButton+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
 		F0AA245021B516ED0083766C /* UIButton+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		F0AA245221B51CE50083766C /* PayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayView.h; sourceTree = "<group>"; };
@@ -630,6 +657,8 @@
 		F0F6C79C219A6A77009F91A5 /* LZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerView.m; sourceTree = "<group>"; };
 		F0F6D4B6219E75C80004FCB3 /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
 		F0F6D4B7219E75C80004FCB3 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
+		F0F7524921B763EE008FB3BA /* HomeMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeMessageModel.h; sourceTree = "<group>"; };
+		F0F7524A21B763EE008FB3BA /* HomeMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeMessageModel.m; sourceTree = "<group>"; };
 		F0F7856621AFC8EE00F0251F /* LMZXSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = LMZXSDK.a; sourceTree = "<group>"; };
 		F0F7856721AFC8EE00F0251F /* LMZXSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMZXSDK.h; sourceTree = "<group>"; };
 		F0F7856821AFC8EE00F0251F /* lmzxResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = lmzxResource.bundle; sourceTree = "<group>"; };
@@ -646,8 +675,10 @@
 		F0F99FB821B1071600210786 /* SettingCreaitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCreaitCell.h; sourceTree = "<group>"; };
 		F0F99FB921B1071600210786 /* SettingCreaitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCreaitCell.m; sourceTree = "<group>"; };
 		F0F99FBA21B1071600210786 /* SettingCreaitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCreaitCell.xib; sourceTree = "<group>"; };
-		F0FBC88121A53B9200B8ADE9 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
-		F0FBC88221A53B9200B8ADE9 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		F0F9C0B621B6644B00DEDBC3 /* HomeRecommandModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRecommandModel.h; sourceTree = "<group>"; };
+		F0F9C0B721B6644B00DEDBC3 /* HomeRecommandModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRecommandModel.m; sourceTree = "<group>"; };
+		F0F9C0B921B6667F00DEDBC3 /* ApplicationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationModel.h; sourceTree = "<group>"; };
+		F0F9C0BA21B6667F00DEDBC3 /* ApplicationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationModel.m; sourceTree = "<group>"; };
 		F0FBC88421A53CE100B8ADE9 /* CouponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
 		F0FBC88521A53CE100B8ADE9 /* CouponModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CouponModel.m; sourceTree = "<group>"; };
 		F0FBC88721A5401300B8ADE9 /* LoanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanModel.h; sourceTree = "<group>"; };
@@ -792,6 +823,87 @@
 				F0F0E726218D99E100B4ABCE /* PrefixHeader.pch */,
 			);
 			path = mitugou;
+			sourceTree = "<group>";
+		};
+		F02FF21A21B8FDA60051F3C0 /* 央行查询 */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF21E21B8FDC80051F3C0 /* Model */,
+				F02FF21D21B8FDC10051F3C0 /* Other */,
+				F02FF21C21B8FDBB0051F3C0 /* View */,
+				F02FF21B21B8FDB20051F3C0 /* Controller */,
+			);
+			path = "央行查询";
+			sourceTree = "<group>";
+		};
+		F02FF21B21B8FDB20051F3C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF21F21B8FE990051F3C0 /* CentralBankCreditVC.h */,
+				F02FF22021B8FE990051F3C0 /* CentralBankCreditVC.m */,
+				F02FF22121B8FE990051F3C0 /* CentralBankCreditVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F02FF21C21B8FDBB0051F3C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F02FF21D21B8FDC10051F3C0 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F02FF21E21B8FDC80051F3C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F02FF22421B90D370051F3C0 /* 运营商 */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF22D21B929B30051F3C0 /* Controller */,
+			);
+			path = "运营商";
+			sourceTree = "<group>";
+		};
+		F02FF22521B90D410051F3C0 /* 淘宝 */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF22621B9188A0051F3C0 /* Controller */,
+			);
+			path = "淘宝";
+			sourceTree = "<group>";
+		};
+		F02FF22621B9188A0051F3C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF22721B9189B0051F3C0 /* TaobaoVC.h */,
+				F02FF22821B9189B0051F3C0 /* TaobaoVC.m */,
+				F02FF22921B9189B0051F3C0 /* TaobaoVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F02FF22D21B929B30051F3C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF23221B929CB0051F3C0 /* OperatorVC.h */,
+				F02FF23021B929CB0051F3C0 /* OperatorVC.m */,
+				F02FF23321B929CB0051F3C0 /* OperatorVC.xib */,
+				F02FF22E21B929CB0051F3C0 /* PostCodeVC.h */,
+				F02FF22F21B929CB0051F3C0 /* PostCodeVC.m */,
+				F02FF23121B929CB0051F3C0 /* PostCodeVC.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		F0E1ABD62193CA1400A9C17F /* 邀请好友 */ = {
@@ -1049,6 +1161,9 @@
 				F0E1AC5521942F0F00A9C17F /* CardAuthonVC.h */,
 				F0E1AC5621942F0F00A9C17F /* CardAuthonVC.m */,
 				F0E1AC5721942F0F00A9C17F /* CardAuthonVC.xib */,
+				F00CF85021B7AD9A00121892 /* CardAuthonVC2.h */,
+				F00CF85121B7AD9A00121892 /* CardAuthonVC2.m */,
+				F00CF85221B7AD9A00121892 /* CardAuthonVC2.xib */,
 			);
 			path = "银行卡识别";
 			sourceTree = "<group>";
@@ -1195,10 +1310,12 @@
 				F0D8EE2D21A42D6F00CEB35A /* ProductSubModel.m */,
 				F0D8EE2F21A42EAF00CEB35A /* HomedestailModel.h */,
 				F0D8EE3021A42EAF00CEB35A /* HomedestailModel.m */,
-				F0FBC88121A53B9200B8ADE9 /* MessageModel.h */,
-				F0FBC88221A53B9200B8ADE9 /* MessageModel.m */,
 				F0F9801B21AEA84500F4EB1D /* ZFDetailModel.h */,
 				F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */,
+				F0F9C0B621B6644B00DEDBC3 /* HomeRecommandModel.h */,
+				F0F9C0B721B6644B00DEDBC3 /* HomeRecommandModel.m */,
+				F0F7524921B763EE008FB3BA /* HomeMessageModel.h */,
+				F0F7524A21B763EE008FB3BA /* HomeMessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1269,6 +1386,8 @@
 		F0F0E473218D53D000B4ABCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0F9C0B921B6667F00DEDBC3 /* ApplicationModel.h */,
+				F0F9C0BA21B6667F00DEDBC3 /* ApplicationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1289,6 +1408,9 @@
 		F0F0E475218D53D000B4ABCE /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				F02FF22521B90D410051F3C0 /* 淘宝 */,
+				F02FF22421B90D370051F3C0 /* 运营商 */,
+				F02FF21A21B8FDA60051F3C0 /* 央行查询 */,
 				F0F693A921B500FD007F3A5B /* 活体检测 */,
 				F0F99FAE21B1031000210786 /* 征信 */,
 				F0F7857121AFCBE900F0251F /* 测试 */,
@@ -2215,6 +2337,7 @@
 				F0E1AC182193D92D00A9C17F /* SettingFriendVC.xib in Resources */,
 				F0E1AC222193D9DC00A9C17F /* SettingAuthonVC.xib in Resources */,
 				F0F0E703218D987E00B4ABCE /* 成功图片@2x.png in Resources */,
+				F00CF85421B7AD9A00121892 /* CardAuthonVC2.xib in Resources */,
 				F0F6933221B4D93B007F3A5B /* OrderPinjiaVC.xib in Resources */,
 				F0EEFA4D21928EDC006D1650 /* HomerecommendCell.xib in Resources */,
 				F0EEFA4821928E9D006D1650 /* HomeTypeCell.xib in Resources */,
@@ -2226,6 +2349,7 @@
 				F0E1AC4A21942E0D00A9C17F /* ZhifubaoPayAuthonVC.xib in Resources */,
 				F0F6938A21B4FF5C007F3A5B /* ShareSDK.bundle in Resources */,
 				F0F693A321B50060007F3A5B /* HTJCData.bundle in Resources */,
+				F02FF22321B8FE9A0051F3C0 /* CentralBankCreditVC.xib in Resources */,
 				F0F6932A21B4D2DD007F3A5B /* LogisticsCell.xib in Resources */,
 				F0E1AC0E2193D71B00A9C17F /* SettingProblemVC.xib in Resources */,
 				F0F693A021B50060007F3A5B /* HTJCDataBase.bundle in Resources */,
@@ -2243,6 +2367,7 @@
 				F0E1AC2C2193E5DD00A9C17F /* SettingRepaymentVC.xib in Resources */,
 				F0F0E704218D987F00B4ABCE /* car5@2x.png in Resources */,
 				F0E1ABF42193CBDA00A9C17F /* SettingCouponCell.xib in Resources */,
+				F02FF23721B929CB0051F3C0 /* OperatorVC.xib in Resources */,
 				F0EEFA5C2192A7D9006D1650 /* HomeForyouCell.xib in Resources */,
 				F0F7856B21AFC8EE00F0251F /* lmzxResource.bundle in Resources */,
 				F0F7857621AFCC1200F0251F /* SettingTestLimuEducationVC.xib in Resources */,
@@ -2251,6 +2376,7 @@
 				F0F0E702218D987E00B4ABCE /* car2@2x.png in Resources */,
 				F0AA245621B51D100083766C /* PayView.xib in Resources */,
 				F0E1AC3B219426A500A9C17F /* SettingAuthonCell.xib in Resources */,
+				F02FF23621B929CB0051F3C0 /* PostCodeVC.xib in Resources */,
 				F0F6938F21B4FF5C007F3A5B /* ShareSDKConfigFile.bundle in Resources */,
 				F0E1AC272193E5A100A9C17F /* SettingLoanVC.xib in Resources */,
 				F0F0E761218D9ECE00B4ABCE /* ApplicationVC.xib in Resources */,
@@ -2265,6 +2391,7 @@
 				F0FF5AE12195A28F0050AD96 /* OrderContentCell.xib in Resources */,
 				F0FF5AD72195520D0050AD96 /* StagingTypeCell.xib in Resources */,
 				F0FD36092196872E00F6C93B /* PersonCardVC.xib in Resources */,
+				F02FF22B21B9189B0051F3C0 /* TaobaoVC.xib in Resources */,
 				F0EEFAA02192E9C5006D1650 /* SettingCommentCell.xib in Resources */,
 				F0F0E706218D987F00B4ABCE /* car3@2x.png in Resources */,
 				F0F0E708218D987F00B4ABCE /* car1@2x.png in Resources */,
@@ -2350,12 +2477,15 @@
 				F0E1AC212193D9DC00A9C17F /* SettingAuthonVC.m in Sources */,
 				F0F0E6E5218D987E00B4ABCE /* UIScrollView+EmptyDataSet.m in Sources */,
 				F0EEFA6E2192C288006D1650 /* HomeSearchVC.m in Sources */,
+				F0F9C0B821B6644B00DEDBC3 /* HomeRecommandModel.m in Sources */,
 				F0F0E6D9218D987E00B4ABCE /* UIView+ZJFrame.m in Sources */,
 				F0FF5AD62195520D0050AD96 /* StagingTypeCell.m in Sources */,
 				F0FF5AC4219526970050AD96 /* AddreeListCell.m in Sources */,
 				F0E1AC3A219426A500A9C17F /* SettingAuthonCell.m in Sources */,
 				F0E1AC7521943CA500A9C17F /* AddressListVC.m in Sources */,
 				F009C1C521A2AC4B00EE828E /* PeriodsModel.m in Sources */,
+				F02FF23521B929CB0051F3C0 /* OperatorVC.m in Sources */,
+				F02FF22221B8FE9A0051F3C0 /* CentralBankCreditVC.m in Sources */,
 				F0FF5ACC219539DB0050AD96 /* AddSelectCell.m in Sources */,
 				F0F0E722218D991900B4ABCE /* ZFCustomView.m in Sources */,
 				F0F0E760218D9ECE00B4ABCE /* ApplicationVC.m in Sources */,
@@ -2386,6 +2516,7 @@
 				F0E1AC5321942ED300A9C17F /* YunYinShangAuthonVC.m in Sources */,
 				F0E1AC66219436AD00A9C17F /* OrderListVC.m in Sources */,
 				F0F7857521AFCC1200F0251F /* SettingTestLimuEducationVC.m in Sources */,
+				F0F7524B21B763EE008FB3BA /* HomeMessageModel.m in Sources */,
 				F0EEFA892192D447006D1650 /* HomeEngineVC.m in Sources */,
 				F0D8EE2B21A40F7D00CEB35A /* ProductModel.m in Sources */,
 				F0F0E6D8218D987E00B4ABCE /* IQKeyboardReturnKeyHandler.m in Sources */,
@@ -2395,6 +2526,7 @@
 				F0E1ABF82193CF1B00A9C17F /* SettingUserinfoVC.m in Sources */,
 				F0F0E6FE218D987E00B4ABCE /* YTKChainRequestAgent.m in Sources */,
 				F0EEFA952192D885006D1650 /* ApplicationproductCell.m in Sources */,
+				F00CF85321B7AD9A00121892 /* CardAuthonVC2.m in Sources */,
 				F0F0E6DF218D987E00B4ABCE /* ZJScrollSegmentView.m in Sources */,
 				F0FD36032196871C00F6C93B /* PersonVC.m in Sources */,
 				F0F0E723218D991900B4ABCE /* UIViewController+HUD.m in Sources */,
@@ -2419,6 +2551,7 @@
 				F0F0E6FC218D987E00B4ABCE /* YTKBatchRequest.m in Sources */,
 				F0EEFA9A2192E877006D1650 /* SettingHeaderCell.m in Sources */,
 				F0EEFA4C21928EDC006D1650 /* HomerecommendCell.m in Sources */,
+				F02FF22A21B9189B0051F3C0 /* TaobaoVC.m in Sources */,
 				F0B50A06218FE76D0027BB61 /* BindVC.m in Sources */,
 				F0F0E705218D987F00B4ABCE /* ZJCustomHud.m in Sources */,
 				F0E1ABD42193C49F00A9C17F /* HomeMessageCell.m in Sources */,
@@ -2426,12 +2559,12 @@
 				F0F693A721B500F9007F3A5B /* SettingLiveBodyVC.m in Sources */,
 				F0F6932421B4D240007F3A5B /* LogisticsVC.m in Sources */,
 				F0FF5AC821952F600050AD96 /* AddreeModel.m in Sources */,
+				F02FF23421B929CB0051F3C0 /* PostCodeVC.m in Sources */,
 				F0F0E6DA218D987E00B4ABCE /* ZJTitleView.m in Sources */,
 				F0E1AC022193CFD600A9C17F /* SettingLogoutCell.m in Sources */,
 				F0F0E724218D991900B4ABCE /* JsonTool.m in Sources */,
 				F0F0E6E0218D987E00B4ABCE /* ZJScrollPageView.m in Sources */,
 				F0EEFA4221928CDC006D1650 /* HomeAdCell.m in Sources */,
-				F0FBC88321A53B9200B8ADE9 /* MessageModel.m in Sources */,
 				F0F0E6CA218D987E00B4ABCE /* IQTextView.m in Sources */,
 				F0F0E6D7218D987E00B4ABCE /* IQUIViewController+Additions.m in Sources */,
 				F0E1AC5821942F0F00A9C17F /* CardAuthonVC.m in Sources */,
@@ -2449,6 +2582,7 @@
 				F0D8EE2221A3D6E000CEB35A /* HomeSysInfo.m in Sources */,
 				F0E1AC4921942E0D00A9C17F /* ZhifubaoPayAuthonVC.m in Sources */,
 				F0F0E757218D9EA300B4ABCE /* MyNavigationController.m in Sources */,
+				F0F9C0BB21B6667F00DEDBC3 /* ApplicationModel.m in Sources */,
 				F0EEFA5621929078006D1650 /* HomeOtherCell.m in Sources */,
 				F0F0E6DD218D987E00B4ABCE /* ZJCollectionView.m in Sources */,
 				F0E1AC7A21943CD000A9C17F /* AddressEditVC.m in Sources */,

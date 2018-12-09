@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardAuthonVC2">
+            <connections>
+                <outlet property="card_tf" destination="hLl-xr-Dsa" id="5iB-Pq-PQu"/>
+                <outlet property="phone_tf" destination="4HO-Mg-etn" id="duq-6U-HpW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入银行卡号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-xr-Dsa">
+                    <rect key="frame" x="30" y="60" width="315" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="6U5-lh-c0B"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入预存手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-Mg-etn">
+                    <rect key="frame" x="30" y="120" width="315" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="xOf-pM-X9q"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZw-sy-INb">
+                    <rect key="frame" x="30" y="216" width="315" height="45"/>
+                    <color key="backgroundColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="ysF-6N-dwd"/>
+                    </constraints>
+                    <state key="normal" title=" 提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="actionCommitBtn:" destination="-1" eventType="touchUpInside" id="LQc-XS-gke"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hLl-xr-Dsa" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="2Pr-HB-VVj"/>
+                <constraint firstItem="hLl-xr-Dsa" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="40" id="3Ky-9q-ruO"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hLl-xr-Dsa" secondAttribute="trailing" constant="30" id="BLw-Mn-kaw"/>
+                <constraint firstItem="aZw-sy-INb" firstAttribute="top" secondItem="4HO-Mg-etn" secondAttribute="bottom" constant="66" id="MgY-cz-Vtb"/>
+                <constraint firstItem="4HO-Mg-etn" firstAttribute="top" secondItem="hLl-xr-Dsa" secondAttribute="bottom" constant="30" id="P7w-28-s5g"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="aZw-sy-INb" secondAttribute="trailing" constant="30" id="SkN-6g-hqk"/>
+                <constraint firstItem="aZw-sy-INb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="Ssu-4e-8Wv"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="4HO-Mg-etn" secondAttribute="trailing" constant="30" id="rem-TD-UaV"/>
+                <constraint firstItem="4HO-Mg-etn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="rpf-WB-7iP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

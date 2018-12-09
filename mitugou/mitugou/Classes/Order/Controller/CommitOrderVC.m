@@ -11,11 +11,13 @@
 #import "AddressListVC.h"
 #import "AddreeModel.h"
 #import "UserModel.h"
+#import "PayView.h"
 @interface CommitOrderVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *total_lab;
 @property (nonatomic,strong)NSMutableArray *addressArray;
 @property (nonatomic,strong)AddreeModel *addressmodel;
+@property (nonatomic,strong)PayView *payview;
 @end
 @implementation CommitOrderVC
 -(NSMutableArray *)addressArray
@@ -27,8 +29,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"PayView" owner:nil options:nil];
+    self.payview  = views[0];
     self.navigationItem.title = @"支付确认";
     self.view.backgroundColor = RGB(240, 240, 240);
+    self.total_lab.text = [NSString stringWithFormat:@"￥%.2f",[self.detailModel.price doubleValue]];
     [self setupData];
     [self setupTableView];
 }
@@ -169,8 +174,8 @@
  */
 - (IBAction)acitonCommitVC:(UIButton *)sender
 {
-    [self PayMethod];
-    
+   // [self PayMethod];
+    [self.payview show];
 }
 /**
  支付方式

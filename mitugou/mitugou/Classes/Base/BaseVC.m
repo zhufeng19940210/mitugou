@@ -101,7 +101,6 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc]init]];
     }
 }
-
 /// 设置UINavbar右按钮(图片和文字)
 - (void)setRightButton:(UIImage *)image withText:(NSString *)text
 {
@@ -138,6 +137,7 @@
 
 - (void)onLeftBtnAction:(UIButton *)button
 {
+    [SVProgressHUD dismiss];
     if (self.navigationController.viewControllers.count > 1)
     {
         [self.navigationController popViewControllerAnimated:YES];
@@ -147,9 +147,9 @@
 - (void)onRightBtnAction:(UIButton *)button
 {
 }
-
 - (void)backViewController
 {
+    [SVProgressHUD dismiss];
     NSArray *viewControllers = [self.navigationController viewControllers];
     // 根据viewControllers的个数来判断此控制器是被present的还是被push的
     if (1 <= viewControllers.count && 0 < [viewControllers indexOfObject:self])
@@ -206,7 +206,7 @@
     tableView.emptyDataSetDelegate = self;
 }
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-    NSString *title = @"暂无数据";
+    NSString *title = @"空空如也~~~";
     NSDictionary *attributes = @{
                                  NSFontAttributeName:[UIFont systemFontOfSize:17],
                                  NSForegroundColorAttributeName:GrayFontColor

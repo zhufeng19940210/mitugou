@@ -12,6 +12,10 @@
 #define  LIMU_SeverUrl @"https://t.limuzhengxin.cn"
 //#define LIMU_SeverUrl @"https://api.limuzhengxin.com/"
 /// 请设置成在立木官网注册的参数信息
+///1872077072713686 |U73TlBw1UOeXe6QY58MeRrxmnb0LoyG1
+//#define  APIKEY         @"1872077072713686"
+//#define  APISECRET      @"U73TlBw1UOeXe6QY58MeRrxmnb0LoyG1"
+///测试环境
 #define  APIKEY         @"0496145008501381"
 #define  APISECRET      @"NorGLbc72zTgmE99HfACL82wbNeAhUQs"
 #define RGB2 (r,g,b)      [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]

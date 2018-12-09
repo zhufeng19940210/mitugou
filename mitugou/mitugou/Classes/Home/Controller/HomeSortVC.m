@@ -13,6 +13,7 @@
 @property (nonatomic,strong)NSMutableArray *jicheArray;
 @property (nonatomic,strong)NSMutableArray *phoneArray;
 @property (nonatomic,strong)NSMutableArray *peijianArray;
+@property (nonatomic,copy)NSString *prefix;
 @end
 @implementation HomeSortVC
 -(NSMutableArray *)jicheArray
@@ -59,6 +60,7 @@
             [weakSelf.jicheArray removeAllObjects];
             [weakSelf.peijianArray removeAllObjects];
             [weakSelf.phoneArray removeAllObjects];
+            weakSelf.prefix = res.data[@"httpPrefix"];
             weakSelf.phoneArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][0][@"commodirys"]];
             weakSelf.jicheArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][1][@"commodirys"]];
             weakSelf.peijianArray  = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"classifys"][2][@"commodirys"]];
@@ -120,6 +122,8 @@
         ApplicationproductCell *jichenCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
         ProductModel *model = self.jicheArray[indexPath.row];
         jichenCell.productModel = model;
+        jichenCell.prePrefix = self.prefix;
+        jichenCell.isPrefix = YES;
         sortCell = jichenCell;
     }else if (indexPath.section == 2){
         ProductTypeCell *typeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductTypeCell" forIndexPath:indexPath];
@@ -136,6 +140,8 @@
         NSLog(@"self.peijianArray.count:%lu",(unsigned long)self.peijianArray.count);
         ProductModel *model = self.peijianArray[indexPath.row];
         peijianCell.productModel = model;
+        peijianCell.prePrefix = self.prefix;
+        peijianCell.isPrefix = YES;
         sortCell = peijianCell;
     }else if (indexPath.section == 4){
         ProductTypeCell *typeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductTypeCell" forIndexPath:indexPath];
@@ -151,6 +157,8 @@
         ApplicationproductCell *phoneCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
         ProductModel *model = self.phoneArray[indexPath.row];
         phoneCell.productModel = model;
+        phoneCell.prePrefix = self.prefix;
+        phoneCell.isPrefix = YES;
         sortCell = phoneCell;
     }
     return sortCell;

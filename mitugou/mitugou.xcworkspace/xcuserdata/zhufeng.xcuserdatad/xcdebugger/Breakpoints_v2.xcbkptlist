@@ -60,19 +60,13 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mitugou/Classes/Order/Controller/CommitOrderVC.m"
-            timestampString = "565597473.4975131"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-setupData"
-            landmarkType = "7">
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,13 +75,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mitugou/Classes/Order/Controller/CommitOrderVC.m"
-            timestampString = "565597473.497637"
+            filePath = "mitugou/Classes/Setting/&#x8fd0;&#x8425;&#x5546;/Controller/OperatorVC.m"
+            timestampString = "565853225.6697021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-setupData"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-postData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

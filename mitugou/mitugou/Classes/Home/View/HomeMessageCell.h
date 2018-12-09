@@ -5,4 +5,6 @@
 #import <UIKit/UIKit.h>
 @interface HomeMessageCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title_lab;
+@property (weak, nonatomic) IBOutlet UILabel *content_lab;
+@property (weak, nonatomic) IBOutlet UILabel *time_lab;
 @end

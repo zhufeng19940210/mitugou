@@ -19,7 +19,7 @@
 -(NSMutableArray *)titleArray
 {
     if (!_titleArray) {
-        _titleArray = [NSMutableArray arrayWithObjects:@"常见问题",@"关于我们",@"清理缓存",@"修改登录密码",nil];
+        _titleArray = [NSMutableArray arrayWithObjects:@"常见问题",@"关于我们",/*@"清理缓存",*/@"修改登录密码",nil];
     }
     return _titleArray;
 }
@@ -70,8 +70,6 @@
             SettingAboutVC *aboutvc = [[SettingAboutVC alloc]init];
             [self.navigationController pushViewController:aboutvc animated:YES];
         }else if(indexPath.row == 2){
-            //清理缓存
-        }else if(indexPath.row == 3){
             //修改登录密码
             UpdatePwdVC *updatevc = [[UpdatePwdVC alloc]init];
             [self.navigationController pushViewController:updatevc animated:YES];

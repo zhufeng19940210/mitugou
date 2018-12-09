@@ -7,10 +7,12 @@
 #import "ApplicationproductCell.h"
 #import "HomeProductDetailVC.h"
 #import "SettingAuthonVC.h"
+#import "ProductModel.h"
 @interface ApplicationVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionview;
 @property (nonatomic,strong)NSMutableArray *applicationArray;
 @property (nonatomic,strong)NSDictionary *responseDic;
+@property (nonatomic,assign)int maxCount;
 @end
 @implementation ApplicationVC
 -(NSMutableArray *)applicationArray
@@ -38,15 +40,20 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
     WEAKSELF
-    [[NetWorkTool shareInstacne]postWithURLString:@"" parameters:param success:^(id  _Nonnull responseObject) {
+    [[NetWorkTool shareInstacne]postWithURLString:Appication_Url parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             [SVProgressHUD showSuccessWithStatus:@"获取成功"];
+            [weakSelf.applicationArray removeAllObjects];
+            weakSelf.applicationArray = [ProductModel mj_objectArrayWithKeyValuesArray:res.data[@"commodirys"]];
+            //额度
+            NSLog(@"res.data:%@",res.data[@"maxAmount"]);
+            weakSelf.maxCount = [res.data[@"maxAmount"] intValue];
         }else{
-            [SVProgressHUD showErrorWithStatus:@"获取成功"];
-            [weakSelf.collectionview.mj_header endRefreshing];
-            return;
+            [SVProgressHUD showErrorWithStatus:@"获取失败"];
+            return ;
         }
         [weakSelf.collectionview reloadData];
         [weakSelf.collectionview.mj_header endRefreshing];
@@ -76,7 +83,11 @@
     if (section == 0) {
         return  1;
     }else{
-        return 4;
+        if (self.applicationArray.count>3) {
+            return 4;
+        }else{
+            return self.applicationArray.count;
+        }
     }
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -85,6 +96,7 @@
     if (indexPath.section == 0) {
         //我的额度
         ApplicationHeaderCell *headerCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationHeaderCell" forIndexPath:indexPath];
+        headerCell.count_lab.text = [NSString stringWithFormat:@"%d",self.maxCount];
         headerCell.actionBlock = ^(UIButton *btn) {
             ///todo这里要做的跳转请求
             [self requestActionBtn];
@@ -93,6 +105,9 @@
     }else if (indexPath.section == 1){
         //商品推荐
         ApplicationproductCell *productCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ApplicationproductCell" forIndexPath:indexPath];
+        ProductModel *model = self.applicationArray[indexPath.row];
+        productCell.isPrefix = NO;
+        productCell.productModel = model;
         applicationCell = productCell;
     }
     return applicationCell;
