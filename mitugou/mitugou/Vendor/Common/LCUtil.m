@@ -407,14 +407,13 @@ static BOOL _isReachable = NO;
 
 //时间戳转换成时间
 +(NSString *)timestampSwitchTime:(NSString *)timeStr andFormatter:(NSString *)format{
-    NSTimeInterval _interval=[timeStr doubleValue];
+    NSTimeInterval _interval=[timeStr doubleValue]/1000;
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
     NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
     [objDateformat setDateFormat:format];
     NSString *currentDateStr = [objDateformat stringFromDate: date];
     return currentDateStr;
 }
-
 
 //照片获取本地路径转换
 +(NSString *)getImagePath:(UIImage *)Image {

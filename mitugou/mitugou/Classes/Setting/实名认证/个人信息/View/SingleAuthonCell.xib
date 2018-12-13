@@ -42,28 +42,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6t-lU-63k">
-                        <rect key="frame" x="263" y="14" width="29" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.99607843139999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="pmT-i1-cLz" secondAttribute="trailing" id="Mfd-ti-0GS"/>
                     <constraint firstAttribute="trailing" secondItem="YO3-rb-YWG" secondAttribute="trailing" constant="10" id="PWA-6l-bvg"/>
-                    <constraint firstItem="YO3-rb-YWG" firstAttribute="leading" secondItem="x6t-lU-63k" secondAttribute="trailing" constant="8" id="VZA-ch-yMJ"/>
                     <constraint firstAttribute="bottom" secondItem="pmT-i1-cLz" secondAttribute="bottom" id="cuB-pG-SuW"/>
                     <constraint firstItem="pmT-i1-cLz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="llJ-5W-N8R"/>
                     <constraint firstItem="sA5-js-Sjm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mLl-Qc-fAE"/>
                     <constraint firstItem="sA5-js-Sjm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rZ9-n9-W8P"/>
                     <constraint firstItem="YO3-rb-YWG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wyo-wh-zMI"/>
-                    <constraint firstItem="x6t-lU-63k" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xmV-Zo-Yxc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="status_lab" destination="x6t-lU-63k" id="FaO-7X-UaQ"/>
                 <outlet property="title_lab" destination="sA5-js-Sjm" id="qkI-Kf-MEB"/>
             </connections>
         </tableViewCell>

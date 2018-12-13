@@ -113,9 +113,12 @@
 #define Appication_Url  [BaseUrl stringByAppendingString:@"/commodiry/byamount4"]
 /*================================支付方式===============================*/
 ///支付宝支付方法
-#define Pay_Alipay [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
+#define Pay_Alipay [BaseUrl stringByAppendingString:@"/order/aliPayOrder"]
 ///微信支付
-#define Pay_Wechat [BaseUrl stringByAppendingString:@"/commodiry/showAll"]
+#define Pay_Wechat [BaseUrl stringByAppendingString:@"/order/wechatpay"]
+///付定金
+#define Pay_alipayPremount [BaseUrl stringByAppendingString:@"/transfer/alipayPremount"]
+
 /*===========================立木征信URL============================*/
 ///立木征信
 #define LIMU_SDK_URL [BaseUrl stringByAppendingString:@"/limutoken/setToken"]
@@ -149,4 +152,5 @@
 #define Home_Message_Clear [BaseUrl stringByAppendingString:@"/infomation/clearinfo"]
 ///查询快递
 #define Express_Url [BaseUrl stringByAppendingString:@"/express/findexp"]
+
 #endif /* URLStr_h */

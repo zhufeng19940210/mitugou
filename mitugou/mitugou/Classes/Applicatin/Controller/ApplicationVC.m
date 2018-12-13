@@ -131,13 +131,45 @@
 }
 #pragma mark -- requestActionBtn
 -(void)requestActionBtn
-{   //1.这里请求接口,判断是否认证的数据
+{
+//    NSDate * date = [NSDate date];
+//    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    //设置时间间隔（秒）（这个我是计算出来的，不知道有没有简便的方法 )
+//    NSTimeInterval time = 60 * 60;//一年的秒数
+//    //得到一年之前的当前时间（-：表示向前的时间间隔（即去年），如果没有，则表示向后的时间间隔（即明年））
+//    NSDate * lastYear = [date dateByAddingTimeInterval:time];
+//    //转化为字符串
+//    NSString * startDate = [dateFormatter stringFromDate:lastYear];
+//    NSLog(@"startDate:%@",startDate);
+    //1.这里请求接口,判断是否认证的数据
     //2.如果认证成功了就显示成功
     //3.如果申请过了等待结果
     //4.如果失败再次申请去申请，这里只是测试罢了
-    SettingAuthonVC *authonvc = [[SettingAuthonVC alloc]init];
-    [self.navigationController pushViewController:authonvc animated:YES];
+    //SettingAuthonVC *authonvc = [[SettingAuthonVC alloc]init];
+    //[self.navigationController pushViewController:authonvc animated:YES];
+    [SVProgressHUD show];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    [[NetWorkTool shareInstacne]postWithURLString:Pay_alipayPremount parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            [[AlipaySDK defaultService] payOrder:res.data[@"payinfo"] fromScheme:AppScheme callback:^(NSDictionary *resultDic) {
+                NSLog(@"reslut = %@",resultDic);
+            }];
+        }else{
+            [SVProgressHUD showErrorWithStatus:res.message];
+            return ;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

@@ -12,12 +12,14 @@
 #import "AddreeModel.h"
 #import "UserModel.h"
 #import "PayView.h"
-@interface CommitOrderVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "AppDelegate.h"
+@interface CommitOrderVC ()<UITableViewDelegate,UITableViewDataSource,AppPaySuccessDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *total_lab;
 @property (nonatomic,strong)NSMutableArray *addressArray;
 @property (nonatomic,strong)AddreeModel *addressmodel;
 @property (nonatomic,strong)PayView *payview;
+@property (nonatomic,strong)AppDelegate *app;
 @end
 @implementation CommitOrderVC
 -(NSMutableArray *)addressArray
@@ -31,6 +33,8 @@
     [super viewDidLoad];
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"PayView" owner:nil options:nil];
     self.payview  = views[0];
+    self.app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    self.app.PayDelegate = self;
     self.navigationItem.title = @"支付确认";
     self.view.backgroundColor = RGB(240, 240, 240);
     self.total_lab.text = [NSString stringWithFormat:@"￥%.2f",[self.detailModel.price doubleValue]];
@@ -70,6 +74,7 @@
         return;
     }];
 }
+
 //设置tableview
 -(void)setupTableView
 {
@@ -174,33 +179,58 @@
  */
 - (IBAction)acitonCommitVC:(UIButton *)sender
 {
-   // [self PayMethod];
-    [self.payview show];
+    [self PayMethod];
+}
+-(void)Pay{
+    [SVProgressHUD dismiss];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = token;
+    param[@"amount"] = @"0.1";
+    param[@"oid"]  = self.detailModel.cid;
+    [[NetWorkTool shareInstacne]postWithURLString:Pay_Alipay parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
+        [SVProgressHUD dismiss];
+        ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
+        if (res.code == 1) {
+            // NOTE: 调用支付结果开始支付
+            [[AlipaySDK defaultService] payOrder:res.data[@"alipay"] fromScheme:AppScheme callback:^(NSDictionary *resultDic) {
+                NSLog(@"reslut = %@",resultDic);
+            }];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"请求失败"];
+            return;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        NSLog(@"error:%@",error);
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:FailRequestTip];
+        return;
+    }];
 }
 /**
  支付方式
  */
 -(void)PayMethod
 {
-    [self commitOrder];
-//    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"请选择支付方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//    //取消按钮
-//    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-//    //支付宝支付
-//    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"支付宝支付" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
-//        //TODO
-//        [self PayWithAlipayBtn];
-//    }];
-//    //微信支付方式
-//    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"微信支付" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-//        //TODO
-//        [self PayWithWechatBtn];
-//    }];
-//    [sheet addAction:sure];
-//    [sheet addAction:cancle];
-//    [sheet addAction:delete];
-//    [self presentViewController:sheet animated:YES completion:^{
-//    }];
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"请选择支付方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    //取消按钮
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    //支付宝支付
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"支付宝支付" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+        //TODO
+        [self PayWithAlipayBtn];
+    }];
+    //微信支付方式
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"微信支付" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        //TODO
+        [self PayWithWechatBtn];
+    }];
+    [sheet addAction:sure];
+    [sheet addAction:cancle];
+    [sheet addAction:delete];
+    [self presentViewController:sheet animated:YES completion:^{
+    }];
 }
 
 -(void)commitOrder
@@ -243,17 +273,29 @@
 -(void)PayWithAlipayBtn
 {
     NSLog(@"支付宝支付");
-    
     [SVProgressHUD dismiss];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    UserModel *usermodel = [UserModel getInfo];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
+    param[@"uid"]   = usermodel.uid;
+    param[@"cid"]   = self.detailModel.cid;
+    param[@"cname"] = self.detailModel.cname;
+    param[@"ctype"] = self.detailModel.ctype;
+    param[@"photo"] = self.detailModel.photo;
+    param[@"price"] = self.detailModel.price;
+    param[@"color"] = self.selectColor;
+    param[@"rname"] = self.addressmodel.receName;
+    param[@"phone"] = self.addressmodel.phone;
+    param[@"address"] = self.addressmodel.detailAddr;
+    NSLog(@"param:%@",param);
     [[NetWorkTool shareInstacne]postWithURLString:Pay_Alipay parameters:param success:^(id  _Nonnull responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
         [SVProgressHUD dismiss];
         ResponeModel *res = [ResponeModel mj_objectWithKeyValues:responseObject];
         if (res.code == 1) {
             // NOTE: 调用支付结果开始支付
-            [[AlipaySDK defaultService] payOrder:@"" fromScheme:@"" callback:^(NSDictionary *resultDic) {
+            [[AlipaySDK defaultService] payOrder:res.data[@"payinfo"] fromScheme:AppScheme callback:^(NSDictionary *resultDic) {
                 NSLog(@"reslut = %@",resultDic);
             }];
         }else{
@@ -275,8 +317,20 @@
     NSLog(@"微信支付");
     [SVProgressHUD dismiss];
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:ZF_TOKEN];
+    UserModel *usermodel = [UserModel getInfo];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = token;
+    param[@"uid"]   = usermodel.uid;
+    param[@"cid"]   = self.detailModel.cid;
+    param[@"cname"] = self.detailModel.cname;
+    param[@"ctype"] = self.detailModel.ctype;
+    param[@"photo"] = self.detailModel.photo;
+    param[@"price"] = self.detailModel.price;
+    param[@"color"] = self.selectColor;
+    param[@"rname"] = self.addressmodel.receName;
+    param[@"phone"] = self.addressmodel.phone;
+    param[@"address"] = self.addressmodel.detailAddr;
+    NSLog(@"param:%@",param);
     WEAKSELF
     [[NetWorkTool shareInstacne]postWithURLString:Pay_Wechat parameters:param success:^(id  _Nonnull responseObject) {
         [SVProgressHUD dismiss];
@@ -318,10 +372,9 @@
 //    [WXApi sendReq: request];
 }
 //缴费完成后的结果回调
--(void)thePayresults:(BOOL)isSucces
-{
-    if (isSucces == YES) {
-        [ZJCustomHud showWithSuccess:@"付款成功！"];
+-(void)AppPayResultSuccess:(BOOL)isSuccess{
+    if (isSuccess == YES) {
+        [ZFCustomView showWithSuccess:@"支付成功"];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }

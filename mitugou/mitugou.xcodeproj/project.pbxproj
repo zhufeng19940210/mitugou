@@ -242,6 +242,10 @@
 		F0F7857021AFC91000F0251F /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F7856F21AFC91000F0251F /* LocalAuthentication.framework */; };
 		F0F7857521AFCC1200F0251F /* SettingTestLimuEducationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F7857321AFCC1200F0251F /* SettingTestLimuEducationVC.m */; };
 		F0F7857621AFCC1200F0251F /* SettingTestLimuEducationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F7857421AFCC1200F0251F /* SettingTestLimuEducationVC.xib */; };
+		F0F8708F21BE0F4600B535BA /* OrderProductDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F8708D21BE0F4600B535BA /* OrderProductDetailVC.m */; };
+		F0F8709021BE0F4600B535BA /* OrderProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F8708E21BE0F4600B535BA /* OrderProductDetailVC.xib */; };
+		F0F8709421BE15BD00B535BA /* OrderProductDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F8709221BE15BD00B535BA /* OrderProductDetailCell.m */; };
+		F0F8709521BE15BD00B535BA /* OrderProductDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F8709321BE15BD00B535BA /* OrderProductDetailCell.xib */; };
 		F0F9801D21AEA84500F4EB1D /* ZFDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */; };
 		F0F99FB621B1052000210786 /* SettingCreditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F99FB421B1052000210786 /* SettingCreditVC.m */; };
 		F0F99FB721B1052000210786 /* SettingCreditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F99FB521B1052000210786 /* SettingCreditVC.xib */; };
@@ -667,6 +671,12 @@
 		F0F7857221AFCC1200F0251F /* SettingTestLimuEducationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingTestLimuEducationVC.h; sourceTree = "<group>"; };
 		F0F7857321AFCC1200F0251F /* SettingTestLimuEducationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingTestLimuEducationVC.m; sourceTree = "<group>"; };
 		F0F7857421AFCC1200F0251F /* SettingTestLimuEducationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTestLimuEducationVC.xib; sourceTree = "<group>"; };
+		F0F8708C21BE0F4600B535BA /* OrderProductDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderProductDetailVC.h; sourceTree = "<group>"; };
+		F0F8708D21BE0F4600B535BA /* OrderProductDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderProductDetailVC.m; sourceTree = "<group>"; };
+		F0F8708E21BE0F4600B535BA /* OrderProductDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProductDetailVC.xib; sourceTree = "<group>"; };
+		F0F8709121BE15BD00B535BA /* OrderProductDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderProductDetailCell.h; sourceTree = "<group>"; };
+		F0F8709221BE15BD00B535BA /* OrderProductDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderProductDetailCell.m; sourceTree = "<group>"; };
+		F0F8709321BE15BD00B535BA /* OrderProductDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProductDetailCell.xib; sourceTree = "<group>"; };
 		F0F9801B21AEA84500F4EB1D /* ZFDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFDetailModel.h; sourceTree = "<group>"; };
 		F0F9801C21AEA84500F4EB1D /* ZFDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFDetailModel.m; sourceTree = "<group>"; };
 		F0F99FB321B1052000210786 /* SettingCreditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCreditVC.h; sourceTree = "<group>"; };
@@ -961,6 +971,9 @@
 				F0F6932E21B4D93B007F3A5B /* OrderPinjiaVC.h */,
 				F0F6932F21B4D93B007F3A5B /* OrderPinjiaVC.m */,
 				F0F6933021B4D93B007F3A5B /* OrderPinjiaVC.xib */,
+				F0F8708C21BE0F4600B535BA /* OrderProductDetailVC.h */,
+				F0F8708D21BE0F4600B535BA /* OrderProductDetailVC.m */,
+				F0F8708E21BE0F4600B535BA /* OrderProductDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -971,6 +984,9 @@
 				F0FF5ADD2195A28F0050AD96 /* OrderContentCell.h */,
 				F0FF5ADE2195A28F0050AD96 /* OrderContentCell.m */,
 				F0FF5ADF2195A28F0050AD96 /* OrderContentCell.xib */,
+				F0F8709121BE15BD00B535BA /* OrderProductDetailCell.h */,
+				F0F8709221BE15BD00B535BA /* OrderProductDetailCell.m */,
+				F0F8709321BE15BD00B535BA /* OrderProductDetailCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2383,6 +2399,7 @@
 				F0EEFA4321928CDC006D1650 /* HomeAdCell.xib in Resources */,
 				F0B50A0A218FE76D0027BB61 /* LoginVC.xib in Resources */,
 				F0FF5AD221953BA40050AD96 /* ProductDetailCell.xib in Resources */,
+				F0F8709021BE0F4600B535BA /* OrderProductDetailVC.xib in Resources */,
 				F0F0E75C218D9EBA00B4ABCE /* HomeVC.xib in Resources */,
 				F0EEFA6A2192C11D006D1650 /* HomeMessageVC.xib in Resources */,
 				F0EEFA912192D83F006D1650 /* ApplicationHeaderCell.xib in Resources */,
@@ -2391,6 +2408,7 @@
 				F0FF5AE12195A28F0050AD96 /* OrderContentCell.xib in Resources */,
 				F0FF5AD72195520D0050AD96 /* StagingTypeCell.xib in Resources */,
 				F0FD36092196872E00F6C93B /* PersonCardVC.xib in Resources */,
+				F0F8709521BE15BD00B535BA /* OrderProductDetailCell.xib in Resources */,
 				F02FF22B21B9189B0051F3C0 /* TaobaoVC.xib in Resources */,
 				F0EEFAA02192E9C5006D1650 /* SettingCommentCell.xib in Resources */,
 				F0F0E706218D987F00B4ABCE /* car3@2x.png in Resources */,
@@ -2473,6 +2491,7 @@
 				F0FBC88621A53CE100B8ADE9 /* CouponModel.m in Sources */,
 				F0D8EE2521A3D79700CEB35A /* HomeBaaner.m in Sources */,
 				F009C1CB21A2BA9F00EE828E /* DetailImageModel.m in Sources */,
+				F0F8708F21BE0F4600B535BA /* OrderProductDetailVC.m in Sources */,
 				F0F9801D21AEA84500F4EB1D /* ZFDetailModel.m in Sources */,
 				F0E1AC212193D9DC00A9C17F /* SettingAuthonVC.m in Sources */,
 				F0F0E6E5218D987E00B4ABCE /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -2512,6 +2531,7 @@
 				F0F0E6CC218D987E00B4ABCE /* IQTitleBarButtonItem.m in Sources */,
 				F0EEFA512192905F006D1650 /* HomeProductCell.m in Sources */,
 				F0F0E6E2218D987E00B4ABCE /* UIButton+countDown.m in Sources */,
+				F0F8709421BE15BD00B535BA /* OrderProductDetailCell.m in Sources */,
 				F0E1ABEE2193CB2F00A9C17F /* SettingCouponVC.m in Sources */,
 				F0E1AC5321942ED300A9C17F /* YunYinShangAuthonVC.m in Sources */,
 				F0E1AC66219436AD00A9C17F /* OrderListVC.m in Sources */,

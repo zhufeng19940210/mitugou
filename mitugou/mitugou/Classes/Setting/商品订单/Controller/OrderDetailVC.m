@@ -7,6 +7,7 @@
 #import "OrderStatusModel.h"
 #import "LogisticsVC.h"
 #import "OrderPinjiaVC.h"
+#import "OrderProductDetailVC.h"
 @interface OrderDetailVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic,strong)NSMutableArray *orderlistArray;
@@ -187,6 +188,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    OrderStatusModel *ordermodel = self.orderlistArray[indexPath.row];
+    OrderProductDetailVC *productDetailvc = [[OrderProductDetailVC alloc]init];
+    productDetailvc.statusmodel = ordermodel;
+    [self.navigationController pushViewController:productDetailvc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

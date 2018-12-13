@@ -6,6 +6,8 @@
 #define BMacro_h
 //弱引用
 #define WEAKSELF __weak typeof(self) weakSelf = self;
+//支付宝的appkey
+#define AppScheme  @"LanpangziHutougouPay"
 /**************立木征信垃圾***********/
 #define  UID            @"11"
 #define  CALLBACKURL    @"http://192.168.117.239:8080/credit_callback.php"
